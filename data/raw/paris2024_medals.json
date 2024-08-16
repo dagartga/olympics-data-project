@@ -1,0 +1,599 @@
+{
+    "3x3 Basketball": {
+        "3x3 (M)": [
+            "gold",
+            "Netherlands",
+            "NL",
+            "silver",
+            "France",
+            "FR",
+            "bronze",
+            "Lithuania",
+            "LT"
+        ]
+    },
+    "Archery": {
+        "Team (X)": [
+            "gold",
+            "Lim/Kim",
+            "KR",
+            "silver",
+            "Kroppen/Unruh",
+            "DE",
+            "bronze",
+            "Kaufhold/Ellis.",
+            "US"
+        ]
+    },
+    "Artistic Swimming": {
+        "Team Synchronized Swimming": [
+            "gold",
+            "China",
+            "CN",
+            "silver",
+            "USA",
+            "US",
+            "bronze",
+            "Spain",
+            "ES"
+        ]
+    },
+    "Athletics": {
+        "100m Hurdles (F)": [
+            "gold",
+            "M.Russell",
+            "US",
+            "silver",
+            "C.Samba-Mayela",
+            "FR",
+            "bronze",
+            "J.Quinn",
+            "PR"
+        ]
+    },
+    "Badminton": {
+        "Singles (M)": [
+            "gold",
+            "V.Axelsen",
+            "DK",
+            "silver",
+            "K.Vitidsarn",
+            "TH",
+            "bronze",
+            "Z.Lee",
+            "MY"
+        ]
+    },
+    "Basketball": {
+        "Women": [
+            "gold",
+            "USA",
+            "US",
+            "silver",
+            "France",
+            "FR",
+            "bronze",
+            "Australia",
+            "AU"
+        ]
+    },
+    "Beach Volleyball": {
+        "Women": [
+            "gold",
+            "Eduar./Patr\u00edcia",
+            "BR",
+            "silver",
+            "Humana/Wilkers.",
+            "CA",
+            "bronze",
+            "Brunner/H\u00fcberli",
+            "CH"
+        ]
+    },
+    "BMX Freestyle": {
+        "Park (M)": [
+            "gold",
+            "J.Torres Gil",
+            "AR",
+            "silver",
+            "K.Reilly",
+            "GB",
+            "bronze",
+            "A.Jeanjean",
+            "FR"
+        ]
+    },
+    "Boxing": {
+        "Over 91 kg (M)": [
+            "gold",
+            "B.Jalolov",
+            "UZ",
+            "silver",
+            "A.Ghadfa Drissi",
+            "ES",
+            "bronze",
+            "N.Tiafack",
+            "DE",
+            "bronze",
+            "D.Aboudou Moind",
+            "FR"
+        ]
+    },
+    "Breaking": {
+        "Breakdance (M)": [
+            "gold",
+            "P.Kim",
+            "CA",
+            "silver",
+            "D.Civil",
+            "FR",
+            "bronze",
+            "V.Montalvo",
+            "US"
+        ]
+    },
+    "Canoe Slalom": {
+        "Slalom Extreme K-1 (F)": [
+            "gold",
+            "N.Fox",
+            "AU",
+            "silver",
+            "A.Hug",
+            "FR",
+            "bronze",
+            "K.Woods",
+            "GB"
+        ]
+    },
+    "Canoe Sprint": {
+        "C-2 500m": [
+            "gold",
+            "Xu/Sun",
+            "CN",
+            "silver",
+            "Luzan/Rybachok",
+            "UA",
+            "bronze",
+            "Vincent/Macken.",
+            "CA"
+        ]
+    },
+    "Cycling BMX Racing": {
+        "Women": [
+            "gold",
+            "S.Sakakibara",
+            "AU",
+            "silver",
+            "M.Veenstra",
+            "NL",
+            "bronze",
+            "Z.Claessens",
+            "CH"
+        ]
+    },
+    "Cycling Road": {
+        "Time Trial (M)": [
+            "gold",
+            "R.Evenepoel",
+            "BE",
+            "silver",
+            "F.Ganna",
+            "IT",
+            "bronze",
+            "W.van Aert",
+            "BE"
+        ]
+    },
+    "Cycling Track": {
+        "Omnium (Cycling) (F)": [
+            "gold",
+            "J.Valente",
+            "US",
+            "silver",
+            "D.Pikulik",
+            "PL",
+            "bronze",
+            "A.Wollaston",
+            "NZ"
+        ]
+    },
+    "Diving": {
+        "Syn. 3m Springboard Diving (F)": [
+            "gold",
+            "Chang/Chen",
+            "CN",
+            "silver",
+            "Bacon/Cook",
+            "US",
+            "bronze",
+            "Harper/Mew",
+            "GB"
+        ]
+    },
+    "Equestrian": {
+        "Show Jumping Individual": [
+            "gold",
+            "C. Kukuk",
+            "DE",
+            "silver",
+            "S. Guerdat",
+            "CH",
+            "bronze",
+            "M. van der Vleu",
+            "NL"
+        ]
+    },
+    "Fencing": {
+        "Foil Singles (F)": [
+            "gold",
+            "L.Kiefer",
+            "US",
+            "silver",
+            "L.Scruggs",
+            "US",
+            "bronze",
+            "E.Harvey",
+            "CA"
+        ]
+    },
+    "Football": {
+        "Women": [
+            "gold",
+            "USA",
+            "US",
+            "silver",
+            "Brazil",
+            "BR",
+            "bronze",
+            "Germany",
+            "DE"
+        ]
+    },
+    "Golf": {
+        "Women": [
+            "gold",
+            "L.Ko",
+            "NZ",
+            "silver",
+            "E.Henseleit",
+            "DE",
+            "bronze",
+            "X.Lin",
+            "CN"
+        ]
+    },
+    "Gymnastics": {
+        "Floor Exercise Gymnastics (M)": [
+            "gold",
+            "C.Yulo",
+            "PH",
+            "silver",
+            "A.Dolgopyat",
+            "IL",
+            "bronze",
+            "J.Jarman",
+            "GB"
+        ]
+    },
+    "Handball": {
+        "Women": [
+            "gold",
+            "Norway",
+            "NO",
+            "silver",
+            "France",
+            "FR",
+            "bronze",
+            "Denmark",
+            "DK"
+        ]
+    },
+    "Hockey": {
+        "Women": [
+            "gold",
+            "Netherlands",
+            "NL",
+            "silver",
+            "China",
+            "CN",
+            "bronze",
+            "Argentina",
+            "AR"
+        ]
+    },
+    "Judo": {
+        "Up to 48 kg (F)": [
+            "gold",
+            "N.Tsunoda",
+            "JP",
+            "silver",
+            "B.Bavuudorj",
+            "MN",
+            "bronze",
+            "S.Boukli",
+            "FR",
+            "bronze",
+            "T.Babulfath",
+            "SE"
+        ]
+    },
+    "Marathon Swimming": {
+        "10km Marathon Swimming (M)": [
+            "gold",
+            "K.Rasovszky",
+            "HU",
+            "silver",
+            "O.Klemet",
+            "DE",
+            "bronze",
+            "D.Betlehem",
+            "HU"
+        ]
+    },
+    "Modern Pentathlon": {
+        "Women": [
+            "gold",
+            "M.Gulyas",
+            "HU",
+            "silver",
+            "E.Clouvel",
+            "FR",
+            "bronze",
+            "S.Seong",
+            "KR"
+        ]
+    },
+    "Mountain Biking": {
+        "Women": [
+            "gold",
+            "P.Ferrand Prevo",
+            "FR",
+            "silver",
+            "H.Batten",
+            "US",
+            "bronze",
+            "J.Rissveds",
+            "SE"
+        ]
+    },
+    "Rhyth. Gymnastics": {
+        "Group Gymnastics": [
+            "gold",
+            "China",
+            "CN",
+            "silver",
+            "Israel",
+            "IL",
+            "bronze",
+            "Italy",
+            "IT"
+        ]
+    },
+    "Rowing": {
+        "Double Sculls (F)": [
+            "gold",
+            "Francis/Spoors",
+            "NZ",
+            "silver",
+            "Radi\u015f/Bodnar",
+            "RO",
+            "bronze",
+            "H.-Byrne/Wilde",
+            "GB"
+        ]
+    },
+    "Rugby Sevens": {
+        "Women": [
+            "gold",
+            "New Zealand",
+            "NZ",
+            "silver",
+            "Canada",
+            "CA",
+            "bronze",
+            "USA",
+            "US"
+        ]
+    },
+    "Sailing": {
+        "Laser Radial Sailing (F)": [
+            "gold",
+            "M.Bouwmeester",
+            "NL",
+            "silver",
+            "A.-M.Rindom",
+            "DK",
+            "bronze",
+            "L.Flem Hoest",
+            "NO"
+        ]
+    },
+    "Shooting": {
+        "Air Rifle 10m (M)": [
+            "gold",
+            "L.Sheng",
+            "CN",
+            "silver",
+            "V.Lindgren",
+            "SE",
+            "bronze",
+            "M.Mari\u010di\u0107",
+            "HR"
+        ]
+    },
+    "Skateboarding": {
+        "Street (M)": [
+            "gold",
+            "Y.Horigome",
+            "JP",
+            "silver",
+            "J.Eaton",
+            "US",
+            "bronze",
+            "N.Huston",
+            "US"
+        ]
+    },
+    "Sport Climbing": {
+        "Women": [
+            "gold",
+            "A.Miros\u0142aw",
+            "PL",
+            "silver",
+            "L.Deng",
+            "CN",
+            "bronze",
+            "A.Kalucka",
+            "PL"
+        ]
+    },
+    "Surfing": {
+        "Surfing (M)": [
+            "gold",
+            "K.Vaast",
+            "FR",
+            "silver",
+            "J.Robinson",
+            "AU",
+            "bronze",
+            "G.Medina",
+            "BR"
+        ]
+    },
+    "Swimming": {
+        "100m Butterfly Swimming (F)": [
+            "gold",
+            "T.Huske",
+            "US",
+            "silver",
+            "G.Walsh",
+            "US",
+            "bronze",
+            "Y.Zhang",
+            "CN"
+        ]
+    },
+    "Table Tennis": {
+        "Team Tennis (M)": [
+            "gold",
+            "China",
+            "CN",
+            "silver",
+            "Sweden",
+            "SE",
+            "bronze",
+            "France",
+            "FR"
+        ]
+    },
+    "Taekwondo": {
+        "Up to 58kg Weightlifting (M)": [
+            "gold",
+            "T.Park",
+            "KR",
+            "silver",
+            "G.Magomedov",
+            "AZ",
+            "bronze",
+            "C.Ravet",
+            "FR",
+            "bronze",
+            "M.Jendoubi",
+            "TN"
+        ]
+    },
+    "Tennis": {
+        "Singles Tennis (F)": [
+            "gold",
+            "Q. Zheng",
+            "CN",
+            "silver",
+            "D. Veki\u0107",
+            "HR",
+            "bronze",
+            "I. \u015awi\u0105tek",
+            "PL"
+        ]
+    },
+    "Trampoline": {
+        "Women": [
+            "gold",
+            "B.Page",
+            "GB",
+            "silver",
+            "V.Bardzilouskay",
+            "BY",
+            "bronze",
+            "M.Sophiane",
+            "CA"
+        ]
+    },
+    "Triathlon": {
+        "Women": [
+            "gold",
+            "C.Beaugrand",
+            "FR",
+            "silver",
+            "J.Derron",
+            "CH",
+            "bronze",
+            "B.Potter",
+            "GB"
+        ]
+    },
+    "Volleyball": {
+        "Women": [
+            "gold",
+            "Italy",
+            "IT",
+            "silver",
+            "USA",
+            "US",
+            "bronze",
+            "Brazil",
+            "BR"
+        ]
+    },
+    "Water Polo": {
+        "Women": [
+            "gold",
+            "Spain",
+            "ES",
+            "silver",
+            "Australia",
+            "AU",
+            "bronze",
+            "Netherlands",
+            "NL"
+        ]
+    },
+    "Weightlifting": {
+        "Up to 59 kg (F)": [
+            "gold",
+            "S.Luo",
+            "CN",
+            "silver",
+            "M.Charron",
+            "CA",
+            "bronze",
+            "H.-C.Kuo",
+            "TW"
+        ]
+    },
+    "Wrestling": {
+        "Freestyle Up to 68kg (F)": [
+            "gold",
+            "A.Elor",
+            "US",
+            "silver",
+            "M.Zhumanazarova",
+            "KG",
+            "bronze",
+            "B.Cavusoglu Tos",
+            "TR",
+            "bronze",
+            "N.Ozaki",
+            "JP"
+        ]
+    }
+}
