@@ -1,0 +1,2649 @@
+{
+    "3x3 Basketball": {
+        "3x3 Basketball, Men": [
+            "LAT",
+            "ROC",
+            "SRB"
+        ],
+        "3x3 Basketball, Women": [
+            "USA",
+            "ROC",
+            "CHN"
+        ]
+    },
+    "Archery": {
+        "Individual, Men": [
+            "Mete Gazoz",
+            "TUR",
+            "Mauro Nespoli",
+            "ITA",
+            "Takaharu Furukawa",
+            "JPN"
+        ],
+        "Team, Men": [
+            "KOR",
+            "TPE",
+            "JPN"
+        ],
+        "Individual, Women": [
+            "An San",
+            "KOR",
+            "Yelena Osipova",
+            "ROC",
+            "Lucilla Boari",
+            "ITA"
+        ],
+        "Team, Women": [
+            "KOR",
+            "ROC",
+            "GER"
+        ],
+        "Team, Mixed": [
+            "KOR",
+            "NED",
+            "MEX"
+        ]
+    },
+    "Artistic Gymnastics": {
+        "Individual All-Around, Men": [
+            "Daiki Hashimoto",
+            "JPN",
+            "Xiao Ruoteng",
+            "CHN",
+            "Nikita Nagorny",
+            "ROC"
+        ],
+        "Team All-Around, Men": [
+            "ROC",
+            "JPN",
+            "CHN"
+        ],
+        "Floor Exercise, Men": [
+            "Artem Dolgopyat",
+            "ISR",
+            "Ray Zapata",
+            "ESP",
+            "Xiao Ruoteng",
+            "CHN"
+        ],
+        "Horse Vault, Men": [
+            "Sin Jae-Hwan",
+            "KOR",
+            "Denis Ablyazin",
+            "ROC",
+            "Artur Davtyan",
+            "ARM"
+        ],
+        "Parallel Bars, Men": [
+            "Zou Jingyuan",
+            "CHN",
+            "Lukas Dauser",
+            "GER",
+            "Ferhat Ar\u0131can",
+            "TUR"
+        ],
+        "Horizontal Bar, Men": [
+            "Daiki Hashimoto",
+            "JPN",
+            "Tin Srbi\u0107",
+            "CRO",
+            "Nikita Nagorny",
+            "ROC"
+        ],
+        "Rings, Men": [
+            "Liu Yang",
+            "CHN",
+            "You Hao",
+            "CHN",
+            "Lefteris Petrounias",
+            "GRE"
+        ],
+        "Pommelled Horse, Men": [
+            "Max Whitlock",
+            "GBR",
+            "Lee Chih-Kai",
+            "TPE",
+            "Kazuma Kaya",
+            "JPN"
+        ],
+        "Individual All-Around, Women": [
+            "Suni Lee",
+            "USA",
+            "Rebeca Andrade",
+            "BRA",
+            "Angelina Melnikova",
+            "ROC"
+        ],
+        "Team All-Around, Women": [
+            "ROC",
+            "USA",
+            "GBR"
+        ],
+        "Floor Exercise, Women": [
+            "Jade Carey",
+            "USA",
+            "Vanessa Ferrari",
+            "ITA",
+            "Mai Murakami",
+            "Angelina Melnikova",
+            "JPN",
+            "ROC"
+        ],
+        "Horse Vault, Women": [
+            "Rebeca Andrade",
+            "BRA",
+            "MyKayla Skinner",
+            "USA",
+            "Yeo Seo-Jeong",
+            "KOR"
+        ],
+        "Uneven Bars, Women": [
+            "Nina Derwael",
+            "BEL",
+            "Anastasiya Ilyankova",
+            "ROC",
+            "Suni Lee",
+            "USA"
+        ],
+        "Balance Beam, Women": [
+            "Guan Chenchen",
+            "CHN",
+            "Tang Xijing",
+            "CHN",
+            "Simone Biles",
+            "USA"
+        ]
+    },
+    "Artistic Swimming": {
+        "Duet, Women": [
+            "ROC",
+            "CHN",
+            "UKR"
+        ],
+        "Team, Women": [
+            "ROC",
+            "CHN",
+            "UKR"
+        ]
+    },
+    "Athletics": {
+        "100 metres, Men": [
+            "Lamont Marcell Jacobs",
+            "ITA",
+            "Fred Kerley",
+            "USA",
+            "Andre De Grasse",
+            "CAN"
+        ],
+        "200 metres, Men": [
+            "Andre De Grasse",
+            "CAN",
+            "Kenny Bednarek",
+            "USA",
+            "Noah Lyles",
+            "USA"
+        ],
+        "400 metres, Men": [
+            "Steven Gardiner",
+            "BAH",
+            "Anthony Zambrano",
+            "COL",
+            "Kirani James",
+            "GRN"
+        ],
+        "800 metres, Men": [
+            "Emmanuel Korir",
+            "KEN",
+            "Ferguson Rotich",
+            "KEN",
+            "Patryk Dobek",
+            "POL"
+        ],
+        "1,500 metres, Men": [
+            "Jakob Ingebrigtsen",
+            "NOR",
+            "Timothy Cheruiyot",
+            "KEN",
+            "Josh Kerr",
+            "GBR"
+        ],
+        "5,000 metres, Men": [
+            "Joshua Cheptegei",
+            "UGA",
+            "Moh Ahmed",
+            "CAN",
+            "Paul Chelimo",
+            "USA"
+        ],
+        "10,000 metres, Men": [
+            "Selemon Barega",
+            "ETH",
+            "Joshua Cheptegei",
+            "UGA",
+            "Jacob Kiplimo",
+            "UGA"
+        ],
+        "Marathon, Men": [
+            "Eliud Kipchoge",
+            "KEN",
+            "Abdi Nageeye",
+            "NED",
+            "Bashir Abdi",
+            "BEL"
+        ],
+        "110 metres Hurdles, Men": [
+            "Hansle Parchment",
+            "JAM",
+            "Grant Holloway",
+            "USA",
+            "Ronald Levy",
+            "JAM"
+        ],
+        "400 metres Hurdles, Men": [
+            "Karsten Warholm",
+            "NOR",
+            "Rai Benjamin",
+            "USA",
+            "Alison dos Santos",
+            "BRA"
+        ],
+        "3,000 metres Steeplechase, Men": [
+            "Soufiane El-Bakkali",
+            "MAR",
+            "Lamecha Girma",
+            "ETH",
+            "Benjamin Kigen",
+            "KEN"
+        ],
+        "4 \u00d7 100 metres Relay, Men": [
+            "ITA",
+            "CAN",
+            "CHN"
+        ],
+        "4 \u00d7 400 metres Relay, Men": [
+            "USA",
+            "NED",
+            "BOT"
+        ],
+        "20 kilometres Race Walk, Men": [
+            "Massimo Stano",
+            "ITA",
+            "Koki Ikeda",
+            "JPN",
+            "Toshikazu Yamanishi",
+            "JPN"
+        ],
+        "50 kilometres Race Walk, Men": [
+            "Dawid Tomala",
+            "POL",
+            "Jonathan Hilbert",
+            "GER",
+            "Evan Dunfee",
+            "CAN"
+        ],
+        "High Jump, Men": [
+            "Gianmarco Tamberi",
+            "Mutaz Essa Barshim",
+            "ITA",
+            "QAT",
+            "Maksim Nedasekau",
+            "BLR"
+        ],
+        "Pole Vault, Men": [
+            "Mondo Duplantis",
+            "SWE",
+            "Chris Nilsen",
+            "USA",
+            "Thiago Braz",
+            "BRA"
+        ],
+        "Long Jump, Men": [
+            "Miltiadis Tentoglou",
+            "GRE",
+            "Juan Miguel Echevarr\u00eda",
+            "CUB",
+            "Maykel Mass\u00f3",
+            "CUB"
+        ],
+        "Triple Jump, Men": [
+            "Pedro Pablo Pichardo",
+            "POR",
+            "Zhu Yaming",
+            "CHN",
+            "Hugues Zango",
+            "BUR"
+        ],
+        "Shot Put, Men": [
+            "Ryan Crouser",
+            "USA",
+            "Joe Kovacs",
+            "USA",
+            "Tom Walsh",
+            "NZL"
+        ],
+        "Discus Throw, Men": [
+            "Daniel St\u00e5hl",
+            "SWE",
+            "Simon Pettersson",
+            "SWE",
+            "Lukas Wei\u00dfhaidinger",
+            "AUT"
+        ],
+        "Hammer Throw, Men": [
+            "Wojciech Nowicki",
+            "POL",
+            "Eivind Henriksen",
+            "NOR",
+            "Pawe\u0142 Fajdek",
+            "POL"
+        ],
+        "Javelin Throw, Men": [
+            "Neeraj Chopra",
+            "IND",
+            "Jakub Vadlejch",
+            "CZE",
+            "V\u00edt\u011bzslav Vesel\u00fd",
+            "CZE"
+        ],
+        "Decathlon, Men": [
+            "Damian Warner",
+            "CAN",
+            "K\u00e9vin Mayer",
+            "FRA",
+            "Ashley Moloney",
+            "AUS"
+        ],
+        "100 metres, Women": [
+            "Elaine Thompson-Herah",
+            "JAM",
+            "Shelly-Ann Fraser-Pryce",
+            "JAM",
+            "Shericka Jackson",
+            "JAM"
+        ],
+        "200 metres, Women": [
+            "Elaine Thompson-Herah",
+            "JAM",
+            "Christine Mboma",
+            "NAM",
+            "Gabby Thomas",
+            "USA"
+        ],
+        "400 metres, Women": [
+            "Shaunae Miller-Uibo",
+            "BAH",
+            "Marileidy Paulino",
+            "DOM",
+            "Allyson Felix",
+            "USA"
+        ],
+        "800 metres, Women": [
+            "Athing Mu",
+            "USA",
+            "Keely Hodgkinson",
+            "GBR",
+            "Raevyn Rogers",
+            "USA"
+        ],
+        "1,500 metres, Women": [
+            "Faith Kipyegon",
+            "KEN",
+            "Laura Muir",
+            "GBR",
+            "Sifan Hassan",
+            "NED"
+        ],
+        "5,000 metres, Women": [
+            "Sifan Hassan",
+            "NED",
+            "Hellen Obiri",
+            "KEN",
+            "Gudaf Tsegay",
+            "ETH"
+        ],
+        "10,000 metres, Women": [
+            "Sifan Hassan",
+            "NED",
+            "Kalkidan Gezahegne",
+            "BRN",
+            "Letesenbet Gidey",
+            "ETH"
+        ],
+        "Marathon, Women": [
+            "Peres Jepchirchir",
+            "KEN",
+            "Brigid Kosgei",
+            "KEN",
+            "Molly Seidel",
+            "USA"
+        ],
+        "100 metres Hurdles, Women": [
+            "Jasmine Camacho-Quinn",
+            "PUR",
+            "Keni Harrison",
+            "USA",
+            "Megan Tapper",
+            "JAM"
+        ],
+        "400 metres Hurdles, Women": [
+            "Sydney McLaughlin",
+            "USA",
+            "Dalilah Muhammad",
+            "USA",
+            "Femke Bol",
+            "NED"
+        ],
+        "3,000 metres Steeplechase, Women": [
+            "Peruth Chemutai",
+            "UGA",
+            "Courtney Frerichs",
+            "USA",
+            "Hyvin Kiyeng",
+            "KEN"
+        ],
+        "4 \u00d7 100 metres Relay, Women": [
+            "JAM",
+            "USA",
+            "GBR"
+        ],
+        "4 \u00d7 400 metres Relay, Women": [
+            "USA",
+            "POL",
+            "JAM"
+        ],
+        "20 kilometres Race Walk, Women": [
+            "Antonella Palmisano",
+            "ITA",
+            "Sandra Arenas",
+            "COL",
+            "Liu Hong",
+            "CHN"
+        ],
+        "High Jump, Women": [
+            "Mariya Lasitskene",
+            "ROC",
+            "Nicola McDermott",
+            "AUS",
+            "Yaroslava Mahuchikh",
+            "UKR"
+        ],
+        "Pole Vault, Women": [
+            "Katie Nageotte",
+            "USA",
+            "Anzhelika Sidorova",
+            "ROC",
+            "Holly Bradshaw",
+            "GBR"
+        ],
+        "Long Jump, Women": [
+            "Malaika Mihambo",
+            "GER",
+            "Brittney Reese",
+            "USA",
+            "Ese Brume",
+            "NGR"
+        ],
+        "Triple Jump, Women": [
+            "Yulimar Rojas",
+            "VEN",
+            "Patr\u00edcia Mamona",
+            "POR",
+            "Ana Peleteiro",
+            "ESP"
+        ],
+        "Shot Put, Women": [
+            "Gong Lijiao",
+            "CHN",
+            "Raven Saunders",
+            "USA",
+            "Valerie Adams",
+            "NZL"
+        ],
+        "Discus Throw, Women": [
+            "Valarie Allman",
+            "USA",
+            "Kristin Pudenz",
+            "GER",
+            "Yaim\u00e9 P\u00e9rez",
+            "CUB"
+        ],
+        "Hammer Throw, Women": [
+            "Anita W\u0142odarczyk",
+            "POL",
+            "Wang Zheng",
+            "CHN",
+            "Malwina Kopron",
+            "POL"
+        ],
+        "Javelin Throw, Women": [
+            "Liu Shiying",
+            "CHN",
+            "Maria Andrejczyk",
+            "POL",
+            "Kelsey-Lee Barber",
+            "AUS"
+        ],
+        "Heptathlon, Women": [
+            "Nafi Thiam",
+            "BEL",
+            "Anouk Vetter",
+            "NED",
+            "Emma Oosterwegel",
+            "NED"
+        ],
+        "4 \u00d7 400 metres Relay, Mixed": [
+            "POL",
+            "DOM",
+            "USA"
+        ]
+    },
+    "Badminton": {
+        "Singles, Men": [
+            "Viktor Axelsen",
+            "DEN",
+            "Chen Long",
+            "CHN",
+            "Anthony Sinisuka Ginting",
+            "INA"
+        ],
+        "Doubles, Men": [
+            "TPE",
+            "CHN",
+            "MAS"
+        ],
+        "Singles, Women": [
+            "Chen Yufei",
+            "CHN",
+            "Tai Tzu-Ying",
+            "TPE",
+            "P. V. Sindhu",
+            "IND"
+        ],
+        "Doubles, Women": [
+            "INA",
+            "CHN",
+            "KOR"
+        ],
+        "Doubles, Mixed": [
+            "CHN",
+            "CHN",
+            "JPN"
+        ]
+    },
+    "Baseball": {
+        "Baseball, Men": [
+            "JPN",
+            "USA",
+            "DOM"
+        ]
+    },
+    "Basketball": {
+        "Basketball, Men": [
+            "USA",
+            "FRA",
+            "AUS"
+        ],
+        "Basketball, Women": [
+            "USA",
+            "JPN",
+            "FRA"
+        ]
+    },
+    "Beach Volleyball": {
+        "Beach Volleyball, Men": [
+            "NOR",
+            "ROC",
+            "QAT"
+        ],
+        "Beach Volleyball, Women": [
+            "USA",
+            "AUS",
+            "SUI"
+        ]
+    },
+    "Boxing": {
+        "Flyweight, Men": [
+            "Galal Yafai",
+            "GBR",
+            "Carlo Paalam",
+            "PHI",
+            "Ryomei Tanaka",
+            "Saken Bibosinov",
+            "JPN",
+            "KAZ"
+        ],
+        "Featherweight, Men": [
+            "Albert Batyrgaziyev",
+            "ROC",
+            "Duke Ragan",
+            "USA",
+            "L\u00e1zaro \u00c1lvarez",
+            "Samuel Takyi",
+            "CUB",
+            "GHA"
+        ],
+        "Lightweight, Men": [
+            "Andy Cruz",
+            "CUB",
+            "Keyshawn Davis",
+            "USA",
+            "Hovhannes Bachkov",
+            "Harry Garside",
+            "ARM",
+            "AUS"
+        ],
+        "Welterweight, Men": [
+            "Roniel Iglesias",
+            "CUB",
+            "Pat McCormack",
+            "GBR",
+            "Aidan Walsh",
+            "Andrey Zamkovoy",
+            "IRL",
+            "ROC"
+        ],
+        "Middleweight, Men": [
+            "Hebert Concei\u00e7\u00e3o",
+            "BRA",
+            "Oleksandr Khyzhniak",
+            "UKR",
+            "Eumir Marcial",
+            "Gleb Bakshi",
+            "PHI",
+            "ROC"
+        ],
+        "Light-Heavyweight, Men": [
+            "Arlen L\u00f3pez",
+            "CUB",
+            "Ben Whittaker",
+            "GBR",
+            "Loren Alfonso",
+            "Imam Khatayev",
+            "AZE",
+            "ROC"
+        ],
+        "Heavyweight, Men": [
+            "Julio C\u00e9sar la Cruz",
+            "CUB",
+            "Muslim Gadzhimagomedov",
+            "ROC",
+            "Abner Teixeira",
+            "David Nyika",
+            "BRA",
+            "NZL"
+        ],
+        "Super-Heavyweight, Men": [
+            "Bakhodir Dzhalolov",
+            "UZB",
+            "Richard Torrez",
+            "USA",
+            "Frazer Clarke",
+            "Kamshybek Kunkabayev",
+            "GBR",
+            "KAZ"
+        ],
+        "Flyweight, Women": [
+            "Stoyka Krasteva",
+            "BUL",
+            "Buse Naz \u00c7ak\u0131ro\u011flu",
+            "TUR",
+            "Tsukimi Namiki",
+            "Huang Hsiao-Wen",
+            "JPN",
+            "TPE"
+        ],
+        "Featherweight, Women": [
+            "Sena Irie",
+            "JPN",
+            "Nesthy Petecio",
+            "PHI",
+            "Karriss Artingstall",
+            "Irma Testa",
+            "GBR",
+            "ITA"
+        ],
+        "Lightweight, Women": [
+            "Kellie Harrington",
+            "IRL",
+            "Beatriz Ferreira",
+            "BRA",
+            "Mira Potkonen",
+            "Sudaporn Seesondee",
+            "FIN",
+            "THA"
+        ],
+        "Welterweight, Women": [
+            "Busenaz S\u00fcrmeneli",
+            "TUR",
+            "Gu Hong",
+            "CHN",
+            "Lovlina Borgohain",
+            "Oshae Jones",
+            "IND",
+            "USA"
+        ],
+        "Middleweight, Women": [
+            "Lauren Price",
+            "GBR",
+            "Li Qian",
+            "CHN",
+            "Nouchka Fontijn",
+            "Zemfira Magomedaliyeva",
+            "NED",
+            "ROC"
+        ]
+    },
+    "Canoe Slalom": {
+        "Kayak Singles, Slalom, Men": [
+            "Ji\u0159\u00ed Prskavec",
+            "CZE",
+            "Jakub Grigar",
+            "SVK",
+            "Hannes Aigner",
+            "GER"
+        ],
+        "Canadian Singles, Slalom, Men": [
+            "Benjamin Sav\u0161ek",
+            "SLO",
+            "Luk\u00e1\u0161 Rohan",
+            "CZE",
+            "Sideris Tasiadis",
+            "GER"
+        ],
+        "Kayak Singles, Slalom, Women": [
+            "Ricarda Funk",
+            "GER",
+            "Maialen Chourraut",
+            "ESP",
+            "Jess Fox",
+            "AUS"
+        ],
+        "Canadian Singles, Slalom, Women": [
+            "Jess Fox",
+            "AUS",
+            "Mallory Franklin",
+            "GBR",
+            "Andrea Herzog",
+            "GER"
+        ]
+    },
+    "Canoe Sprint": {
+        "Kayak Singles, 200 metres, Men": [
+            "S\u00e1ndor T\u00f3tka",
+            "HUN",
+            "Manfredi Rizza",
+            "ITA",
+            "Liam Heath",
+            "GBR"
+        ],
+        "Kayak Singles, 1,000 metres, Men": [
+            "B\u00e1lint Kopasz",
+            "HUN",
+            "\u00c1d\u00e1m Varga",
+            "HUN",
+            "Fernando Pimenta",
+            "POR"
+        ],
+        "Kayak Doubles, 1,000 metres, Men": [
+            "AUS",
+            "GER",
+            "CZE"
+        ],
+        "Kayak Fours, 500 metres, Men": [
+            "GER",
+            "ESP",
+            "SVK"
+        ],
+        "Canadian Singles, 1,000 metres, Men": [
+            "Isaquias Queiroz",
+            "BRA",
+            "Liu Hao",
+            "CHN",
+            "Serghei Tarnovschi",
+            "MDA"
+        ],
+        "Canadian Doubles, 1,000 metres, Men": [
+            "CUB",
+            "CHN",
+            "GER"
+        ],
+        "Kayak Singles, 200 metres, Women": [
+            "Lisa Carrington",
+            "NZL",
+            "Teresa Portela",
+            "ESP",
+            "Emma J\u00f8rgensen",
+            "DEN"
+        ],
+        "Kayak Singles, 500 metres, Women": [
+            "Lisa Carrington",
+            "NZL",
+            "Tamara Csipes",
+            "HUN",
+            "Emma J\u00f8rgensen",
+            "DEN"
+        ],
+        "Kayak Doubles, 500 metres, Women": [
+            "NZL",
+            "POL",
+            "HUN"
+        ],
+        "Kayak Fours, 500 metres, Women": [
+            "HUN",
+            "BLR",
+            "POL"
+        ],
+        "Canadian Singles, 200 metres, Women": [
+            "Nevin Harrison",
+            "USA",
+            "Laurence Vincent-Lapointe",
+            "CAN",
+            "Liudmyla Luzan",
+            "UKR"
+        ],
+        "Canadian Doubles, 500 metres, Women": [
+            "CHN",
+            "UKR",
+            "CAN"
+        ]
+    },
+    "Cycling BMX Freestyle": {
+        "Park, Men": [
+            "Logan Martin",
+            "AUS",
+            "Daniel Dhers",
+            "VEN",
+            "Declan Brooks",
+            "GBR"
+        ],
+        "Park, Women": [
+            "Charlotte Worthington",
+            "GBR",
+            "Hannah Roberts",
+            "USA",
+            "Nikita Ducarroz",
+            "SUI"
+        ]
+    },
+    "Cycling BMX Racing": {
+        "BMX, Men": [
+            "Niek Kimmann",
+            "NED",
+            "Kye Whyte",
+            "GBR",
+            "Carlos Ram\u00edrez",
+            "COL"
+        ],
+        "BMX, Women": [
+            "Beth Shriever",
+            "GBR",
+            "Mariana Paj\u00f3n",
+            "COL",
+            "Merel Smulders",
+            "NED"
+        ]
+    },
+    "Cycling Mountain Bike": {
+        "Cross-Country, Men": [
+            "Tom Pidcock",
+            "GBR",
+            "Mathias Fl\u00fcckiger",
+            "SUI",
+            "David Valero",
+            "ESP"
+        ],
+        "Cross-Country, Women": [
+            "Jolanda Neff",
+            "SUI",
+            "Sina Frei",
+            "SUI",
+            "Linda Indergand",
+            "SUI"
+        ]
+    },
+    "Cycling Road": {
+        "Road Race, Individual, Men": [
+            "Richard Carapaz",
+            "ECU",
+            "Wout Van Aert",
+            "BEL",
+            "Tadej Poga\u010dar",
+            "SLO"
+        ],
+        "Individual Time Trial, Men": [
+            "Primo\u017e Rogli\u010d",
+            "SLO",
+            "Tom Dumoulin",
+            "NED",
+            "Rohan Dennis",
+            "AUS"
+        ],
+        "Road Race, Individual, Women": [
+            "Anna Kiesenhofer",
+            "AUT",
+            "Annemiek van Vleuten",
+            "NED",
+            "Elisa Longo Borghini",
+            "ITA"
+        ],
+        "Individual Time Trial, Women": [
+            "Annemiek van Vleuten",
+            "NED",
+            "Marlen Reusser",
+            "SUI",
+            "Anna van der Breggen",
+            "NED"
+        ]
+    },
+    "Cycling Track": {
+        "Sprint, Men": [
+            "Harrie Lavreysen",
+            "NED",
+            "Jeffrey Hoogland",
+            "NED",
+            "Jack Carlin",
+            "GBR"
+        ],
+        "Keirin, Men": [
+            "Jason Kenny",
+            "GBR",
+            "Azizul Awang",
+            "MAS",
+            "Harrie Lavreysen",
+            "NED"
+        ],
+        "Team Sprint, Men": [
+            "NED",
+            "GBR",
+            "FRA"
+        ],
+        "Team Pursuit, 4,000 metres, Men": [
+            "ITA",
+            "DEN",
+            "AUS"
+        ],
+        "Madison, Men": [
+            "DEN",
+            "GBR",
+            "FRA"
+        ],
+        "Omnium, Men": [
+            "Matthew Walls",
+            "GBR",
+            "Campbell Stewart",
+            "NZL",
+            "Elia Viviani",
+            "ITA"
+        ],
+        "Sprint, Women": [
+            "Kelsey Mitchell",
+            "CAN",
+            "Olena Starikova",
+            "UKR",
+            "Sarah Lee",
+            "HKG"
+        ],
+        "Keirin, Women": [
+            "Shanne Braspennincx",
+            "NED",
+            "Ellesse Andrews",
+            "NZL",
+            "Lauriane Genest",
+            "CAN"
+        ],
+        "Team Sprint, Women": [
+            "CHN",
+            "GER",
+            "ROC"
+        ],
+        "Team Pursuit, Women": [
+            "GER",
+            "GBR",
+            "USA"
+        ],
+        "Omnium, Women": [
+            "Jennifer Valente",
+            "USA",
+            "Yumi Kajihara",
+            "JPN",
+            "Kirsten Wild",
+            "NED"
+        ],
+        "Madison, Women": [
+            "GBR",
+            "DEN",
+            "ROC"
+        ]
+    },
+    "Diving": {
+        "Springboard, Men": [
+            "Xie Siyi",
+            "CHN",
+            "Wang Zongyuan",
+            "CHN",
+            "Jack Laugher",
+            "GBR"
+        ],
+        "Platform, Men": [
+            "Cao Yuan",
+            "CHN",
+            "Yang Jian",
+            "CHN",
+            "Tom Daley",
+            "GBR"
+        ],
+        "Synchronized Springboard, Men": [
+            "CHN",
+            "USA",
+            "GER"
+        ],
+        "Synchronized Platform, Men": [
+            "GBR",
+            "CHN",
+            "ROC"
+        ],
+        "Springboard, Women": [
+            "Shi Tingmao",
+            "CHN",
+            "Wang Han",
+            "CHN",
+            "Krysta Palmer",
+            "USA"
+        ],
+        "Platform, Women": [
+            "Quan Hongchan",
+            "CHN",
+            "Chen Yuxi",
+            "CHN",
+            "Melissa Wu",
+            "AUS"
+        ],
+        "Synchronized Springboard, Women": [
+            "CHN",
+            "CAN",
+            "GER"
+        ],
+        "Synchronized Platform, Women": [
+            "CHN",
+            "USA",
+            "MEX"
+        ]
+    },
+    "Equestrian Dressage": {
+        "Individual, Open": [
+            "Jessica von Bredow-Werndl",
+            "GER",
+            "Isabell Werth",
+            "GER",
+            "Charlotte Dujardin",
+            "GBR"
+        ],
+        "Team, Open": [
+            "GER",
+            "USA",
+            "GBR"
+        ]
+    },
+    "Equestrian Eventing": {
+        "Individual, Open": [
+            "Julia Krajewski",
+            "GER",
+            "Tom McEwen",
+            "GBR",
+            "Andrew Hoy",
+            "AUS"
+        ],
+        "Team, Open": [
+            "GBR",
+            "AUS",
+            "FRA"
+        ]
+    },
+    "Equestrian Jumping": {
+        "Individual, Open": [
+            "Ben Maher",
+            "GBR",
+            "Peder Fredricson",
+            "SWE",
+            "Maikel van der Vleuten",
+            "NED"
+        ],
+        "Team, Open": [
+            "SWE",
+            "USA",
+            "BEL"
+        ]
+    },
+    "Fencing": {
+        "Foil, Individual, Men": [
+            "Edgar Cheung",
+            "HKG",
+            "Daniele Garozzo",
+            "ITA",
+            "Alexander Choupenitch",
+            "CZE"
+        ],
+        "Foil, Team, Men": [
+            "FRA",
+            "ROC",
+            "USA"
+        ],
+        "\u00c9p\u00e9e, Individual, Men": [
+            "Romain Cannone",
+            "FRA",
+            "Gergely Sikl\u00f3si",
+            "HUN",
+            "Ihor Reizlin",
+            "UKR"
+        ],
+        "\u00c9p\u00e9e, Team, Men": [
+            "JPN",
+            "ROC",
+            "KOR"
+        ],
+        "Sabre, Individual, Men": [
+            "\u00c1ron Szil\u00e1gyi",
+            "HUN",
+            "Luigi Samele",
+            "ITA",
+            "Kim Jeong-Hwan",
+            "KOR"
+        ],
+        "Sabre, Team, Men": [
+            "KOR",
+            "ITA",
+            "HUN"
+        ],
+        "Foil, Individual, Women": [
+            "Lee Kiefer",
+            "USA",
+            "Inna Deriglazova",
+            "ROC",
+            "Larisa Korobeynikova",
+            "ROC"
+        ],
+        "Foil, Team, Women": [
+            "ROC",
+            "FRA",
+            "ITA"
+        ],
+        "\u00c9p\u00e9e, Individual, Women": [
+            "Sun Yiwen",
+            "CHN",
+            "Ana Maria Popescu",
+            "ROU",
+            "Katrina Lehis",
+            "EST"
+        ],
+        "\u00c9p\u00e9e, Team, Women": [
+            "EST",
+            "KOR",
+            "ITA"
+        ],
+        "Sabre, Individual, Women": [
+            "Sofiya Pozdnyakova",
+            "ROC",
+            "Sofya Velikaya",
+            "ROC",
+            "Manon Brunet",
+            "FRA"
+        ],
+        "Sabre, Team, Women": [
+            "ROC",
+            "FRA",
+            "KOR"
+        ]
+    },
+    "Football": {
+        "Football, Men": [
+            "BRA",
+            "ESP",
+            "MEX"
+        ],
+        "Football, Women": [
+            "CAN",
+            "SWE",
+            "USA"
+        ]
+    },
+    "Golf": {
+        "Individual, Men": [
+            "Xander Schauffele",
+            "USA",
+            "Rory Sabbatini",
+            "SVK",
+            "C. T. Pan",
+            "TPE"
+        ],
+        "Individual, Women": [
+            "Nelly Korda",
+            "USA",
+            "Mone Inami",
+            "JPN",
+            "Lydia Ko",
+            "NZL"
+        ]
+    },
+    "Handball": {
+        "Handball, Men": [
+            "FRA",
+            "DEN",
+            "ESP"
+        ],
+        "Handball, Women": [
+            "FRA",
+            "ROC",
+            "NOR"
+        ]
+    },
+    "Hockey": {
+        "Hockey, Men": [
+            "BEL",
+            "AUS",
+            "IND"
+        ],
+        "Hockey, Women": [
+            "NED",
+            "ARG",
+            "GBR"
+        ]
+    },
+    "Judo": {
+        "Extra-Lightweight, Men": [
+            "Naohisa Takato",
+            "JPN",
+            "Yang Yung-Wei",
+            "TPE",
+            "Luka Mkheidze",
+            "Yeldos Smetov",
+            "FRA",
+            "KAZ"
+        ],
+        "Half-Lightweight, Men": [
+            "Hifumi Abe",
+            "JPN",
+            "Vazha Margvelashvili",
+            "GEO",
+            "Daniel Cargnin",
+            "An Ba-Ul",
+            "BRA",
+            "KOR"
+        ],
+        "Lightweight, Men": [
+            "Shohei Ono",
+            "JPN",
+            "Lasha Shavdatuashvili",
+            "GEO",
+            "An Chang-Rim",
+            "Tsend-Ochiryn Tsogtbaatar",
+            "KOR",
+            "MGL"
+        ],
+        "Half-Middleweight, Men": [
+            "Takanori Nagase",
+            "JPN",
+            "Saeid Mollaei",
+            "MGL",
+            "Shamil Borchashvili",
+            "Matthias Casse",
+            "AUT",
+            "BEL"
+        ],
+        "Middleweight, Men": [
+            "Lasha Bekauri",
+            "GEO",
+            "Eduard Trippel",
+            "GER",
+            "Kriszti\u00e1n T\u00f3th",
+            "Davlat Bobonov",
+            "HUN",
+            "UZB"
+        ],
+        "Half-Heavyweight, Men": [
+            "Aaron Wolf",
+            "JPN",
+            "Jo Gu-Ham",
+            "KOR",
+            "Jorge Fonseca",
+            "Niyaz Ilyasov",
+            "POR",
+            "ROC"
+        ],
+        "Heavyweight, Men": [
+            "Luk\u00e1\u0161 Krp\u00e1lek",
+            "CZE",
+            "Guram Tushishvili",
+            "GEO",
+            "Teddy Riner",
+            "Tamerlan Bashayev",
+            "FRA",
+            "ROC"
+        ],
+        "Extra-Lightweight, Women": [
+            "Distria Krasniqi",
+            "KOS",
+            "Funa Tonaki",
+            "JPN",
+            "M\u00f6nkhbatyn Urantsetseg",
+            "Dar'ia Bilodid",
+            "MGL",
+            "UKR"
+        ],
+        "Half-Lightweight, Women": [
+            "Uta Abe",
+            "JPN",
+            "Amandine Buchard",
+            "FRA",
+            "Chelsie Giles",
+            "Odette Giuffrida",
+            "GBR",
+            "ITA"
+        ],
+        "Lightweight, Women": [
+            "Nora Gjakova",
+            "KOS",
+            "Sarah-L\u00e9onie Cysique",
+            "FRA",
+            "Jessica Klimkait",
+            "Tsukasa Yoshida",
+            "CAN",
+            "JPN"
+        ],
+        "Half-Middleweight, Women": [
+            "Clarisse Agbegnenou",
+            "FRA",
+            "Tina Trstenjak",
+            "SLO",
+            "Catherine Beauchemin-Pinard",
+            "Maria Centracchio",
+            "CAN",
+            "ITA"
+        ],
+        "Middleweight, Women": [
+            "Chizuru Arai",
+            "JPN",
+            "Michaela Polleres",
+            "AUT",
+            "Sanne van Dijke",
+            "Madina Taymazova",
+            "NED",
+            "ROC"
+        ],
+        "Half-Heavyweight, Women": [
+            "Shori Hamada",
+            "JPN",
+            "Madeleine Malonga",
+            "FRA",
+            "Mayra Aguiar",
+            "Anna-Maria Wagner",
+            "BRA",
+            "GER"
+        ],
+        "Heavyweight, Women": [
+            "Akira Sone",
+            "JPN",
+            "Idalys Ortiz",
+            "CUB",
+            "Iryna Kindzerska",
+            "Romane Dicko",
+            "AZE",
+            "FRA"
+        ],
+        "Team, Mixed": [
+            "FRA",
+            "JPN",
+            "GER",
+            "ISR"
+        ]
+    },
+    "Karate": {
+        "Kata, Men": [
+            "Ryo Kiyuna",
+            "JPN",
+            "Dami\u00e1n Quintero",
+            "ESP",
+            "Ali Sofuo\u011flu",
+            "Ariel Torres",
+            "TUR",
+            "USA"
+        ],
+        "Kumite, \u226467 kg, Men": [
+            "Steven Da Costa",
+            "FRA",
+            "Eray \u015eamdan",
+            "TUR",
+            "Abdel Rahman Al-Masatfa",
+            "Darkhan Asadilov",
+            "JOR",
+            "KAZ"
+        ],
+        "Kumite, \u226475 kg, Men": [
+            "Luigi Bus\u00e0",
+            "ITA",
+            "R\u0259fael A\u011fayev",
+            "AZE",
+            "G\u00e1bor H\u00e1rspataki",
+            "Stanislav Horuna",
+            "HUN",
+            "UKR"
+        ],
+        "Kumite, >75 kg, Men": [
+            "Sajad Ganjzadeh",
+            "IRI",
+            "Tareg Hamedi",
+            "KSA",
+            "Ryutaro Araga",
+            "U\u011fur Akta\u015f",
+            "JPN",
+            "TUR"
+        ],
+        "Kata, Women": [
+            "Sandra S\u00e1nchez",
+            "ESP",
+            "Kiyou Shimizu",
+            "JPN",
+            "Grace Lau",
+            "Viviana Bottaro",
+            "HKG",
+            "ITA"
+        ],
+        "Kumite, \u226455 kg, Women": [
+            "Ivet Goranova",
+            "BUL",
+            "Anzhelika Terliuha",
+            "UKR",
+            "Bettina Plank",
+            "Wen Tzu-Yun",
+            "AUT",
+            "TPE"
+        ],
+        "Kumite, \u226461 kg, Women": [
+            "Jovana Prekovi\u0107",
+            "SRB",
+            "Yin Xiaoyan",
+            "CHN",
+            "Giana Lotfy",
+            "Merve \u00c7oban",
+            "EGY",
+            "TUR"
+        ],
+        "Kumite, >61 kg, Women": [
+            "Feryal Ashraf",
+            "EGY",
+            "\u0130rina Zaretska",
+            "AZE",
+            "Gong Li",
+            "Sofya Berultseva",
+            "CHN",
+            "KAZ"
+        ]
+    },
+    "Marathon Swimming": {
+        "10 kilometres Open Water, Men": [
+            "Florian Wellbrock",
+            "GER",
+            "Krist\u00f3f Rasovszky",
+            "HUN",
+            "Gregorio Paltrinieri",
+            "ITA"
+        ],
+        "10 kilometres Open Water, Women": [
+            "Ana Marcela Cunha",
+            "BRA",
+            "Sharon van Rouwendaal",
+            "NED",
+            "Kareena Lee",
+            "AUS"
+        ]
+    },
+    "Modern Pentathlon": {
+        "Individual, Men": [
+            "Joe Choong",
+            "GBR",
+            "Ahmed El-Gendy",
+            "EGY",
+            "Jeon Ung-Tae",
+            "KOR"
+        ],
+        "Individual, Women": [
+            "Kate French",
+            "GBR",
+            "Laura Asadauskait\u0117",
+            "LTU",
+            "Sarolta Kov\u00e1cs",
+            "HUN"
+        ]
+    },
+    "Rhythmic Gymnastics": {
+        "Individual, Women": [
+            "Linoy Ashram",
+            "ISR",
+            "Dina Averina",
+            "ROC",
+            "Alina Harnasko",
+            "BLR"
+        ],
+        "Group, Women": [
+            "BUL",
+            "ROC",
+            "ITA"
+        ]
+    },
+    "Rowing": {
+        "Single Sculls, Men": [
+            "Stefanos Ntouskos",
+            "GRE",
+            "Kjetil Borch",
+            "NOR",
+            "Damir Martin",
+            "CRO"
+        ],
+        "Double Sculls, Men": [
+            "FRA",
+            "NED",
+            "CHN"
+        ],
+        "Quadruple Sculls, Men": [
+            "NED",
+            "GBR",
+            "AUS"
+        ],
+        "Coxless Pairs, Men": [
+            "CRO",
+            "ROU",
+            "DEN"
+        ],
+        "Coxless Fours, Men": [
+            "AUS",
+            "ROU",
+            "ITA"
+        ],
+        "Eights, Men": [
+            "NZL",
+            "GER",
+            "GBR"
+        ],
+        "Lightweight Double Sculls, Men": [
+            "IRL",
+            "GER",
+            "ITA"
+        ],
+        "Single Sculls, Women": [
+            "Emma Twigg",
+            "NZL",
+            "Anna Prakaten",
+            "ROC",
+            "Magdalena Lobnig",
+            "AUT"
+        ],
+        "Double Sculls, Women": [
+            "ROU",
+            "NZL",
+            "NED"
+        ],
+        "Quadruple Sculls, Women": [
+            "CHN",
+            "POL",
+            "AUS"
+        ],
+        "Coxless Pairs, Women": [
+            "NZL",
+            "ROC",
+            "CAN"
+        ],
+        "Coxless Fours, Women": [
+            "AUS",
+            "NED",
+            "IRL"
+        ],
+        "Eights, Women": [
+            "CAN",
+            "NZL",
+            "CHN"
+        ],
+        "Lightweight Double Sculls, Women": [
+            "ITA",
+            "FRA",
+            "NED"
+        ]
+    },
+    "Rugby Sevens": {
+        "Rugby Sevens, Men": [
+            "FIJ",
+            "NZL",
+            "ARG"
+        ],
+        "Rugby Sevens, Women": [
+            "NZL",
+            "FRA",
+            "FIJ"
+        ]
+    },
+    "Sailing": {
+        "Windsurfer, Men": [
+            "Kiran Badloe",
+            "NED",
+            "Thomas Goyard",
+            "FRA",
+            "Bi Kun",
+            "CHN"
+        ],
+        "One Person Dinghy, Men": [
+            "Matthew Wearn",
+            "AUS",
+            "Ton\u010di Stipanovi\u0107",
+            "CRO",
+            "Hermann Tomasgaard",
+            "NOR"
+        ],
+        "Two Person Dinghy, Men": [
+            "AUS",
+            "SWE",
+            "ESP"
+        ],
+        "Skiff, Men": [
+            "GBR",
+            "NZL",
+            "GER"
+        ],
+        "One Person Heavyweight Dinghy, Men": [
+            "Giles Scott",
+            "GBR",
+            "Zsombor Berecz",
+            "HUN",
+            "Joan Cardona",
+            "ESP"
+        ],
+        "Windsurfer, Women": [
+            "Lu Yunxiu",
+            "CHN",
+            "Charline Picon",
+            "FRA",
+            "Emma Wilson",
+            "GBR"
+        ],
+        "One Person Dinghy, Women": [
+            "Anne-Marie Rindom",
+            "DEN",
+            "Josefin Olsson",
+            "SWE",
+            "Marit Bouwmeester",
+            "NED"
+        ],
+        "Two Person Dinghy, Women": [
+            "GBR",
+            "POL",
+            "FRA"
+        ],
+        "Skiff, Women": [
+            "BRA",
+            "GER",
+            "NED"
+        ],
+        "Multihull, Mixed": [
+            "ITA",
+            "GBR",
+            "GER"
+        ]
+    },
+    "Shooting": {
+        "Air Pistol, 10 metres, Men": [
+            "Javad Foroughi",
+            "IRI",
+            "Damir Mikec",
+            "SRB",
+            "Pang Wei",
+            "CHN"
+        ],
+        "Rapid-Fire Pistol, 25 metres, Men": [
+            "Jean Quiquampoix",
+            "FRA",
+            "Leuris Pupo",
+            "CUB",
+            "Li Yuehong",
+            "CHN"
+        ],
+        "Air Rifle, 10 metres, Men": [
+            "Will Shaner",
+            "USA",
+            "Sheng Lihao",
+            "CHN",
+            "Yang Haoran",
+            "CHN"
+        ],
+        "Small-Bore Rifle, Three Positions, 50 metres, Men": [
+            "Zhang Changhong",
+            "CHN",
+            "Sergey Kamensky",
+            "ROC",
+            "Milenko Sebi\u0107",
+            "SRB"
+        ],
+        "Trap, Men": [
+            "Ji\u0159\u00ed Lipt\u00e1k",
+            "CZE",
+            "David Kosteleck\u00fd",
+            "CZE",
+            "Matthew Coward-Holley",
+            "GBR"
+        ],
+        "Skeet, Men": [
+            "Vincent Hancock",
+            "USA",
+            "Jesper Hansen",
+            "DEN",
+            "Abdullah Al-Rashidi",
+            "KUW"
+        ],
+        "Air Pistol, 10 metres, Women": [
+            "Vitalina Batsarashkina",
+            "ROC",
+            "Antoaneta Kostadinova",
+            "BUL",
+            "Jiang Ranxin",
+            "CHN"
+        ],
+        "Sporting Pistol, 25 metres, Women": [
+            "Vitalina Batsarashkina",
+            "ROC",
+            "Kim Min-Jeong",
+            "KOR",
+            "Xiao Jiaruixuan",
+            "CHN"
+        ],
+        "Air Rifle, 10 metres, Women": [
+            "Yang Qian",
+            "CHN",
+            "Anastasiya Galashina",
+            "ROC",
+            "Nina Christen",
+            "SUI"
+        ],
+        "Small-Bore Rifle, Three Positions, 50 metres, Women": [
+            "Nina Christen",
+            "SUI",
+            "Yuliya Zykova",
+            "ROC",
+            "Yuliya Karimova",
+            "ROC"
+        ],
+        "Trap, Women": [
+            "Zuzana Reh\u00e1k \u0160tefe\u010dekov\u00e1",
+            "SVK",
+            "Kayle Browning",
+            "USA",
+            "Alessandra Perilli",
+            "SMR"
+        ],
+        "Skeet, Women": [
+            "Amber English",
+            "USA",
+            "Diana Bacosi",
+            "ITA",
+            "Wei Meng",
+            "CHN"
+        ],
+        "Air Pistol, 10 metres, Team, Mixed": [
+            "CHN",
+            "ROC",
+            "UKR"
+        ],
+        "Air Rifle, 10 metres, Team, Mixed": [
+            "CHN",
+            "USA",
+            "ROC"
+        ],
+        "Trap, Team, Mixed": [
+            "ESP",
+            "SMR",
+            "USA"
+        ]
+    },
+    "Skateboarding": {
+        "Street, Men": [
+            "Yuto Horigome",
+            "JPN",
+            "Kelvin Hoefler",
+            "BRA",
+            "Jagger Eaton",
+            "USA"
+        ],
+        "Park, Men": [
+            "Keegan Palmer",
+            "AUS",
+            "Pedro Barros",
+            "BRA",
+            "Cory Juneau",
+            "USA"
+        ],
+        "Street, Women": [
+            "Momiji Nishiya",
+            "JPN",
+            "Rayssa Leal",
+            "BRA",
+            "Funa Nakayama",
+            "JPN"
+        ],
+        "Park, Women": [
+            "Sakura Yosozumi",
+            "JPN",
+            "Kokona Hiraki",
+            "JPN",
+            "Sky Brown",
+            "GBR"
+        ]
+    },
+    "Softball": {
+        "Softball, Women": [
+            "JPN",
+            "USA",
+            "CAN"
+        ]
+    },
+    "Sport Climbing": {
+        "Combined, Men": [
+            "Alberto Gin\u00e9s",
+            "ESP",
+            "Nathaniel Coleman",
+            "USA",
+            "Jakob Schubert",
+            "AUT"
+        ],
+        "Combined, Women": [
+            "Janja Garnbret",
+            "SLO",
+            "Miho Nonaka",
+            "JPN",
+            "Akiyo Noguchi",
+            "JPN"
+        ]
+    },
+    "Surfing": {
+        "Shortboard, Men": [
+            "\u00cdtalo Ferreira",
+            "BRA",
+            "Kanoa Igarashi",
+            "JPN",
+            "Owen Wright",
+            "AUS"
+        ],
+        "Shortboard, Women": [
+            "Carissa Moore",
+            "USA",
+            "Bianca Buitendag",
+            "RSA",
+            "Amuro Tsuzuki",
+            "JPN"
+        ]
+    },
+    "Swimming": {
+        "50 metres Freestyle, Men": [
+            "Caeleb Dressel",
+            "USA",
+            "Florent Manaudou",
+            "FRA",
+            "Bruno Fratus",
+            "BRA"
+        ],
+        "100 metres Freestyle, Men": [
+            "Caeleb Dressel",
+            "USA",
+            "Kyle Chalmers",
+            "AUS",
+            "Kliment Kolesnikov",
+            "ROC"
+        ],
+        "200 metres Freestyle, Men": [
+            "Tom Dean",
+            "GBR",
+            "Duncan Scott",
+            "GBR",
+            "Fernando Scheffer",
+            "BRA"
+        ],
+        "400 metres Freestyle, Men": [
+            "Ahmed Hafnaoui",
+            "TUN",
+            "Jack McLoughlin",
+            "AUS",
+            "Kieran Smith",
+            "USA"
+        ],
+        "800 metres Freestyle, Men": [
+            "Bobby Finke",
+            "USA",
+            "Gregorio Paltrinieri",
+            "ITA",
+            "Mykhailo Romanchuk",
+            "UKR"
+        ],
+        "1,500 metres Freestyle, Men": [
+            "Bobby Finke",
+            "USA",
+            "Mykhailo Romanchuk",
+            "UKR",
+            "Florian Wellbrock",
+            "GER"
+        ],
+        "4 \u00d7 100 metres Freestyle Relay, Men": [
+            "USA",
+            "ITA",
+            "AUS"
+        ],
+        "4 \u00d7 200 metres Freestyle Relay, Men": [
+            "GBR",
+            "ROC",
+            "AUS"
+        ],
+        "100 metres Backstroke, Men": [
+            "Yevgeny Rylov",
+            "ROC",
+            "Kliment Kolesnikov",
+            "ROC",
+            "Ryan Murphy",
+            "USA"
+        ],
+        "200 metres Backstroke, Men": [
+            "Yevgeny Rylov",
+            "ROC",
+            "Ryan Murphy",
+            "USA",
+            "Luke Greenbank",
+            "GBR"
+        ],
+        "100 metres Breaststroke, Men": [
+            "Adam Peaty",
+            "GBR",
+            "Arno Kamminga",
+            "NED",
+            "Nicol\u00f2 Martinenghi",
+            "ITA"
+        ],
+        "200 metres Breaststroke, Men": [
+            "Zac Stubblety-Cook",
+            "AUS",
+            "Arno Kamminga",
+            "NED",
+            "Matti Mattsson",
+            "FIN"
+        ],
+        "100 metres Butterfly, Men": [
+            "Caeleb Dressel",
+            "USA",
+            "Krist\u00f3f Mil\u00e1k",
+            "HUN",
+            "No\u00e8 Ponti",
+            "SUI"
+        ],
+        "200 metres Butterfly, Men": [
+            "Krist\u00f3f Mil\u00e1k",
+            "HUN",
+            "Tomoru Honda",
+            "JPN",
+            "Federico Burdisso",
+            "ITA"
+        ],
+        "200 metres Individual Medley, Men": [
+            "Wang Shun",
+            "CHN",
+            "Duncan Scott",
+            "GBR",
+            "J\u00e9r\u00e9my Desplanches",
+            "SUI"
+        ],
+        "400 metres Individual Medley, Men": [
+            "Chase Kalisz",
+            "USA",
+            "Jay Litherland",
+            "USA",
+            "Brendon Smith",
+            "AUS"
+        ],
+        "4 \u00d7 100 metres Medley Relay, Men": [
+            "USA",
+            "GBR",
+            "ITA"
+        ],
+        "50 metres Freestyle, Women": [
+            "Emma McKeon",
+            "AUS",
+            "Sarah Sj\u00f6str\u00f6m",
+            "SWE",
+            "Pernille Blume",
+            "DEN"
+        ],
+        "100 metres Freestyle, Women": [
+            "Emma McKeon",
+            "AUS",
+            "Siobh\u00e1n Haughey",
+            "HKG",
+            "Cate Campbell",
+            "AUS"
+        ],
+        "200 metres Freestyle, Women": [
+            "Ariarne Titmus",
+            "AUS",
+            "Siobh\u00e1n Haughey",
+            "HKG",
+            "Penny Oleksiak",
+            "CAN"
+        ],
+        "400 metres Freestyle, Women": [
+            "Ariarne Titmus",
+            "AUS",
+            "Katie Ledecky",
+            "USA",
+            "Li Bingjie",
+            "CHN"
+        ],
+        "800 metres Freestyle, Women": [
+            "Katie Ledecky",
+            "USA",
+            "Ariarne Titmus",
+            "AUS",
+            "Simona Quadarella",
+            "ITA"
+        ],
+        "1,500 metres Freestyle, Women": [
+            "Katie Ledecky",
+            "USA",
+            "Erica Sullivan",
+            "USA",
+            "Sarah K\u00f6hler",
+            "GER"
+        ],
+        "4 \u00d7 100 metres Freestyle Relay, Women": [
+            "AUS",
+            "CAN",
+            "USA"
+        ],
+        "4 \u00d7 200 metres Freestyle Relay, Women": [
+            "CHN",
+            "USA",
+            "AUS"
+        ],
+        "100 metres Backstroke, Women": [
+            "Kaylee McKeown",
+            "AUS",
+            "Kylie Masse",
+            "CAN",
+            "Regan Smith",
+            "USA"
+        ],
+        "200 metres Backstroke, Women": [
+            "Kaylee McKeown",
+            "AUS",
+            "Kylie Masse",
+            "CAN",
+            "Emily Seebohm",
+            "AUS"
+        ],
+        "100 metres Breaststroke, Women": [
+            "Lydia Jacoby",
+            "USA",
+            "Tatjana Schoenmaker",
+            "RSA",
+            "Lilly King",
+            "USA"
+        ],
+        "200 metres Breaststroke, Women": [
+            "Tatjana Schoenmaker",
+            "RSA",
+            "Lilly King",
+            "USA",
+            "Annie Lazor",
+            "USA"
+        ],
+        "100 metres Butterfly, Women": [
+            "Maggie Mac Neil",
+            "CAN",
+            "Zhang Yufei",
+            "CHN",
+            "Emma McKeon",
+            "AUS"
+        ],
+        "200 metres Butterfly, Women": [
+            "Zhang Yufei",
+            "CHN",
+            "Regan Smith",
+            "USA",
+            "Hali Flickinger",
+            "USA"
+        ],
+        "200 metres Individual Medley, Women": [
+            "Yui Ohashi",
+            "JPN",
+            "Alex Walsh",
+            "USA",
+            "Kate Douglass",
+            "USA"
+        ],
+        "400 metres Individual Medley, Women": [
+            "Yui Ohashi",
+            "JPN",
+            "Emma Weyant",
+            "USA",
+            "Hali Flickinger",
+            "USA"
+        ],
+        "4 \u00d7 100 metres Medley Relay, Women": [
+            "AUS",
+            "USA",
+            "CAN"
+        ],
+        "4 \u00d7 100 metres Medley Relay, Mixed": [
+            "GBR",
+            "CHN",
+            "AUS"
+        ]
+    },
+    "Table Tennis": {
+        "Singles, Men": [
+            "Ma Long",
+            "CHN",
+            "Fan Zhendong",
+            "CHN",
+            "Dimitrij Ovtcharov",
+            "GER"
+        ],
+        "Team, Men": [
+            "CHN",
+            "GER",
+            "JPN"
+        ],
+        "Singles, Women": [
+            "Chen Meng",
+            "CHN",
+            "Sun Yingsha",
+            "CHN",
+            "Mima Ito",
+            "JPN"
+        ],
+        "Team, Women": [
+            "CHN",
+            "JPN",
+            "HKG"
+        ],
+        "Doubles, Mixed": [
+            "JPN",
+            "CHN",
+            "TPE"
+        ]
+    },
+    "Taekwondo": {
+        "Flyweight, Men": [
+            "Vito Dell'Aquila",
+            "ITA",
+            "Mohamed Khalil Jendoubi",
+            "TUN",
+            "Jang Jun",
+            "Mikhail Artamonov",
+            "KOR",
+            "ROC"
+        ],
+        "Featherweight, Men": [
+            "Ulugbek Rashitov",
+            "UZB",
+            "Bradly Sinden",
+            "GBR",
+            "Zhao Shuai",
+            "Hakan Re\u00e7ber",
+            "CHN",
+            "TUR"
+        ],
+        "Welterweight, Men": [
+            "Maksim Khramtsov",
+            "ROC",
+            "Saleh El-Sharabaty",
+            "JOR",
+            "Toni Kanaet",
+            "Seif Eissa",
+            "CRO",
+            "EGY"
+        ],
+        "Heavyweight, Men": [
+            "Vladislav Larin",
+            "ROC",
+            "Dejan Georgievski",
+            "MKD",
+            "Rafael Alba",
+            "In Gyo-Don",
+            "CUB",
+            "KOR"
+        ],
+        "Flyweight, Women": [
+            "Panipak Wongpattanakit",
+            "THA",
+            "Adriana Cerezo",
+            "ESP",
+            "Abishag Semberg",
+            "Tijana Bogdanovi\u0107",
+            "ISR",
+            "SRB"
+        ],
+        "Featherweight, Women": [
+            "Anastasija Zolotic",
+            "USA",
+            "Tatyana Minina",
+            "ROC",
+            "Lo Chia-Ling",
+            "Hatice K\u00fcbra \u0130lg\u00fcn",
+            "TPE",
+            "TUR"
+        ],
+        "Welterweight, Women": [
+            "Matea Jeli\u0107",
+            "CRO",
+            "Lauren Williams",
+            "GBR",
+            "Ruth Gbagbi",
+            "Hedaya Malak",
+            "CIV",
+            "EGY"
+        ],
+        "Heavyweight, Women": [
+            "Milica Mandi\u0107",
+            "SRB",
+            "Lee Da-Bin",
+            "KOR",
+            "Alth\u00e9a Laurin",
+            "Bianca Walkden",
+            "FRA",
+            "GBR"
+        ]
+    },
+    "Tennis": {
+        "Singles, Men": [
+            "Alexander Zverev",
+            "GER",
+            "Karen Khachanov",
+            "ROC",
+            "Pablo Carre\u00f1o Busta",
+            "ESP"
+        ],
+        "Doubles, Men": [
+            "CRO",
+            "CRO",
+            "NZL"
+        ],
+        "Singles, Women": [
+            "Belinda Bencic",
+            "SUI",
+            "Mark\u00e9ta Vondrou\u0161ov\u00e1",
+            "CZE",
+            "Elina Svitolina",
+            "UKR"
+        ],
+        "Doubles, Women": [
+            "CZE",
+            "SUI",
+            "BRA"
+        ],
+        "Doubles, Mixed": [
+            "ROC",
+            "ROC",
+            "AUS"
+        ]
+    },
+    "Trampolining": {
+        "Individual, Men": [
+            "Ivan Litvinovich",
+            "BLR",
+            "Dong Dong",
+            "CHN",
+            "Dylan Schmidt",
+            "NZL"
+        ],
+        "Individual, Women": [
+            "Zhu Xueying",
+            "CHN",
+            "Liu Lingling",
+            "CHN",
+            "Bryony Page",
+            "GBR"
+        ]
+    },
+    "Triathlon": {
+        "Olympic Distance, Men": [
+            "Kristian Blummenfelt",
+            "NOR",
+            "Alex Yee",
+            "GBR",
+            "Hayden Wilde",
+            "NZL"
+        ],
+        "Olympic Distance, Women": [
+            "Flora Duffy",
+            "BER",
+            "Georgia Taylor-Brown",
+            "GBR",
+            "Katie Zaferes",
+            "USA"
+        ],
+        "Relay, Mixed": [
+            "GBR",
+            "USA",
+            "FRA"
+        ]
+    },
+    "Volleyball": {
+        "Volleyball, Men": [
+            "FRA",
+            "ROC",
+            "ARG"
+        ],
+        "Volleyball, Women": [
+            "USA",
+            "BRA",
+            "SRB"
+        ]
+    },
+    "Water Polo": {
+        "Water Polo, Men": [
+            "SRB",
+            "GRE",
+            "HUN"
+        ],
+        "Water Polo, Women": [
+            "USA",
+            "ESP",
+            "HUN"
+        ]
+    },
+    "Weightlifting": {
+        "Featherweight, Men": [
+            "Li Fabin",
+            "CHN",
+            "Eko Yuli Irawan",
+            "INA",
+            "Igor Son",
+            "KAZ"
+        ],
+        "Lightweight, Men": [
+            "Chen Lijun",
+            "CHN",
+            "Luis Mosquera",
+            "COL",
+            "Mirko Zanni",
+            "ITA"
+        ],
+        "Middleweight, Men": [
+            "Shi Zhiyong",
+            "CHN",
+            "Julio Mayora",
+            "VEN",
+            "Rahmat Abdullah",
+            "INA"
+        ],
+        "Light-Heavyweight, Men": [
+            "Lu Xiaojun",
+            "CHN",
+            "Zacar\u00edas Bonnat",
+            "DOM",
+            "Antonino Pizzolato",
+            "ITA"
+        ],
+        "Middle-Heavyweight, Men": [
+            "Fares Ibrahim",
+            "QAT",
+            "Keydomar Vallenilla",
+            "VEN",
+            "Anton Pliesnoi",
+            "GEO"
+        ],
+        "Heavyweight, Men": [
+            "Akbar Djuraev",
+            "UZB",
+            "Simon Martirosyan",
+            "ARM",
+            "Art\u016brs Pl\u0113snieks",
+            "LAT"
+        ],
+        "Super-Heavyweight, Men": [
+            "Lasha Talakhadze",
+            "GEO",
+            "Ali Davoudi",
+            "IRI",
+            "Man Asaad",
+            "SYR"
+        ],
+        "Flyweight, Women": [
+            "Hou Zhihui",
+            "CHN",
+            "Mirabai Chanu",
+            "IND",
+            "Windy Cantika Aisah",
+            "INA"
+        ],
+        "Featherweight, Women": [
+            "Hidilyn Diaz",
+            "PHI",
+            "Liao Qiuyun",
+            "CHN",
+            "Zulfiya Chinshanlo",
+            "KAZ"
+        ],
+        "Lightweight, Women": [
+            "Kuo Hsing-Chun",
+            "TPE",
+            "Polina Guryeva",
+            "TKM",
+            "Mikiko Ando",
+            "JPN"
+        ],
+        "Middleweight, Women": [
+            "Maude Charron",
+            "CAN",
+            "Giorgia Bordignon",
+            "ITA",
+            "Chen Wen-Huei",
+            "TPE"
+        ],
+        "Light-Heavyweight, Women": [
+            "Neisi Dajomes",
+            "ECU",
+            "Kate Nye",
+            "USA",
+            "Aremi Fuentes",
+            "MEX"
+        ],
+        "Heavyweight, Women": [
+            "Wang Zhouyu",
+            "CHN",
+            "Tamara Salazar",
+            "ECU",
+            "Crismery Santana",
+            "DOM"
+        ],
+        "Super-Heavyweight, Women": [
+            "Li Wenwen",
+            "CHN",
+            "Emily Campbell",
+            "GBR",
+            "Sarah Robles",
+            "USA"
+        ]
+    },
+    "Wrestling": {
+        "Featherweight, Greco-Roman, Men": [
+            "Luis Alberto Orta",
+            "CUB",
+            "Kenichiro Fumita",
+            "JPN",
+            "Walihan Sailike",
+            "Sergey Yemelin",
+            "CHN",
+            "ROC"
+        ],
+        "Welterweight, Greco-Roman, Men": [
+            "Mohammadreza Geraei",
+            "IRI",
+            "Parviz Nasibov",
+            "UKR",
+            "Mohamed Ibrahim El-Sayed",
+            "Frank St\u00e4bler",
+            "EGY",
+            "GER"
+        ],
+        "Middleweight, Greco-Roman, Men": [
+            "Tam\u00e1s L\u0151rincz",
+            "HUN",
+            "Akzhol Makhmudov",
+            "KGZ",
+            "Rafiq H\u00fcseynov",
+            "Shohei Yabiku",
+            "AZE",
+            "JPN"
+        ],
+        "Light-Heavyweight, Greco-Roman, Men": [
+            "Zhan Beleniuk",
+            "UKR",
+            "Viktor L\u0151rincz",
+            "HUN",
+            "Denis Kudla",
+            "Zurabi Datunashvili",
+            "GER",
+            "SRB"
+        ],
+        "Heavyweight, Greco-Roman, Men": [
+            "Musa Yevloyev",
+            "ROC",
+            "Artur Aleksanyan",
+            "ARM",
+            "Mohammadhadi Saravi",
+            "Tadeusz Michalik",
+            "IRI",
+            "POL"
+        ],
+        "Super-Heavyweight, Greco-Roman, Men": [
+            "Mija\u00edn L\u00f3pez",
+            "CUB",
+            "Iakobi Kajaia",
+            "GEO",
+            "Sergey Semyonov",
+            "R\u0131za Kayaalp",
+            "ROC",
+            "TUR"
+        ],
+        "Featherweight, Freestyle, Men": [
+            "Zavur Uguyev",
+            "ROC",
+            "Ravi Kumar",
+            "IND",
+            "Nurislam Sanayev",
+            "Thomas Gilman",
+            "KAZ",
+            "USA"
+        ],
+        "Welterweight, Freestyle, Men": [
+            "Takuto Otoguro",
+            "JPN",
+            "Hac\u0131 \u018fliyev",
+            "AZE",
+            "Bajrang Punia",
+            "Gadzhimurad Rashidov",
+            "IND",
+            "ROC"
+        ],
+        "Middleweight, Freestyle, Men": [
+            "Zaurbek Sidakov",
+            "ROC",
+            "Mahamedkhabib Kadzimahamedau",
+            "BLR",
+            "Kyle Dake",
+            "Bekzod Abdurakhmonov",
+            "USA",
+            "UZB"
+        ],
+        "Light-Heavyweight, Freestyle, Men": [
+            "David Taylor",
+            "USA",
+            "Hassan Yazdani",
+            "IRI",
+            "Artur Nayfonov",
+            "Myles Amine",
+            "ROC",
+            "SMR"
+        ],
+        "Heavyweight, Freestyle, Men": [
+            "Abdulrashid Sadulayev",
+            "ROC",
+            "Kyle Snyder",
+            "USA",
+            "Reineris Salas",
+            "Abraham Conyedo",
+            "CUB",
+            "ITA"
+        ],
+        "Super-Heavyweight, Freestyle, Men": [
+            "Gable Steveson",
+            "USA",
+            "Geno Petriashvili",
+            "GEO",
+            "Amir Hossein Zare",
+            "Taha Akg\u00fcl",
+            "IRI",
+            "TUR"
+        ],
+        "Flyweight, Freestyle, Women": [
+            "Yui Susaki",
+            "JPN",
+            "Sun Yanan",
+            "CHN",
+            "Mariya Stadnik",
+            "Sarah Hildebrandt",
+            "AZE",
+            "USA"
+        ],
+        "Featherweight, Freestyle, Women": [
+            "Mayu Mukaida",
+            "JPN",
+            "Pang Qianyu",
+            "CHN",
+            "Vanesa Kaladzinskaya",
+            "Bat Ochiryn Bolortuyaa",
+            "BLR",
+            "MGL"
+        ],
+        "Lightweight, Freestyle, Women": [
+            "Risako Kawai",
+            "JPN",
+            "Iryna Kurachkina",
+            "BLR",
+            "Evelina Nikolova",
+            "Helen Maroulis",
+            "BUL",
+            "USA"
+        ],
+        "Middleweight, Freestyle, Women": [
+            "Yukako Kawai",
+            "JPN",
+            "Aysuluu Tynybekova",
+            "KGZ",
+            "Taybe Yusein",
+            "Iryna Koliadenko",
+            "BUL",
+            "UKR"
+        ],
+        "Light-Heavyweight, Freestyle, Women": [
+            "Tamyra Mensah-Stock",
+            "USA",
+            "Blessing Oborududu",
+            "NGR",
+            "Meerim Zhumanazarova",
+            "Alla Cherkasova",
+            "KGZ",
+            "UKR"
+        ],
+        "Heavyweight, Freestyle, Women": [
+            "Aline Rotter-Focken",
+            "GER",
+            "Adeline Gray",
+            "USA",
+            "Zhou Qian",
+            "Yasemin Adar",
+            "CHN",
+            "TUR"
+        ]
+    }
+}
