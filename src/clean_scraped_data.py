@@ -60,4 +60,37 @@ for key, val in data_tokyo.items():
         medals.append(results)
 
 # create a dataframe
-tokyo_df = pd.DataFrame({"Sport": sports, "Event": events, "Medals": medals})
+tokyo_df = pd.DataFrame({"Sport": sports, "Event": events, "Results": medals})
+
+tokyo_df["Team"] = None
+tokyo_df["NOC"] = None
+
+final_tokyo_df = pd.DataFrame(
+    columns=["Team", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
+)
+
+# Create the list of medals
+medals = ["Gold", "Silver", "Bronze"]
+
+# Repeat each sport/event combination for each medal
+df_expanded = tokyo_df.loc[tokyo_df.index.repeat(3)].reset_index(drop=True)
+
+# drop the results column
+df_expanded.drop(columns="Results", inplace=True)
+
+# Assign the medals to the new 'medal' column
+df_expanded["Medal"] = medals * (len(df_expanded) // 3)
+
+df_expanded
+
+# iterate through the rows and extract the team, noc and medal
+# from the results column and add them to the final dataframe
+for i, row in tokyo_df.iterrows():
+    sport = row["Sport"]
+    event = row["Event"]
+    results = row["Results"]
+    # split the results into gold, silver and bronze
+    split_val = len(results) // 3
+    gold = results[:split_val]
+    silver = results[split_val : 2 * split_val]
+    bronze = results[2 * split_val :]
