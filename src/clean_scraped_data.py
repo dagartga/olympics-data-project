@@ -11,7 +11,7 @@ KAGGLE_OLYMPICS = "../data/raw/olympics_1896_2016_data.csv"
 TOKYO_2020 = "../data/raw/tokyo2020_medals.json"
 PARIS_2024 = "../data/raw/paris2024_medals.json"
 
-TOKYO_YEAR = 2020
+TOKYO_YEAR = "2020"
 TOKYO_SEASON = "Summer"
 TOKYO_CITY = "Tokyo"
 
