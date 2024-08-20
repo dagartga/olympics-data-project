@@ -142,6 +142,11 @@ def split_medals(results: list)-> tuple:
         gold = results[:2]
         silver = results[2:4]
         bronze = results[4:]
+    # tie for gold indices
+    elif country_indices == [2,3,5]:
+        gold = results[:4]
+        silver = []
+        bronze = results[4:] 
     
     return gold, silver, bronze
         
