@@ -80,6 +80,34 @@ for i, row in tokyo_df.iterrows():
     results = row["Results"]
     
     
+def create_event_df(df_row: pd.Series) -> pd.DataFrame:
+    """Takes in a row from the Tokyo 2020 dataframe and creates a new dataframe
+    with the athlete, noc, year, season, city, sport, event and medal columns.
+    
+    Args:
+        df_row (pd.Series): A row from the Tokyo 2020 dataframe.
+        
+    Returns:
+        pd.DataFrame: A new dataframe with the athlete, noc, year, season, city, sport, event and medal columns.
+    """
+    
+    sport = df_row["Sport"]
+    event = df_row["Event"]
+    results = df_row["Results"]
+    
+    # create a list of the athletes and their respective NOC
+    medal_tuple = split_medals(results)
+    gold, silver, bronze = medal_tuple[0], medal_tuple[1], medal_tuple[2]
+    
+    # create a list of the medals
+    medals = ["Gold", "Silver", "Bronze"]
+    
+    # create a list of the final columns
+    columns = ["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
+    
+
+    return -1
+    
     
     
     
@@ -105,6 +133,8 @@ def split_medals(results: list)-> tuple:
             
             ['USA', 'CAN', 'GBR'] 
             This would Gold for USA, Silver for CAN and Bronze for GBR
+            
+            Assumption: There will be no ties in team events.
             
         Individual Results: 
         
@@ -147,6 +177,17 @@ def split_medals(results: list)-> tuple:
         gold = results[:4]
         silver = []
         bronze = results[4:] 
+    # tie for silver indices
+    elif country_indices == [1,4,5]:
+        gold = results[:2]
+        silver = results[2:]
+        bronze = []   
+    # tie for bronze indices
+    else:
+        gold = results[:2]
+        silver = results[2:4]
+        bronze = results[4:] 
+    
     
     return gold, silver, bronze
         
@@ -173,3 +214,15 @@ def test_bronze_tie():
     results = ["Michael Phelps", "USA", "Ryan Lochte", "USA", "Laszlo Cseh", "Chad Le Clos", "HUN", "RSA"]
     assert split_medals(results) == (["Michael Phelps", "USA"], ["Ryan Lochte", "USA"], ["Laszlo Cseh", "Chad Le Clos", "HUN", "RSA"])
     
+    
+def test_event_df():
+    test_df = pd.DataFrame({"Sport": ["Swimming"], 
+                            "Event": "100M Freestyle (Men)", 
+                            "Results": ["Caeleb Dressel", "USA", "Kyle Chalmers", "AUS", "Kliment Kolesnikov", "ROC"]})
+    
+    final_df = create_event_df(test_df)
+    assert final_df.shape == (3, 8)
+    assert final_df["Sport"].unique() == ["Swimming"]
+    assert final_df[final_df["Medal"] == ["Gold"]]["Athlete"].values == ["Caeleb Dressel"]
+    assert final_df[final_df["Medal"] == ["Silver"]]["Athlete"].values == ["Kyle Chalmers"]
+    assert final_df[final_df["Medal"] == ["Bronze"]]["Athlete"].values == ["Kliment Kolesnikov"]
