@@ -77,8 +77,77 @@ for i, row in tokyo_df.iterrows():
     sport = row["Sport"]
     event = row["Event"]
     results = row["Results"]
-    # split the results into gold, silver and bronze
-    split_val = len(results) // 3
-    gold = results[:split_val]
-    silver = results[split_val : 2 * split_val]
-    bronze = results[2 * split_val :]
+    
+    
+    
+    
+    
+def split_medals(results: list)-> tuple:
+    """Takes in a list of athlete names and/or NOC to parse.
+    The list is of the results from the event and uses the order in the list
+    to signify which medal it is. 
+    
+    There is a mix of team events and individual events. This makes the parsing
+    more complex. As well, if there is a tie in an individual event, then there
+    will be a different ordering of the values.
+    
+    
+    Returns with a list of either team or individual with country (NOC).
+    Team Example:
+        (['USA'], ['CAN'], ['GBR'])
+    
+    Individual Example:
+        (["Michael Phelps", "USA"], ["Ryan Lochte", "USA"], ["Laszlo Cseh", "HUN"])
+    
+    Example:
+        Team Results: 
+            
+            ['USA', 'CAN', 'GBR'] 
+            This would Gold for USA, Silver for CAN and Bronze for GBR
+            
+        Individual Results: 
+        
+            ["Michael Phelps", "USA", "Ryan Lochte", "USA", "Laszlo Cseh", "HUN"] 
+            This would be Gold for Michael Phelps, Silver for Ryan Lochte and Bronze for Laszlo Cseh
+
+        If there is a tie for gold then the results would be:
+        
+            ["Michael Phelps", "Ryan Lochte", "USA", "USA", "Laszlo Cseh", "HUN"]
+            This would be Gold for Michael Phelps, Silver for Ryan Lochte and Laszlo Cseh an no Bronze.
+        
+        If there is a tie for silver then the results would be:
+            
+            ["Michael Phelps", "USA", "Ryan Lochte", "Laszlo Cseh", "USA", "HUN"]
+            This would be Gold for Michael Phelps, Silver for Ryan Lochte and Laszlo Cseh an no Bronze.
+        
+        If there is a tie for bronze then the results would be:
+            
+            ["Michael Phelps", "USA", "Ryan Lochte", "USA", "Laszlo Cseh", "Chad Le Clos", "HUN", "RSA"]
+            This would be Gold for Michael Phelps, Silver for Ryan Lochte and tie for Bronze between
+            Laszlo Cseh and Chad Le Clos.
+    
+    """
+
+
+
+    return -1
+
+
+def test_split_medals():
+    # Test the split_medals function
+    results = ['USA', 'CAN', 'GBR']
+    assert split_medals(results) == (['USA'], ['CAN'], ['GBR'])
+    
+    results = ["Michael Phelps", "USA", "Ryan Lochte", "USA", "Laszlo Cseh", "HUN"]
+    assert split_medals(results) == (["Michael Phelps", "USA"], ["Ryan Lochte", "USA"], ["Laszlo Cseh", "HUN"])
+    
+    results = ["Michael Phelps", "Ryan Lochte", "USA", "USA", "Laszlo Cseh", "HUN"]
+    assert split_medals(results) == (["Michael Phelps", "Ryan Lochte", "USA", "USA"], [], ["Laszlo Cseh", "HUN"])
+    
+    results = ["Michael Phelps", "USA", "Ryan Lochte", "Laszlo Cseh", "USA", "HUN"]
+    assert split_medals(results) == (["Michael Phelps", "USA"], ["Ryan Lochte", "Laszlo Cseh", "USA", "HUN"], [])
+    
+    results = ["Michael Phelps", "USA", "Ryan Lochte", "USA", "Laszlo Cseh", "Chad Le Clos", "HUN", "RSA"]
+    assert split_medals(results) == (["Michael Phelps", "USA"], ["Ryan Lochte", "USA"], ["Laszlo Cseh", "Chad Le Clos", "HUN", "RSA"])
+    
+    print("All tests pass")
