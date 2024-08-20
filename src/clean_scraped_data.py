@@ -5,6 +5,7 @@
 
 import pandas as pd
 import json
+import regex as re
 
 
 KAGGLE_OLYMPICS = "../data/raw/olympics_1896_2016_data.csv"
@@ -128,12 +129,25 @@ def split_medals(results: list)-> tuple:
     
     """
 
+    # create a regex for the country
+    country_regex = re.compile(r"[A-Z]{3}")
+    
+    country_indices = [i for i, x in enumerate(results) if country_regex.match(x)]
+    
+    if country_indices == [0,1,2]:
+        gold = [results[0]]
+        silver = [results[1]]
+        bronze = [results[2]]
+    elif country_indices == [1,3,5]:
+        gold = results[:2]
+        silver = results[2:4]
+        bronze = results[4:]
+    
+    return gold, silver, bronze
+        
 
 
-    return -1
-
-
-def test_split_medals():
+def test_simple_split_medals():
     # Test the split_medals function
     results = ['USA', 'CAN', 'GBR']
     assert split_medals(results) == (['USA'], ['CAN'], ['GBR'])
@@ -141,13 +155,16 @@ def test_split_medals():
     results = ["Michael Phelps", "USA", "Ryan Lochte", "USA", "Laszlo Cseh", "HUN"]
     assert split_medals(results) == (["Michael Phelps", "USA"], ["Ryan Lochte", "USA"], ["Laszlo Cseh", "HUN"])
     
+
+def test_gold_tie():
     results = ["Michael Phelps", "Ryan Lochte", "USA", "USA", "Laszlo Cseh", "HUN"]
     assert split_medals(results) == (["Michael Phelps", "Ryan Lochte", "USA", "USA"], [], ["Laszlo Cseh", "HUN"])
     
+def test_silver_tie():
     results = ["Michael Phelps", "USA", "Ryan Lochte", "Laszlo Cseh", "USA", "HUN"]
     assert split_medals(results) == (["Michael Phelps", "USA"], ["Ryan Lochte", "Laszlo Cseh", "USA", "HUN"], [])
     
+def test_bronze_tie():
     results = ["Michael Phelps", "USA", "Ryan Lochte", "USA", "Laszlo Cseh", "Chad Le Clos", "HUN", "RSA"]
     assert split_medals(results) == (["Michael Phelps", "USA"], ["Ryan Lochte", "USA"], ["Laszlo Cseh", "Chad Le Clos", "HUN", "RSA"])
     
-    print("All tests pass")
