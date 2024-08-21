@@ -16,6 +16,9 @@ TOKYO_YEAR = "2020"
 TOKYO_SEASON = "Summer"
 TOKYO_CITY = "Tokyo"
 
+FINAL_COLUMNS = ["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
+MEDALS = ["Gold", "Silver", "Bronze"]
+
 
 def process_kaggle_olympics_data(file_path: str) -> pd.DataFrame:
     """Takes in the path to the kaggle olympics data.
@@ -64,16 +67,10 @@ def create_event_df(df_row: pd.Series) -> pd.DataFrame:
     medal_tuple = split_medals(results)
     gold, silver, bronze = medal_tuple[0], medal_tuple[1], medal_tuple[2]
     
-    # create a list of the medals
-    medals = ["Gold", "Silver", "Bronze"]
-    
-    # create a list of the final columns
-    columns = ["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
-    
     # create a dataframe for the medals and athletes
-    final_event_df = pd.DataFrame(columns=columns)
+    final_event_df = pd.DataFrame(columns=FINAL_COLUMNS)
     # iterate through the medals and athletes
-    for i, medal in enumerate(medals):
+    for i, medal in enumerate(MEDALS):
         if medal == "Gold":
             athlete = gold
             noc = gold
@@ -84,7 +81,7 @@ def create_event_df(df_row: pd.Series) -> pd.DataFrame:
             athlete = bronze
             noc = bronze
         
-        final_event_df = final_event_df.append(pd.Series([athlete, noc, TOKYO_YEAR, TOKYO_SEASON, TOKYO_CITY, sport, event, medal], index=columns), ignore_index=True)
+        final_event_df = final_event_df.append(pd.Series([athlete, noc, TOKYO_YEAR, TOKYO_SEASON, TOKYO_CITY, sport, event, medal], index=FINAL_COLUMNS), ignore_index=True)
     
 
     return final_event_df
@@ -284,28 +281,23 @@ if __name__ == "__main__":
         data_tokyo = json.load(f)
 
 
-    sports = list()
-    events = list()
-    medals = list()
+    sports_ls = list()
+    events_lS = list()
+    medals_ls = list()
 
     # iterate through the keys (Sport) and results
     for key, val in data_tokyo.items():
         sport = key
         for event, results in val.items():
-            sports.append(sport)
-            events.append(event)
-            medals.append(results)
+            sports_ls.append(sport)
+            events_lS.append(event)
+            medals_ls.append(results)
 
     # create a dataframe
-    tokyo_df = pd.DataFrame({"Sport": sports, "Event": events, "Results": medals})
+    tokyo_df = pd.DataFrame({"Sport": sports_ls, "Event": events_lS, "Results": medals_ls})
 
 
-    expanded_tokyo_df = pd.DataFrame(
-        columns=["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
-    )
-
-    # Create the list of medals
-    medals = ["Gold", "Silver", "Bronze"]
+    expanded_tokyo_df = pd.DataFrame(columns=FINAL_COLUMNS)
 
 
     # iterate through the rows and extract the team, noc and medal
@@ -320,7 +312,8 @@ if __name__ == "__main__":
     # process the ties
     cleaned_final_tokyo_df = remove_ties(final_tokyo_df)
     
-        
+    # save the final dataframe
+    cleaned_final_tokyo_df.to_csv("../data/processed/tokyo2020_results.csv", index=False)
     
         
         
