@@ -197,16 +197,16 @@ def test_bronze_tie():
     
     
 def test_event_df():
-    test_df = pd.DataFrame({"Sport": ["Swimming"], 
+    test_df = pd.DataFrame({"Sport": "Swimming", 
                             "Event": "100M Freestyle (Men)", 
-                            "Results": ["Caeleb Dressel", "USA", "Kyle Chalmers", "AUS", "Kliment Kolesnikov", "ROC"]})
+                            "Results": [["Caeleb Dressel", "USA", "Kyle Chalmers", "AUS", "Kliment Kolesnikov", "ROC"]]})
     
-    final_df = create_event_df(test_df)
+    final_df = create_event_df(test_df.iloc[0])
     assert final_df.shape == (3, 8)
-    assert final_df["Sport"].unique() == ["Swimming"]
-    assert final_df[final_df["Medal"] == ["Gold"]]["Athlete"].values == ["Caeleb Dressel"]
-    assert final_df[final_df["Medal"] == ["Silver"]]["Athlete"].values == ["Kyle Chalmers"]
-    assert final_df[final_df["Medal"] == ["Bronze"]]["Athlete"].values == ["Kliment Kolesnikov"]
+    assert final_df["Sport"].unique()[0] == "Swimming"
+    assert final_df[final_df["Medal"] == "Gold"]["Athlete"].values[0] == ["Caeleb Dressel", "USA"]
+    assert final_df[final_df["Medal"] == "Silver"]["Athlete"].values[0] == ["Kyle Chalmers", "AUS"]
+    assert final_df[final_df["Medal"] == "Bronze"]["Athlete"].values[0] == ["Kliment Kolesnikov", "ROC"]
     
     
     
