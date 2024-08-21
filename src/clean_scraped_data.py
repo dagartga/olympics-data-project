@@ -43,41 +43,6 @@ def process_kaggle_olympics_data(file_path: str) -> pd.DataFrame:
     return final_summer_df
 
 
-# Load the json file
-with open(TOKYO_2020) as f:
-    data_tokyo = json.load(f)
-
-
-sports = list()
-events = list()
-medals = list()
-
-# iterate through the keys (Sport) and results
-for key, val in data_tokyo.items():
-    sport = key
-    for event, results in val.items():
-        sports.append(sport)
-        events.append(event)
-        medals.append(results)
-
-# create a dataframe
-tokyo_df = pd.DataFrame({"Sport": sports, "Event": events, "Results": medals})
-
-
-final_tokyo_df = pd.DataFrame(
-    columns=["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
-)
-
-# Create the list of medals
-medals = ["Gold", "Silver", "Bronze"]
-
-
-# iterate through the rows and extract the team, noc and medal
-# from the results column and add them to the final dataframe
-for i, row in tokyo_df.iterrows():
-    sport = row["Sport"]
-    event = row["Event"]
-    results = row["Results"]
     
     
 def create_event_df(df_row: pd.Series) -> pd.DataFrame:
@@ -105,8 +70,24 @@ def create_event_df(df_row: pd.Series) -> pd.DataFrame:
     # create a list of the final columns
     columns = ["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
     
+    # create a dataframe for the medals and athletes
+    final_df = pd.DataFrame(columns=columns)
+    # iterate through the medals and athletes
+    for i, medal in enumerate(medals):
+        if medal == "Gold":
+            athlete = gold
+            noc = gold
+        elif medal == "Silver":
+            athlete = silver
+            noc = silver
+        else:
+            athlete = bronze
+            noc = bronze
+        
+        final_df = final_df.append(pd.Series([athlete, noc, TOKYO_YEAR, TOKYO_SEASON, TOKYO_CITY, sport, event, medal], index=columns), ignore_index=True)
+    
 
-    return -1
+    return final_df
     
     
     
@@ -226,3 +207,49 @@ def test_event_df():
     assert final_df[final_df["Medal"] == ["Gold"]]["Athlete"].values == ["Caeleb Dressel"]
     assert final_df[final_df["Medal"] == ["Silver"]]["Athlete"].values == ["Kyle Chalmers"]
     assert final_df[final_df["Medal"] == ["Bronze"]]["Athlete"].values == ["Kliment Kolesnikov"]
+    
+    
+    
+    
+    
+    
+    
+    
+if __name__ == "__main__":    
+    
+    # Load the json file
+    with open(TOKYO_2020) as f:
+        data_tokyo = json.load(f)
+
+
+    sports = list()
+    events = list()
+    medals = list()
+
+    # iterate through the keys (Sport) and results
+    for key, val in data_tokyo.items():
+        sport = key
+        for event, results in val.items():
+            sports.append(sport)
+            events.append(event)
+            medals.append(results)
+
+    # create a dataframe
+    tokyo_df = pd.DataFrame({"Sport": sports, "Event": events, "Results": medals})
+
+
+    final_tokyo_df = pd.DataFrame(
+        columns=["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
+    )
+
+    # Create the list of medals
+    medals = ["Gold", "Silver", "Bronze"]
+
+
+    # iterate through the rows and extract the team, noc and medal
+    # from the results column and add them to the final dataframe
+    for i, row in tokyo_df.iterrows():
+        temp_df = create_event_df(row)
+        final_tokyo_df = final_tokyo_df.append(temp_df, ignore_index=True)
+    
+    final_tokyo_df.head()
