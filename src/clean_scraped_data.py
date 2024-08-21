@@ -173,6 +173,68 @@ def split_medals(results: list)-> tuple:
     return gold, silver, bronze
         
 
+def split_athelete_country(df):
+    """Takes in a dataframe and splits the athlete and country into separate columns.
+    
+    Args:
+        df (pd.DataFrame): A dataframe with the athlete and country in the same column.
+        
+    Returns:
+        pd.DataFrame: A dataframe with the athlete and country in separate columns.
+    """
+    
+    # create a new dataframe with the athlete and country split
+    new_df = df.copy()
+    for i, row in df.iterrows():
+        # for team sports choose None for Athlete
+        if len(row["Athlete"]) == 1:
+            new_df.at[i, "Athlete"] = None
+            new_df.at[i, "NOC"] = row["Athlete"][0]
+        # fpr individual sports split the athlete and country
+        elif len(row["Athlete"]) == 2:
+            new_df.at[i, "Athlete"] = row["Athlete"][0]
+            new_df.at[i, "NOC"] = row["Athlete"][1]
+    
+    return new_df
+
+def remove_ties(df):
+    """Takes in the tokyo 2020 dataframe and processes the medal ties
+    by extracting the proper athlete and country values from the list object
+    in the columns Athlete and NOC. The medal column is also updated with
+    (Tie) to signify that there was a tie. For each tie, there is an individual
+    row created for each athlete and country with duplicate medal values."""
+    # get an index list of medal ties
+    ties = [i for i, row in df.iterrows() if (row['Athlete'] == row['NOC'] and len(row['Athlete']) > 0)]
+    # for each tie create a duplicate row with the second value values and reset the index
+    for i in ties:
+        athletes_and_countries = df.loc[i, "Athlete"]
+        assert len(athletes_and_countries) == 4, f"Index {i}, There should be 4 values in the list"
+        # create a temp dataframe from the tied results row
+        temp_df = df.loc[i].copy()
+        temp_df = temp_df.to_frame().T
+        # make a duplicate row
+        temp_df = temp_df.append(temp_df, ignore_index=True)
+        # take the first athlete and country and put it in the first row
+        temp_df.loc[0, "Athlete"] = athletes_and_countries[0]
+        temp_df.loc[0, "NOC"] = athletes_and_countries[2]
+        temp_df.loc[0, "Medal"] = temp_df.loc[0, "Medal"] + " (Tie)"
+        # take the second athlete and country and put it in the second row
+        temp_df.loc[1, "Athlete"] = athletes_and_countries[1]
+        temp_df.loc[1, "NOC"] = athletes_and_countries[3]
+        temp_df.loc[1, "Medal"] = temp_df.loc[1, "Medal"] + " (Tie)"
+        # append the new rows
+        df = df.append(temp_df, ignore_index=True)
+        
+    # remove the tied rows
+    clean_ties_df = df.drop(ties)
+    
+    return clean_ties_df
+        
+
+
+##################################################
+# Testing
+##################################################
 
 def test_simple_split_medals():
     # Test the split_medals function
@@ -238,7 +300,7 @@ if __name__ == "__main__":
     tokyo_df = pd.DataFrame({"Sport": sports, "Event": events, "Results": medals})
 
 
-    final_tokyo_df = pd.DataFrame(
+    expanded_tokyo_df = pd.DataFrame(
         columns=["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
     )
 
@@ -250,6 +312,16 @@ if __name__ == "__main__":
     # from the results column and add them to the final dataframe
     for i, row in tokyo_df.iterrows():
         temp_df = create_event_df(row)
-        final_tokyo_df = final_tokyo_df.append(temp_df, ignore_index=True)
+        expanded_tokyo_df = expanded_tokyo_df.append(temp_df, ignore_index=True)
     
-    final_tokyo_df.head()
+    # split the athlete and country values into the correct columns
+    final_tokyo_df = split_athelete_country(expanded_tokyo_df)
+    
+    # process the ties
+    cleaned_final_tokyo_df = remove_ties(final_tokyo_df)
+    
+        
+    
+        
+        
+    
