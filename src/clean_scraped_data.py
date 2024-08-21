@@ -71,7 +71,7 @@ def create_event_df(df_row: pd.Series) -> pd.DataFrame:
     columns = ["Athlete", "NOC", "Year", "Season", "City", "Sport", "Event", "Medal"]
     
     # create a dataframe for the medals and athletes
-    final_df = pd.DataFrame(columns=columns)
+    final_event_df = pd.DataFrame(columns=columns)
     # iterate through the medals and athletes
     for i, medal in enumerate(medals):
         if medal == "Gold":
@@ -84,10 +84,10 @@ def create_event_df(df_row: pd.Series) -> pd.DataFrame:
             athlete = bronze
             noc = bronze
         
-        final_df = final_df.append(pd.Series([athlete, noc, TOKYO_YEAR, TOKYO_SEASON, TOKYO_CITY, sport, event, medal], index=columns), ignore_index=True)
+        final_event_df = final_event_df.append(pd.Series([athlete, noc, TOKYO_YEAR, TOKYO_SEASON, TOKYO_CITY, sport, event, medal], index=columns), ignore_index=True)
     
 
-    return final_df
+    return final_event_df
     
     
     
