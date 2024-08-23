@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import json
 
-FILE_PATH = 'data/raw/country_codes.json'
+FILE_PATH = 'data/raw/country_codes.csv'
 
 def scrape_iban_website():
     """Scrape the IBAN website for a JSON object with the
@@ -59,15 +59,22 @@ def scrape_iban_website():
             
         return country_codes
 
+def convert_country_codes_to_df(country_codes):
+    """Convert the country codes dictionary to a pandas DataFrame.
+    """
+    country_codes_df = pd.DataFrame(country_codes).T
+    country_codes_df.index.name = 'country_name'
+    country_codes_df.reset_index(inplace=True)
+    return country_codes_df
 
 def save_country_codes(country_codes, file_path):
-    """Save the country codes dictionary to a JSON file.
+    """Save the country codes dictionary to a csv file.
     """
-    with open(file_path, 'w') as file:
-        json.dump(country_codes, file, indent=4)
+    country_codes.to_csv(file_path, index=False)
         
         
 if __name__ == '__main__':
     country_codes = scrape_iban_website()
-    save_country_codes(country_codes, FILE_PATH)
-    print('Country codes saved to data/raw/country_codes.json')
+    country_codes_df = convert_country_codes_to_df(country_codes)
+    save_country_codes(country_codes_df, FILE_PATH)
+    print('Country codes saved to data/raw/country_codes.csv')
