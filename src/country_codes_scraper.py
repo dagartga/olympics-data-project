@@ -7,13 +7,14 @@ FILE_PATH = "data/raw/country_codes.csv"
 IBAN_URL = "https://www.iban.com/country-codes"
 
 
-def scrape_iban_website(IBAN_URL: str) -> dict:
+def scrape_iban_website(url: str) -> dict:
     """Scrape the IBAN website for a JSON object with the
     country name as the key and the country code and NOC nested
     in the JSON object.
 
     Args:
-        IBAN_URL (str): url for the website with the country codes.
+        url (str): url for the website with the country codes.
+        Which is https://www.iban.com/country-codes.
 
     Returns:
         dict: the key is the country name and the value is
@@ -32,7 +33,7 @@ def scrape_iban_website(IBAN_URL: str) -> dict:
             ...
     """
     # Send a GET request to the IBAN website
-    response = requests.get(IBAN_URL)
+    response = requests.get(url)
 
     assert response.status_code == 200, "Failed to fetch web page"
 
@@ -80,7 +81,7 @@ def save_country_codes(country_codes: pd.DataFrame, file_path: str) -> None:
 
 
 if __name__ == "__main__":
-    country_codes = scrape_iban_website()
+    country_codes = scrape_iban_website(IBAN_URL)
     country_codes_df = convert_country_codes_to_df(country_codes)
     save_country_codes(country_codes_df, FILE_PATH)
     print("Country codes saved to data/raw/country_codes.csv")
