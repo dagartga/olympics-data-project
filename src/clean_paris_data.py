@@ -6,11 +6,39 @@ import regex as re
 
 PARIS_PATH = "data/raw/paris2024_results.json"
 
+
+
+
+def clean_paris_data(path):
+    """Clean the json data and save it to a csv file"""
+    data = load_data(path)
+    
+    # remove dates from h2 data
+    h2_data = remove_dates_from_h2(data['h2'])
+    # remove symbols from h2 data
+    h2_data = remove_symbols_from_h2(h2_data)
+    
+    # remove headlines from p data
+    p_data = remove_headlines_from_p(data['p'])
+    # clean medals events from p data
+    p_data = clean_medals_events_from_p(p_data)
+    
+    data = {'h2': h2_data, 'p': p_data}
+    
+    return data
+    
+
+
+
 def load_data(path):
     """Load in the json data from a file path"""
     with open(path) as f:
         data = json.load(f)
     return data
+
+
+
+
 
 def remove_dates_from_h2(h2_data: list) -> list:
     """Remove any string values that are dates
@@ -36,6 +64,9 @@ def remove_dates_from_h2(h2_data: list) -> list:
     return h2_list
     
 
+
+
+
 def remove_symbols_from_h2(h2_data: list) -> list:
     """Keep only values that have some letters in them
     
@@ -54,6 +85,8 @@ def remove_symbols_from_h2(h2_data: list) -> list:
             h2_data.remove(val)
             
     return h2_data
+
+
 
 
 
@@ -84,29 +117,9 @@ def remove_headlines_from_p(p_data: list) -> list:
             results_data.append(val)
 
     return results_data
-    
-
-def group_p_medals(data: list) -> list:
-    """Group each events' medals into a list.
-    Example: [
-                MEN'S CROSS-COUNTRY',
-                'Gold: Tom Pidcock, Britain', 
-                'Silver: Mathieu van der Poel, Netherlands', 
-                'Bronze: Evgenii Fedorov, Russian Olympic Committee'
-                ]
-    """
-    # create a list to store the grouped medals
-    grouped_medals = []
-    event_number = 0
-    
-    for val in data['p']:
-        # if the value is an all uppercase string, it is an event
-        if val.isupper():
-            event_number += 1
-            medals = [val]
-            grouped_medals.append(medals)
-        else:
-            grouped_medals[event_number-1].append(val)
+            
+            
+            
             
 def clean_medals_events_from_p(p_data: list) -> list:
     """Look if there are any values that are combined event and medal.
@@ -152,6 +165,11 @@ def clean_medals_events_from_p(p_data: list) -> list:
     return event_results
 
 
+
+            
+        
+        
+
 ############################################
 # TESTING
 ############################################
@@ -189,3 +207,5 @@ def test_clean_medals_events():
     test_data = ["MEN’S 90KG Gold: Lasha Bekauri, Georgia"]
     cleaned_data = clean_medals_events_from_p(test_data)
     assert cleaned_data == ["MEN’S 90KG", "Gold: Lasha Bekauri, Georgia"]
+    
+    
