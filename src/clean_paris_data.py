@@ -31,7 +31,9 @@ def clean_paris_data(path):
     
     data = {'h2': h2_data, 'p': p_data}
     
-    return data
+    grouped_results = group_medals(data)
+    
+    return grouped_results
     
 
 
@@ -247,38 +249,48 @@ def clean_medals_events_from_p(p_data: list) -> list:
 
 clean_data = clean_paris_data(PARIS_PATH)
 
-# create a dictionary to store the event and medal results
-event_results = []
-# create a list of medals
-medals_list = []
+def group_medals(data: dict) -> list:
+    """Group the medals in a list and assign them to the event
+    
+    Args:
+        data (dict): dictionary of the cleaned data
+    Returns:
+        list: list of the events and their respective medal winners
+    """
+    # create a dictionary to store the event and medal results
+    event_results = []
+    # create a list of medals
+    medals_list = []
 
-for val in clean_data["p"]:
-    # if the value starts with Gold:
-    if val.startswith("Gold:"):
-        medals_list.append(val)
-    # if the value starts with Silver:
-    elif val.startswith("Silver:git"):
-        medals_list.append(val)
-        # two exceptions where no Bronze medal was awarded
-        if "Sofiane Oumiha, France" in val:
-            medals_list.append("Bronze: No medal awarded")
-            event_results.append(medals_list)
-            medals_list = []
-        elif "Nurbek Oralbay, Kazakhstan" in val:
-            medals_list.append("Bronze: No medal awarded")
-            event_results.append(medals_list)
-            medals_list = []
+    for val in clean_data["p"]:
+        # if the value starts with Gold:
+        if val.startswith("Gold:"):
+            medals_list.append(val)
+        # if the value starts with Silver:
+        elif val.startswith("Silver:git"):
+            medals_list.append(val)
+            # two exceptions where no Bronze medal was awarded
+            if "Sofiane Oumiha, France" in val:
+                medals_list.append("Bronze: No medal awarded")
+                event_results.append(medals_list)
+                medals_list = []
+            elif "Nurbek Oralbay, Kazakhstan" in val:
+                medals_list.append("Bronze: No medal awarded")
+                event_results.append(medals_list)
+                medals_list = []
             
-    # if the value starts with Bronze:
-    elif val.startswith("Bronze:"):
-        if "Amin Mirzazadeh, Iran" in val:
-            medals_list.append(val)
-        elif "Zholaman Sharshenbekov, Kyrgyzstan" in val:
-            medals_list.append(val)
-        else:
-            medals_list.append(val)
-            event_results.append(medals_list)
-            medals_list = []
+        # if the value starts with Bronze:
+        elif val.startswith("Bronze:"):
+            if "Amin Mirzazadeh, Iran" in val:
+                medals_list.append(val)
+            elif "Zholaman Sharshenbekov, Kyrgyzstan" in val:
+                medals_list.append(val)
+            else:
+                medals_list.append(val)
+                event_results.append(medals_list)
+                medals_list = []
+                
+    return event_results
         
 
         
