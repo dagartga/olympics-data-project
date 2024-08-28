@@ -31,9 +31,12 @@ def clean_paris_data(path):
     
     data = {'h2': h2_data, 'p': p_data}
     
-    grouped_results = group_medals(data)
+    # group the medals with the events
+    grouped_medals = group_medals(data)
+    # combine the grouped medals with the h2 data
+    combined_data = combine_grouped_medals_with_h2(h2_data, grouped_medals)
     
-    return grouped_results
+    return combined_data
     
 
 
@@ -247,7 +250,7 @@ def clean_medals_events_from_p(p_data: list) -> list:
     return event_results
 
 
-clean_data = clean_paris_data(PARIS_PATH)
+
 
 def group_medals(data: dict) -> list:
     """Group the medals in a list and assign them to the event
@@ -267,7 +270,7 @@ def group_medals(data: dict) -> list:
         if val.startswith("Gold:"):
             medals_list.append(val)
         # if the value starts with Silver:
-        elif val.startswith("Silver:git"):
+        elif val.startswith("Silver:"):
             medals_list.append(val)
             # two exceptions where no Bronze medal was awarded
             if "Sofiane Oumiha, France" in val:
@@ -294,6 +297,15 @@ def group_medals(data: dict) -> list:
         
 
         
+    
+def combine_grouped_medals_with_h2(h2_data: list, grouped_medals: list) -> list:
+    
+    assert len(h2_data) == len(grouped_medals)
+    
+    combined_data = [[x,y] for x,y in zip(h2_data, grouped_medals)]
+    
+    return combined_data
+    
     
         
 
