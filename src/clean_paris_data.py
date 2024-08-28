@@ -17,6 +17,12 @@ def clean_paris_data(path):
     h2_data = remove_dates_from_h2(data['h2'])
     # remove symbols from h2 data
     h2_data = remove_symbols_from_h2(h2_data)
+    # combine the CYCLING and TEAM PURSUIT data
+    h2_data = combine_cycling_pursuit(h2_data)
+    # update the 3X3 BASKETBALL data
+    h2_data = update_3x3_basketball(h2_data)
+    # clean the SWIMMING RELAYS data
+    h2_data = clean_swimming_relays(h2_data)
     
     # remove headlines from p data
     p_data = remove_headlines_from_p(data['p'])
@@ -76,16 +82,90 @@ def remove_symbols_from_h2(h2_data: list) -> list:
     Returns:
         list: list of the h2 tag data with symbols removed
     """
+    
+    # create an empty list to store the updated data
+    cleaned_h2_data = []
+
     # regex pattern to match any string with letters
     has_letters = re.compile(r"[a-zA-Z]")
 
     for val in h2_data:
+        if val.startswith("3X3 BASKETBALL"):
+            cleaned_h2_data.append(val)
         # check if the value matches the regex pattern
-        if not has_letters.match(val):
-            h2_data.remove(val)
+        elif not has_letters.match(val):
+            continue
+        else:
+            cleaned_h2_data.append(val)
             
-    return h2_data
+    return cleaned_h2_data
 
+
+
+
+def combine_cycling_pursuit(h2_data: list) -> list:
+    """The data for CYCLING and TEAM PURSUIT needs to be combined.
+    
+    Args:
+        h2_data (list): list of the h2 tag data from AP News website
+        
+    Returns:
+        list: list of the h2 tag data with CYCLING and TEAM PURSUIT combined
+    """
+    
+    updated_h2_data = []
+    
+    for i, val in enumerate(h2_data):
+        if val == "CYCLING" and "TEAM PURSUIT" in h2_data[i+1]:
+            continue
+            
+        elif "TEAM PURSUIT" in val:
+            updated_h2_data.append(f"CYCLING {val}")
+            
+        else:
+            updated_h2_data.append(val)
+    
+    return updated_h2_data
+
+
+
+def update_3x3_basketball(h2_data: list) -> list:
+    """ The Women's 3X3 Basketball simply says WOMEN,
+    this needs to be updated to WOMEN's 3X3 BASKETBALL and
+    Men's 3X3 Basketball needs to be updated from 3X3 BASKETBALL
+    to MEN'S 3X3 BASKETBALL"""
+
+    updated_h2_data = []
+    
+    womens_index = None
+    
+    for i, val in enumerate(h2_data):
+        if val == "3X3 BASKETBALL":
+            updated_h2_data.append(f"MEN’S {val}")
+            womens_index = i + 1
+        elif womens_index == i:
+            updated_h2_data.append("WOMEN’S 3X3 BASKETBALL")
+        else:
+            updated_h2_data.append(val)
+            
+    return updated_h2_data
+
+
+def clean_swimming_relays(h2_data: list) -> list:
+    
+    updated_h2_data = []
+    
+    for i, val in enumerate(h2_data):
+        if val == "SWIMMING" and "1500M" in h2_data[i+1]:
+            updated_h2_data.append("WOMEN’S 50M FREESTYLE")
+            updated_h2_data.append("WOMEN’S 4x100M MEDLEY RELAY")
+        elif val == "MEN’S 1500M FREESTYLE":
+            updated_h2_data.append(val)
+            updated_h2_data.append("MEN’S 4x100M MEDLEY RELAY")
+        else:
+            updated_h2_data.append(val)
+            
+    return updated_h2_data
 
 
 
@@ -165,6 +245,46 @@ def clean_medals_events_from_p(p_data: list) -> list:
     return event_results
 
 
+clean_data = clean_paris_data(PARIS_PATH)
+
+# create a dictionary to store the event and medal results
+event_results = []
+# create a list of medals
+medals_list = []
+
+for val in clean_data["p"]:
+    # if the value starts with Gold:
+    if val.startswith("Gold:"):
+        medals_list.append(val)
+    # if the value starts with Silver:
+    elif val.startswith("Silver:git"):
+        medals_list.append(val)
+        # two exceptions where no Bronze medal was awarded
+        if "Sofiane Oumiha, France" in val:
+            medals_list.append("Bronze: No medal awarded")
+            event_results.append(medals_list)
+            medals_list = []
+        elif "Nurbek Oralbay, Kazakhstan" in val:
+            medals_list.append("Bronze: No medal awarded")
+            event_results.append(medals_list)
+            medals_list = []
+            
+    # if the value starts with Bronze:
+    elif val.startswith("Bronze:"):
+        if "Amin Mirzazadeh, Iran" in val:
+            medals_list.append(val)
+        elif "Zholaman Sharshenbekov, Kyrgyzstan" in val:
+            medals_list.append(val)
+        else:
+            medals_list.append(val)
+            event_results.append(medals_list)
+            medals_list = []
+        
+
+        
+    
+        
+
 
             
         
@@ -187,9 +307,9 @@ def test_remove_dates_from_h2():
     assert no_date == ["BOXING"]
     
 def test_remove_symbols_from_h2():
-    test_data = [ "CYCLING", "ATHLETICS", "_______", "BOXING", "######"]
+    test_data = [ "CYCLING", "3X3 BASKETBALL", "ATHLETICS", "_______", "BOXING", "######"]
     no_symbol = remove_symbols_from_h2(test_data)
-    assert no_symbol == ["CYCLING", "ATHLETICS", "BOXING"]
+    assert no_symbol == ["CYCLING", "3X3 BASKETBALL", "ATHLETICS", "BOXING"]
     
     
 def test_remove_headlines_from_p():
@@ -198,9 +318,9 @@ def test_remove_headlines_from_p():
                         "2024 Paris Olympics:",
                         "▶ See other events still in progress",
                         "GOLD: Tom Pidcock, Britain",
-                        "WOMEN'S 500M SINGLE KAYAK",]
+                        "WOMEN’S 500M SINGLE KAYAK",]
     no_headlines = remove_headlines_from_p(test_data)
-    assert no_headlines == ["GOLD: Tom Pidcock, Britain", "WOMEN'S 500M SINGLE KAYAK"]
+    assert no_headlines == ["GOLD: Tom Pidcock, Britain", "WOMEN’S 500M SINGLE KAYAK"]
 
 
 def test_clean_medals_events():
@@ -209,3 +329,25 @@ def test_clean_medals_events():
     assert cleaned_data == ["MEN’S 90KG", "Gold: Lasha Bekauri, Georgia"]
     
     
+def test_update_3x3_basketball():
+    test_data = ["MEN’S GRECO-ROMAN 60KG",
+                "WOMEN’S FREESTYLE 68KG",
+                "3X3 BASKETBALL",
+                "WOMEN",
+                "BADMINTON"]
+    updated_data = update_3x3_basketball(test_data)
+    assert updated_data == ["MEN’S GRECO-ROMAN 60KG",
+                            "WOMEN’S FREESTYLE 68KG",
+                            "MEN’S 3X3 BASKETBALL",
+                            "WOMEN’S 3X3 BASKETBALL",
+                            "BADMINTON"]
+    
+    
+def test_clean_swimming_relays():
+    test_data = ["SWIMMING",
+                "MEN’S 1500M FREESTYLE"]
+    cleaned_data = clean_swimming_relays(test_data)
+    assert cleaned_data == ["WOMEN’S 50M FREESTYLE",
+                            "WOMEN’S 4x100M MEDLEY RELAY",
+                            "MEN’S 1500M FREESTYLE",
+                            "MEN’S 4x100M MEDLEY RELAY"]
