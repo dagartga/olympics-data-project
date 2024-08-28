@@ -262,7 +262,7 @@ def group_medals(data: dict) -> list:
     # create a list of medals
     medals_list = []
 
-    for val in clean_data["p"]:
+    for val in data["p"]:
         # if the value starts with Gold:
         if val.startswith("Gold:"):
             medals_list.append(val)
