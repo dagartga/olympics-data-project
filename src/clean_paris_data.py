@@ -36,7 +36,10 @@ def clean_paris_data(path):
     # combine the grouped medals with the h2 data
     combined_data = combine_grouped_medals_with_h2(h2_data, grouped_medals)
     
-    return combined_data
+    # geat the events from the p data
+    p_events = get_p_events(p_data)
+    
+    return combined_data, p_events
     
 
 
@@ -249,6 +252,28 @@ def clean_medals_events_from_p(p_data: list) -> list:
                 
     return event_results
 
+def get_p_events(p_data: list) -> list:
+    """Get all the events from the p data
+    
+    Args:
+        p_data (list): list of the p tag data from AP News website
+        
+    Returns:
+        list: list of the events from the p data
+    """
+    
+    events = []
+    
+    # events do not start with Gold, Silver, or Bronze
+    no_medals = re.compile(r"^(?!Gold:|Silver:|Bronze:)")
+    # iterate through the p data
+    for val in p_data:
+        # check if the value matches the regex pattern
+        if no_medals.match(val):
+            events.append(val)
+            
+    return events
+
 
 
 
@@ -307,7 +332,13 @@ def combine_grouped_medals_with_h2(h2_data: list, grouped_medals: list) -> list:
     return combined_data
     
     
-        
+    
+def convert_to_df(cleaned_data: list) -> pd.DataFrame:
+    """Convert the cleaned data to a pandas DataFrame"""
+    df = pd.DataFrame(cleaned_data, columns=["Event", "Medal Winners"])
+
+    return df
+    
 
 
             
@@ -375,3 +406,45 @@ def test_clean_swimming_relays():
                             "WOMEN’S 4x100M MEDLEY RELAY",
                             "MEN’S 1500M FREESTYLE",
                             "MEN’S 4x100M MEDLEY RELAY"]
+    
+    
+def test_get_p_events():
+    test_data = ["WOMEN’S MARATHON",
+                "Gold: Netherlands (Sifan Hassan)",
+                "Silver: Ethiopia (Tigst Assefa)",
+                "Bronze: Kenya (Hellen Obiri)",
+                "WOMEN’S",
+                "Gold: United States",
+                "Silver: France",
+                "Bronze: Australia",
+                "MEN’S KEIRIN",
+                "Gold: Netherlands (Harrie Lavreysen)",
+                "Silver: Australia (Matthew Richardson)",
+                "Bronze: Australia (Matthew Glaetzer",
+                "WOMEN’S 3X3 BASKETBALL Gold: United States",
+                ]
+    events = get_p_events(test_data)
+    assert events == ["WOMEN’S MARATHON",
+                      "WOMEN’S",
+                        "MEN’S KEIRIN",
+                        "WOMEN’S 3X3 BASKETBALL Gold: United States"] 
+    
+    
+
+
+
+
+
+skip_list = ["WOMEN’S SPRING", 
+             "WOMEN’S OMNIUM",
+             "MEN’S FREESTYLE 65KG", #WRESTLING
+             "MEN’S FREESTYLE 97KG"  #WRESTLING
+             "WOMEN’S 57KG",  #BOXING
+             "MEN’S +92KG", #BOXING
+             "WOMEN’S 75KG", #BOXING
+             "WOMEN’S 500M SINGLE KAYAK",
+             "WOMEN’S 200M SINGLE KAYAK",
+             "WOMEN’S +67KG", #TAEKWONDO
+             
+             
+             
