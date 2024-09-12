@@ -563,8 +563,17 @@ def replace_sport(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-
-
+def insert_p_events(df: pd.DataFrame, p_events: list) -> pd.DataFrame:
+    temp_events = p_events.copy()
+    
+    j = 0
+    for i, row in df.iterrows():
+        if i == 28:
+            df.loc[i, 'Event'] = "MEN’S"
+        elif row['Sport'] == row['Event']:
+            df.loc[i, 'Event'] = temp_events[j]
+            j+=1
+    return df
                  
 
 ############################################
