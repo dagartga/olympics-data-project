@@ -409,13 +409,18 @@ def clean_medals_events_from_p(p_data: list) -> list:
     event_results = []
 
     # match string that has Gold, Silver, or Bronze but not at the start
-    medals = re.compile(r"(?<!^)(Gold:|Silver:|Bronze:)")
+    medals = re.compile(r"(?<!^)(Gold:|GOLD:|Silver:|Bronze:)")
 
     for val in p_data:
         # check if the value matches the regex pattern
         if medals.search(val):
             if "Gold:" in val:
                 event, medal = val.split("Gold:")
+                medal = "Gold:" + medal
+                event_results.append(event.rstrip())
+                event_results.append(medal)
+            elif "GOLD:" in val:
+                event, medal = val.split("GOLD:")
                 medal = "Gold:" + medal
                 event_results.append(event.rstrip())
                 event_results.append(medal)
@@ -449,11 +454,11 @@ def get_p_events(p_data: list) -> list:
     events = []
 
     # events do not start with Gold, Silver, or Bronze
-    no_medals = re.compile(r"^(?!Gold:|Silver:|Bronze:)")
+    no_medals = re.compile(r"^(?!Gold:|Silver:|Bronze:|GOLD:)")
     # iterate through the p data
     for val in p_data:
         # check if the value matches the regex pattern
-        if no_medals.match(val):
+        if no_medals.match(val) and val != "SYNCHRONIZED 10-METER PLATFORM":
             events.append(val)
 
     return events
@@ -565,14 +570,56 @@ def save_p_events(p_events: list):
 def insert_p_events(df: pd.DataFrame, p_events: list) -> pd.DataFrame:
     temp_events = p_events.copy()
 
+    # grant_holloway = temp_events[46]
+    # grant_holloway = grant_holloway.replace("GOLD", "Gold")
+    # add_grant = [grant_holloway] + df.loc[88, "Medal Winners"]
+    # temp_events.pop(46)
+    # insert WOMEN'S KITESURFING at index 53
+    # temp_events.insert(53, "WOMEN’S KITESURFING")
+
+    # remove index 72 from temp_events
+    temp_events.pop(72)
+    # remove index 132 from temp_events
+    temp_events.pop(132)
+
     j = 0
     for i, row in df.iterrows():
         if i == 28:
             df.loc[i, "Event"] = "MEN’S"
-        elif row["Sport"] == row["Event"]:
-            df.loc[i, "Event"] = temp_events[j]
+        if i == 60:
+            df.loc[i, "Event"] = "WOMEN’S"
+        if i == 103:
+            df.loc[i, "Event"] = "WOMEN’S"
+            df.loc[i, "Sport"] = "KITESURFING"
+        if i == 114:
+            df.loc[i, "Event"] = "MEN’S DINGHY"
+            j += 2
+        if i == 172:
+            df.loc[i, "Sport"] = "SWIMMING"
             j += 1
+        if i == 173:
+            df.loc[i, "Sport"] = "SWIMMING"
+            j += 2
+        if i == 
+        if row["Sport"] == row["Event"]:
+            try:
+                df.loc[i, "Event"] = temp_events[j]
+                j += 1
+            except:
+                print(i)
     return df
+
+
+# 18 MEN'S
+# 30 WOMEN'S
+# remove 46
+# replace 60 with MEN'S TEAM PURSUIT
+# 93 MEN'S 1500M FREESTYLE
+# 136 WOMEN'S SYNCHRONIZED 10-METER PLATFORM
+# remove 139?
+# remove 150?
+# 161 MEN'S
+# 175 MEN'S
 
 
 ############################################
