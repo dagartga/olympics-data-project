@@ -6,7 +6,7 @@ import pandas as pd
 import regex as re
 
 PARIS_PATH = "data/raw/paris2024_results.json"
-
+COUNTRY_PATH = "data/raw/country_list.csv"
 
 SPORT_LIST = [
     "ATHLETICS",
@@ -64,7 +64,6 @@ SPORT_LIST = [
     "SPORTS CLIMBING",
     "DIVING",
     "SAILING",
-    "WOMEN’S KITESURFING",
     "WEIGHTLIFTING",
     "WRESTLING",
     "ARTISTIC SWIMMING",
@@ -103,8 +102,7 @@ SPORT_LIST = [
     "FENCING",
     "GOLF",
     "SHOOTING",
-    "MEN’S 1500M FREESTYLE",
-    "MEN’S 4x100M MEDLEY RELAY",
+    "SWIMMING",
     "TABLE TENNIS",
     "TENNIS",
     "TRACK AND FIELD",
@@ -232,6 +230,21 @@ def clean_paris_data(path):
 
     # replace the sport names
     df = replace_sport(df)
+
+    # insert the p events into the DataFrame
+    df = insert_p_events(df, p_events)
+
+    # convert the medal list to a DataFrame
+    df = convert_medal_list_to_df(df)
+
+    # remove the medal colors
+    df = remove_medal_colors(df)
+
+    # melt the medal data
+    df = melt_medals(df)
+
+    # split country and athlete
+    df = split_country_athlete(df, COUNTRY_PATH)
 
     return df, p_events
 
@@ -510,7 +523,14 @@ def group_medals(data: dict) -> list:
 
 def combine_grouped_medals_with_h2(h2_data: list, grouped_medals: list) -> list:
 
-    assert len(h2_data) == len(grouped_medals)
+    h2_data.pop(251)
+    h2_data.pop(254)
+    h2_data.insert(256, "MEN’S 90KG")
+    h2_data.insert(276, "MEN’S 4X200M FREESTYLE RELAY")
+    h2_data.insert(172, "SWIMMING")
+    h2_data.pop(173)
+    h2_data.pop(251)
+    h2_data.insert(251, "CYCLING")
 
     combined_data = [[x, y] for x, y in zip(h2_data, grouped_medals)]
 
@@ -531,7 +551,9 @@ def adjust_event_and_sports(df: pd.DataFrame) -> pd.DataFrame:
     j = 0
     for i, row in df.iterrows():
         try:
-            if row["Sport"] == SPORT_LIST[j]:
+            if j >= len(SPORT_LIST):
+                df.loc[i, "Sport"] = SPORT_LIST[-1]
+            elif row["Sport"] == SPORT_LIST[j]:
                 j += 1
             else:
                 df.loc[i, "Sport"] = SPORT_LIST[j - 1]
@@ -547,11 +569,6 @@ def replace_sport(df: pd.DataFrame) -> pd.DataFrame:
             "CYCLING WOMEN’S TEAM PURSUIT": "CYCLING",
             "MEN’S 3X3 BASKETBALL": "3X3 BASKETBALL",
             "WOMEN’S 3X3 BASKETBALL": "3X3 BASKETBALL",
-            "MEN’S 1500M FREESTYLE": "SWIMMING",
-            "MEN’S 4x100M MEDLEY RELAY": "SWIMMING",
-            "MEN’S 4X100M FREESTYLE RELAY": "SWIMMING",
-            "WOMEN’S 400M FREESTYLE": "SWIMMING",
-            "WOMEN’S 4X100M FREESTYLE RELAY": "SWIMMING",
         }
     )
     return df
@@ -562,6 +579,7 @@ def save_p_events(p_events: list):
     file_path = "../data/raw/p_events.json"
 
     with open(file_path, "w") as file:
+
         json.dump(p_events, file)
 
     print(f"File saved to {file_path}")
@@ -569,57 +587,171 @@ def save_p_events(p_events: list):
 
 def insert_p_events(df: pd.DataFrame, p_events: list) -> pd.DataFrame:
     temp_events = p_events.copy()
-
-    # grant_holloway = temp_events[46]
-    # grant_holloway = grant_holloway.replace("GOLD", "Gold")
-    # add_grant = [grant_holloway] + df.loc[88, "Medal Winners"]
-    # temp_events.pop(46)
-    # insert WOMEN'S KITESURFING at index 53
-    # temp_events.insert(53, "WOMEN’S KITESURFING")
+    temp_df = df.copy()
 
     # remove index 72 from temp_events
     temp_events.pop(72)
+
     # remove index 132 from temp_events
     temp_events.pop(132)
 
+    # remove index 134 from temp_events
+    temp_events.pop(134)
+
+    # remove WOMEN'S 4X100M MEDLEY RELAY
+    temp_events.remove("WOMEN’S 4x100M MEDLEY RELAY")
+    # remove MEN'S 4X100M MEDLEY RELAY
+    temp_events.remove("MEN’S 4x100M MEDLEY RELAY")
+
     j = 0
-    for i, row in df.iterrows():
+    for i, row in temp_df.iterrows():
         if i == 28:
-            df.loc[i, "Event"] = "MEN’S"
+            temp_df.loc[i, "Event"] = "MEN’S"
         if i == 60:
-            df.loc[i, "Event"] = "WOMEN’S"
+            temp_df.loc[i, "Event"] = "WOMEN’S"
         if i == 103:
-            df.loc[i, "Event"] = "WOMEN’S"
-            df.loc[i, "Sport"] = "KITESURFING"
+            temp_df.loc[i, "Event"] = "WOMEN’S KITE"
         if i == 114:
-            df.loc[i, "Event"] = "MEN’S DINGHY"
+            temp_df.loc[i, "Event"] = "MEN’S DINGHY"
             j += 2
-        if i == 172:
-            df.loc[i, "Sport"] = "SWIMMING"
-            j += 1
-        if i == 173:
-            df.loc[i, "Sport"] = "SWIMMING"
-            j += 2
-        if i == 
+        if i == 251:
+            temp_df.loc[i, "Event"] = "WOMEN’S PARK"
+        if i == 253:
+            temp_df.loc[i, "Event"] = "WOMEN’S SYNCHRONIZED 10-METER PLATFORM"
+        if i == 314:
+            temp_df.loc[i, "Event"] = "MEN’S"
         if row["Sport"] == row["Event"]:
             try:
-                df.loc[i, "Event"] = temp_events[j]
+                temp_df.loc[i, "Event"] = temp_events[j]
                 j += 1
             except:
                 print(i)
-    return df
+    return temp_df
 
 
-# 18 MEN'S
-# 30 WOMEN'S
-# remove 46
-# replace 60 with MEN'S TEAM PURSUIT
-# 93 MEN'S 1500M FREESTYLE
-# 136 WOMEN'S SYNCHRONIZED 10-METER PLATFORM
-# remove 139?
-# remove 150?
-# 161 MEN'S
-# 175 MEN'S
+def convert_medal_list_to_df(df: pd.DataFrame) -> pd.DataFrame:
+    """Take the results from column Medal Winners and split them into
+    separate columns for Gold, Silver, and Bronze.
+    Put Medal Winners results in the Tie column if there is a tie"""
+
+    # create copy of the DataFrame
+    temp_df = df.copy()
+
+    # create new columns for Gold, Silver, and Bronze
+    temp_df["Gold"] = None
+    temp_df["Silver"] = None
+    temp_df["Bronze"] = None
+    temp_df["Tie"] = None
+
+    # iterate through the DataFrame
+    for i, row in temp_df.iterrows():
+
+        # iterate through the medals
+        for medal in row["Medal Winners"]:
+            # check if the medal is Gold
+            if "Gold" in medal:
+                # check the count of Gold medals
+                count = temp_df.loc[i, "Medal Winners"].count("Gold")
+                # check if there is a tie
+                if count > 1:
+                    temp_df.loc[i, "Tie"] = row["Medal Winners"]
+                temp_df.loc[i, "Gold"] = medal
+            # check if the medal is Silver
+            elif "Silver" in medal:
+                # check the count of Silver medals
+                count = temp_df.loc[i, "Medal Winners"].count("Silver")
+                # check if there is a tie
+                if count > 1:
+                    temp_df.loc[i, "Tie"] = row["Medal Winners"]
+                temp_df.loc[i, "Silver"] = medal
+            # check if the medal is Bronze
+            elif "Bronze" in medal:
+                # check the count of Bronze medals
+                count = temp_df.loc[i, "Medal Winners"].count("Bronze")
+                # check if there is a tie
+                if count > 1:
+                    temp_df.loc[i, "Tie"] = row["Medal Winners"]
+                temp_df.loc[i, "Bronze"] = medal
+
+    return temp_df
+
+
+def remove_medal_colors(df: pd.DataFrame) -> pd.DataFrame:
+    """For each value in the Gold, Silver, and Bronze columns,
+    remove the color from the string"""
+
+    # create copy of the DataFrame
+    temp_df = df.copy()
+
+    # remove the color from the Gold column
+    temp_df["Gold"] = temp_df["Gold"].str.replace("Gold: ", "")
+    # remove the color from the Silver column
+    temp_df["Silver"] = temp_df["Silver"].str.replace("Silver: ", "")
+    # remove the color from the Bronze column
+    temp_df["Bronze"] = temp_df["Bronze"].str.replace("Bronze: ", "")
+
+    return temp_df
+
+
+def melt_medals(df: pd.DataFrame) -> pd.DataFrame:
+    """Create a melted table of the Gold, Silver, and Bronze medals
+    to list medal color and the athlete for each event
+
+    The new columns will be Sport, Event, Medal, and Athlete.
+    Where each medal color is listed in Medal along wtih the athlete name"""
+
+    # create a copy of the DataFrame
+    temp_df = df.copy()
+
+    # melt the DataFrame
+    melted_df = temp_df.melt(
+        id_vars=["Sport", "Event"],
+        value_vars=["Gold", "Silver", "Bronze"],
+        var_name="Medal",
+        value_name="Athlete",
+    )
+
+    return melted_df
+
+
+def split_country_athlete(df: pd.DataFrame, path: str) -> pd.DataFrame:
+    """The Athlete column has the athlete name and country.
+    Check the country name against the list of countries and split the
+    athlete name and country into separate columns"""
+
+    # create a copy of the DataFrame
+    temp_df = df.copy()
+    other_temp_df = df.copy()
+
+    # load the list of countries from csv
+    countries = pd.read_csv(path)
+    country = countries["region"].tolist()
+
+    # create a new column for the country
+    temp_df["Country"] = None
+
+    # iterate through the DataFrame
+    for i, row in other_temp_df.iterrows():
+        if row["Athlete"] is None:
+            continue
+        elif " (" in row["Athlete"]:
+            # split Athlete column on the (
+            athlete = row["Athlete"].split("(")
+            # check if the country is in the list of countries
+            if athlete[0].strip() in country:
+                temp_df.loc[i, "Country"] = athlete[0].strip()
+                temp_df.loc[i, "Athlete"] = athlete[1].strip().replace(")", "")
+        elif "," in row["Athlete"]:
+            # split Athlete column on the comma
+            athlete = row["Athlete"].split(", ")
+            # check if the country is in the list of countries
+            if athlete[1].strip() in country:
+                temp_df.loc[i, "Country"] = athlete[1].strip()
+                temp_df.loc[i, "Athlete"] = athlete[0]
+        else:
+            temp_df.loc[i, "Country"] = row["Athlete"]
+
+    return temp_df
 
 
 ############################################
