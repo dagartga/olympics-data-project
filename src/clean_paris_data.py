@@ -5,188 +5,9 @@ import json
 import pandas as pd
 import regex as re
 
-PARIS_PATH = "data/raw/paris2024_results.json"
-COUNTRY_PATH = "data/raw/country_list.csv"
-
-SPORT_LIST = [
-    "ATHLETICS",
-    "BASKETBALL",
-    "CYCLING TRACK",
-    "HANDBALL",
-    "MODERN PENTATHLON",
-    "VOLLEYBALL",
-    "WATER POLO",
-    "WEIGHTLIFTING",
-    "WRESTLING",
-    "ARTISTIC SWIMMING",
-    "BASKETBALL",
-    "BEACH VOLLEYBALL",
-    "BOXING",
-    "BREAKING",
-    "CANOE SPRINT",
-    "CYCLING TRACK",
-    "DIVING",
-    "GOLF",
-    "HANDBALL",
-    "MODERN PENTATHLON",
-    "RHYTHMIC GYMNASTICS",
-    "SOCCER",
-    "SPORT CLIMBING",
-    "TABLE TENNIS",
-    "TAEKWONDO",
-    "TRACK AND FIELD",
-    "VOLLEYBALL",
-    "WATER POLO",
-    "WEIGHTLIFTING",
-    "WRESTLING",
-    "TRACK AND FIELD",
-    "BEACH VOLLEYBALL",
-    "BOXING",
-    "BREAKING",
-    "CANOE SPRINT",
-    "CYCLING TRACK",
-    "DIVING",
-    "FIELD HOCKEY",
-    "MARATHON SWIMMING",
-    "RHYTHMIC GYMNASTICS",
-    "SAILING",
-    "SOCCER",
-    "SPORT CLIMBING",
-    "TABLE TENNIS",
-    "TAEKWONDO",
-    "WEIGHTLIFTING",
-    "WRESTLING",
-    "TRACK AND FIELD",
-    "CYCLING",
-    "CANOE SLALOM",
-    "FIELD HOCKEY",
-    "MARATHON SWIMMING",
-    "SPORTS CLIMBING",
-    "DIVING",
-    "SAILING",
-    "WEIGHTLIFTING",
-    "WRESTLING",
-    "ARTISTIC SWIMMING",
-    "BOXING",
-    "CLIMBING",
-    "CYCLING MEN’S TEAM PURSUIT",
-    "CYCLING WOMEN’S TEAM PURSUIT",
-    "SAILING",
-    "SKATEBOARDING",
-    "TAEKWONDO",
-    "TRACK AND FIELD",
-    "WEIGHTLIFTING",
-    "WRESTLING",
-    "BOXING",
-    "CYCLING TRACK",
-    "DIVING",
-    "EQUESTRIAN",
-    "SKATEBOARDING",
-    "TRACK AND FIELD",
-    "WRESTLING",
-    "MEN’S 3X3 BASKETBALL",
-    "WOMEN’S 3X3 BASKETBALL",
-    "BADMINTON",
-    "CANOE SLALOM",
-    "CYCLING TRACK",
-    "GYMNASTICS",
-    "SHOOTING",
-    "SURFING",
-    "TRACK AND FIELD",
-    "TRIATHLON",
-    "ARCHERY",
-    "ARTISTIC GYMNASTICS",
-    "BADMINTON",
-    "CYCLING",
-    "EQUESTRIAN",
-    "FENCING",
-    "GOLF",
-    "SHOOTING",
-    "SWIMMING",
-    "TABLE TENNIS",
-    "TENNIS",
-    "TRACK AND FIELD",
-    "ARCHERY",
-    "ARTISTIC GYMNASTICS",
-    "BADMINTON",
-    "CYCLING",
-    "EQUESTRIAN",
-    "FENCING",
-    "JUDO",
-    "ROWING",
-    "SAILING",
-    "SHOOTING",
-    "SWIMMING",
-    "TABLE TENNIS",
-    "TENNIS",
-    "TRACK AND FIELD",
-    "ARCHERY",
-    "BADMINTON",
-    "DIVING",
-    "CYCLING BMX RACING",
-    "EQUESTRIAN",
-    "FENCING",
-    "JUDO",
-    "ROWING",
-    "SAILING",
-    "SHOOTING",
-    "SWIMMING",
-    "TENNIS",
-    "TRACK AND FIELD",
-    "TRAMPOLINE",
-    "CANOE SLALOM",
-    "FENCING",
-    "GYMNASTICS",
-    "JUDO",
-    "ROWING",
-    "SHOOTING",
-    "SWIMMING",
-    "TRACK AND FIELD",
-    "GYMNASTICS",
-    "CANOE",
-    "CYCLING",
-    "DIVING",
-    "FENCING",
-    "JUDO",
-    "ROWING",
-    "SWIMMING",
-    "SHOOTING",
-    "TRIATHLON",
-    "FENCING",
-    "GYMNASTICS",
-    "JUDO",
-    "RUGBY SEVENS",
-    "SHOOTING",
-    "SWIMMING",
-    "TABLE TENNIS",
-    "ARCHERY",
-    "ARTISTIC GYMNASTICS",
-    "CANOE SLALOM",
-    "CYCLING MOUNTAIN BIKE",
-    "DIVING",
-    "EQUESTRIAN",
-    "FENCING",
-    "JUDO",
-    "SHOOTING",
-    "SKATEBOARDING",
-    "SWIMMING",
-    "ARCHERY",
-    "CANOE SLALOM",
-    "CYCLING MOUNTAIN BIKE",
-    "FENCING",
-    "JUDO",
-    "SHOOTING",
-    "SWIMMING",
-    "SHOOTING",
-    "SKATEBOARDING",
-    "CYCLING",
-    "DIVING",
-    "FENCING",
-    "JUDO",
-    "RUGBY SEVENS",
-    "SHOOTING",
-    "SWIMMING",
-]
+PARIS_PATH = "../data/raw/paris2024_results.json"
+COUNTRY_PATH = "../data/raw/country_codes.csv"
+SPORTS_PATH = "../data/raw/sports_list.json"
 
 
 def clean_paris_data(path):
@@ -245,6 +66,10 @@ def clean_paris_data(path):
 
     # split country and athlete
     df = split_country_athlete(df, COUNTRY_PATH)
+
+    # deal with some events that tie for bronze
+    bronze_df, tie_list = deal_with_ties(df)
+    df = remove_bronze_ties(df, bronze_df, tie_list)
 
     return df, p_events
 
@@ -547,7 +372,15 @@ def convert_to_df(cleaned_data: list) -> pd.DataFrame:
     return df
 
 
+def open_sports_list(path: str) -> list:
+    """Open the sports list from a json file"""
+    with open(path) as f:
+        sports = json.load(f)
+    return sports
+
+
 def adjust_event_and_sports(df: pd.DataFrame) -> pd.DataFrame:
+    SPORT_LIST = open_sports_list(SPORTS_PATH)
     j = 0
     for i, row in df.iterrows():
         try:
@@ -725,7 +558,7 @@ def split_country_athlete(df: pd.DataFrame, path: str) -> pd.DataFrame:
 
     # load the list of countries from csv
     countries = pd.read_csv(path)
-    country = countries["region"].tolist()
+    country = countries["country_name"].tolist()
 
     # create a new column for the country
     temp_df["Country"] = None
@@ -734,13 +567,6 @@ def split_country_athlete(df: pd.DataFrame, path: str) -> pd.DataFrame:
     for i, row in other_temp_df.iterrows():
         if row["Athlete"] is None:
             continue
-        elif " (" in row["Athlete"]:
-            # split Athlete column on the (
-            athlete = row["Athlete"].split("(")
-            # check if the country is in the list of countries
-            if athlete[0].strip() in country:
-                temp_df.loc[i, "Country"] = athlete[0].strip()
-                temp_df.loc[i, "Athlete"] = athlete[1].strip().replace(")", "")
         elif "," in row["Athlete"]:
             # split Athlete column on the comma
             athlete = row["Athlete"].split(", ")
@@ -748,8 +574,107 @@ def split_country_athlete(df: pd.DataFrame, path: str) -> pd.DataFrame:
             if athlete[1].strip() in country:
                 temp_df.loc[i, "Country"] = athlete[1].strip()
                 temp_df.loc[i, "Athlete"] = athlete[0]
+            elif athlete[1].strip() == "Britain":
+                temp_df.loc[i, "Country"] = "Great Britain"
+                temp_df.loc[i, "Athlete"] = athlete[0]
+            elif athlete[1].strip() == "AIN":
+                temp_df.loc[i, "Country"] = "Belarus"
+                temp_df.loc[i, "Athlete"] = athlete[0]
+            elif athlete[0].strip() == "Yang":
+                temp_df.loc[i, "Country"] = "China"
+                temp_df.loc[i, "Athlete"] = "Yang Liu"
+            # if the athlete[1] ends with period remove it
+            elif athlete[1].strip().endswith("."):
+                country_updated = athlete[1][:-1]
+                if country_updated in country:
+                    temp_df.loc[i, "Country"] = country_updated
+                    temp_df.loc[i, "Athlete"] = athlete[0]
+        elif " (" in row["Athlete"]:
+            # split Athlete column on the (
+            athlete = row["Athlete"].split(" (")
+            # check if the country is in the list of countries
+            if athlete[0].strip() in country:
+                temp_df.loc[i, "Country"] = athlete[0].strip()
+                temp_df.loc[i, "Athlete"] = athlete[1].strip().replace(")", "")
         else:
             temp_df.loc[i, "Country"] = row["Athlete"]
+
+    # do a second pass to deal with multiple athletes
+    for i, row in temp_df[temp_df["Country"].isna()].iterrows():
+        if row["Athlete"] is None:
+            continue
+        elif "," and " (" in row["Athlete"]:
+            # split Athlete column on the comma
+            athlete = row["Athlete"].split(" (")
+            # check if the country is in the list of countries
+            if athlete[0].strip() in country:
+                temp_df.loc[i, "Country"] = athlete[0].strip()
+                temp_df.loc[i, "Athlete"] = athlete[1]
+            elif athlete[0].strip() == "Britain":
+                temp_df.loc[i, "Country"] = "Great Britain"
+                temp_df.loc[i, "Athlete"] = athlete[1]
+
+    return temp_df
+
+
+def deal_with_ties(df: pd.DataFrame) -> pd.DataFrame:
+    """Events with multiple Bronze medals are Judo, Wrestling, Taekwondo and Boxing"""
+    temp_df = df[df["Country"].isna()].copy()
+
+    # list to store the bronze results
+    bronze_list = []
+
+    # create a list of indices with ties
+    tie_list = []
+
+    # create a list of the sports with ties
+    sports_with_ties = ["WRESTLING", "JUDO", "TAEKWONDO", "BOXING"]
+    for i, row in temp_df.iterrows():
+        if (
+            row["Sport"] in sports_with_ties
+            and "Bronze" in row["Medal"]
+            and "and" in row["Athlete"]
+        ):
+            # split the athlete column on the word 'and'
+            athletes = row["Athlete"].split(" and ")
+            # create a new row for each athlete
+            try:
+                for athlete in athletes:
+                    if "Dauren Kurugliev" in athlete:
+                        athlete_name = "Dauren Kurugliev"
+                        athlete_country = "Greece"
+
+                    else:
+                        athlete_split = athlete.split(", ")
+                        athlete_name = athlete_split[0]
+                        athlete_country = athlete_split[1]
+                    bronze_list.append(
+                        {
+                            "Sport": row["Sport"],
+                            "Event": row["Event"],
+                            "Medal": row["Medal"],
+                            "Athlete": athlete_name,
+                            "Country": athlete_country,
+                        }
+                    )
+                    tie_list.append(i)
+            except:
+                continue
+
+    # create a DataFrame from the list of bronze results
+    bronze_df = pd.DataFrame(bronze_list)
+
+    return bronze_df, tie_list
+
+
+def remove_bronze_ties(
+    df: pd.DataFrame, bronze_df: pd.DataFrame, tie_list: list
+) -> pd.DataFrame:
+    """Remove the rows with bronze ties and append the bronze_df to the original df"""
+
+    temp_df = df.copy()
+    temp_df = temp_df.drop(tie_list)
+    temp_df = temp_df.append(bronze_df, ignore_index=True)
 
     return temp_df
 
