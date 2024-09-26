@@ -618,7 +618,9 @@ def split_country_athlete(df: pd.DataFrame, path: str) -> pd.DataFrame:
 
 
 def deal_with_ties(df: pd.DataFrame) -> pd.DataFrame:
-    """Events with multiple Bronze medals are Judo, Wrestling, Taekwondo and Boxing"""
+    """Events with multiple Bronze medals are Judo, Wrestling, Taekwondo and Boxing.
+    As well, there were ties for Bronze in Women's High Jump, Men's Gymnastics Horizoantal Bar,
+    and Women's K-2 500M Sprint."""
     temp_df = df[df["Country"].isna()].copy()
 
     # list to store the bronze results
@@ -627,11 +629,13 @@ def deal_with_ties(df: pd.DataFrame) -> pd.DataFrame:
     # create a list of indices with ties
     tie_list = []
 
-    # create a list of the sports with ties
-    sports_with_ties = ["WRESTLING", "JUDO", "TAEKWONDO", "BOXING"]
+    # create a list of bronze tie sports
+    bronze_tie_sports = ["WRESTLING", "JUDO", "TAEKWONDO", "BOXING"]
+
+    # look for the events with multiple bronze medals
     for i, row in temp_df.iterrows():
         if (
-            row["Sport"] in sports_with_ties
+            row["Sport"] in bronze_tie_sports
             and "Bronze" in row["Medal"]
             and "and" in row["Athlete"]
         ):
@@ -661,6 +665,31 @@ def deal_with_ties(df: pd.DataFrame) -> pd.DataFrame:
             except:
                 continue
 
+    # split the Gymnastics Horizontal Bar tie at index 772
+    # and the Track and field high jump tie
+    two_ties_df = temp_df[
+        (temp_df["Event"] == "MEN’S HORIZONTAL BAR")
+        | (temp_df["Event"] == "WOMEN’S HIGH JUMP")
+    ].copy()
+    for i, row in two_ties_df.iterrows():
+        # split the athlete column on the word 'and'
+        athletes = row["Athlete"].split(" and ")
+        # create a new row for each athlete
+        for athlete in athletes:
+            athlete_split = athlete.split(", ")
+            athlete_name = athlete_split[0]
+            athlete_country = athlete_split[1]
+            bronze_list.append(
+                {
+                    "Sport": row["Sport"],
+                    "Event": row["Event"],
+                    "Medal": row["Medal"],
+                    "Athlete": athlete_name,
+                    "Country": athlete_country,
+                }
+            )
+            tie_list.append(i)
+
     # create a DataFrame from the list of bronze results
     bronze_df = pd.DataFrame(bronze_list)
 
@@ -674,9 +703,15 @@ def remove_bronze_ties(
 
     temp_df = df.copy()
     temp_df = temp_df.drop(tie_list)
-    temp_df = temp_df.append(bronze_df, ignore_index=True)
+    temp_df = pd.concat([temp_df, bronze_df], ignore_index=True)
 
     return temp_df
+
+
+# clean up the following edge cases
+# row 695 "WOMEN'S KAKAK DOUBLE 500M" Ahtlete needs to remove " and Hungary"
+# Copy row 695 and change Athelete to "Noemi Pup and Sara Fojt" and Country to "Hungary"
+# For Swimming MEN'S 100M BREASTSTROKE, add in the data manaually
 
 
 ############################################
