@@ -714,6 +714,35 @@ def remove_bronze_ties(
 # For Swimming MEN'S 100M BREASTSTROKE, add in the data manaually
 
 
+def fill_athlete_none(df: pd.DataFrame) -> pd.DataFrame:
+    """Manually add the athlete and country for the following
+    events that were missed"""
+
+    temp_df = df.copy()
+
+    na_df = temp_df[temp_df["Athlete"].isna()]
+
+    for i, row in na_df.iterrows():
+        if row["Event"] == "MEN’S 110M HURDLES":
+            temp_df.loc[i, "Country"] = "United States"
+            temp_df.loc[i, "Athlete"] = "GRANT HOLLOWAY"
+        if row["Sport"] == "ARTISTIC SWIMMING":
+            temp_df.loc[i, "Country"] = "China"
+            temp_df.loc[i, "Athlete"] = "China"
+        if row["Event"] == "MEN’S SABER INDIVIDUAL":
+            if row["Medal"] == "Gold":
+                temp_df.loc[i, "Country"] = "South Korea"
+                temp_df.loc[i, "Athlete"] = "Sanguk Oh"
+            if row["Medal"] == "Silver":
+                temp_df.loc[i, "Country"] = "Tunisia"
+                temp_df.loc[i, "Athlete"] = "Fares Ferjani"
+        if row["Event"] == "WOMEN’S FREESTYLE 68KG":
+            temp_df.loc[i, "Country"] = "Kyrgyzstan"
+            temp_df.loc[i, "Athlete"] = "Meerim Zhumanazarova"
+
+    return temp_df
+
+
 ############################################
 # TESTING
 ############################################
