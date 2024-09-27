@@ -5,10 +5,10 @@ import json
 import pandas as pd
 import regex as re
 
-PARIS_PATH = "../data/raw/paris2024_results.json"
-COUNTRY_PATH = "../data/raw/country_codes.csv"
-SPORTS_PATH = "../data/raw/sports_list.json"
-CSV_SAVE_PATH = "../data/processed/paris2024_results.csv"
+PARIS_PATH = "./data/raw/paris2024_results.json"
+COUNTRY_PATH = "./data/raw/country_codes.csv"
+SPORTS_PATH = "./data/raw/sports_list.json"
+CSV_SAVE_PATH = "./data/processed/paris2024_results.csv"
 
 
 def save_data_to_csv(df: pd.DataFrame, path: str):
@@ -410,7 +410,7 @@ def replace_sport(df: pd.DataFrame) -> pd.DataFrame:
 
 def save_p_events(p_events: list):
     """Save the p events to a json file"""
-    file_path = "../data/raw/p_events.json"
+    file_path = "./data/raw/p_events.json"
 
     with open(file_path, "w") as file:
 
