@@ -2,7 +2,7 @@ import pandas as pd
 
 
 KAGGLE_DATA_PATH = "data/raw/athlete_events.csv"
-CLEAN_DATA_PATH = "data/processed/kaggle_1896_2016_results.csv"
+CLEAN_DATA_PATH = "data/processed/kaggle1896_to_2016_results.csv"
 FINAL_COLUMNS = [
     "Name",
     "Team",

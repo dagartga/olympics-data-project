@@ -71,7 +71,16 @@ def clean_paris_data(path):
     bronze_df, tie_list = deal_with_ties(df)
     df = remove_bronze_ties(df, bronze_df, tie_list)
 
-    return df, p_events
+    # fill in the missing athlete and country
+    df = fill_athlete_none(df)
+
+    # create the 100m breaststroke event
+    df = create_100m_breastroke(df)
+
+    # fix the kayak double event
+    df = fix_kayak_double(df)
+
+    return df
 
 
 def load_data(path):
@@ -708,12 +717,6 @@ def remove_bronze_ties(
     return temp_df
 
 
-# clean up the following edge cases
-# row 695 "WOMEN'S KAKAK DOUBLE 500M" Ahtlete needs to remove " and Hungary"
-# Copy row 695 and change Athelete to "Noemi Pup and Sara Fojt" and Country to "Hungary"
-# For Swimming MEN'S 100M BREASTSTROKE, add in the data manaually
-
-
 def fill_athlete_none(df: pd.DataFrame) -> pd.DataFrame:
     """Manually add the athlete and country for the following
     events that were missed"""
@@ -739,6 +742,78 @@ def fill_athlete_none(df: pd.DataFrame) -> pd.DataFrame:
         if row["Event"] == "WOMEN’S FREESTYLE 68KG":
             temp_df.loc[i, "Country"] = "Kyrgyzstan"
             temp_df.loc[i, "Athlete"] = "Meerim Zhumanazarova"
+
+    return temp_df
+
+
+def create_100m_breastroke(df: pd.DataFrame) -> pd.DataFrame:
+    """Manually add the athlete and country for the
+    MEN'S 100M BREASTSTROKE event"""
+
+    # create a dictionary of the data
+    data = [
+        {
+            "Sport": "SWIMMING",
+            "Event": "MEN’S 100M BREASTSTROKE",
+            "Medal": "Gold",
+            "Athlete": "Nicolo Martinenghi",
+            "Country": "Italy",
+        },
+        {
+            "Sport": "SWIMMING",
+            "Event": "MEN’S 100M BREASTSTROKE",
+            "Medal": "Silver",
+            "Athlete": "Nic Fink",
+            "Country": "United States",
+        },
+        {
+            "Sport": "SWIMMING",
+            "Event": "MEN’S 100M BREASTSTROKE",
+            "Medal": "Silver",
+            "Athlete": "Adam Peaty",
+            "Country": "Great Britain",
+        },
+    ]
+
+    # create a DataFrame from the dictionary
+    breaststroke_df = pd.concat([df, pd.DataFrame(data)], ignore_index=True)
+
+    # concatenate the two DataFrames
+    temp_df = pd.concat([df, breaststroke_df], ignore_index=True)
+
+    return temp_df
+
+
+# clean up the following edge cases
+# row 695 "WOMEN'S KAKAK DOUBLE 500M" Ahtlete needs to remove " and Hungary"
+# Copy row 695 and change Athelete to "Noemi Pup and Sara Fojt" and Country to "Hungary"
+
+
+def fix_kayak_double(df: pd.DataFrame) -> pd.DataFrame:
+    """There was a tie for bronze in the WOMEN'S KAKAK DOUBLE 500M event.
+    The athlete format is strange because there are two athlete
+    names per country. The German athletes are listed correctly but the
+    Hungarian"""
+
+    temp_df = df.copy()
+
+    # remove the extra data from Athlete column
+    temp_df.loc[695, "Athlete"] = temp_df.loc[695, "Athlete"].replace(
+        " and Hungary", ""
+    )
+
+    # duplicate the row and change the Athlete and Country
+    hungary = temp_df.loc[695, :].to_dict()
+
+    # change the Athlete and Country
+    hungary["Athlete"] = "Noemi Pup and Sara Fojt"
+    hungary["Country"] = "Hungary"
+
+    # convert dict to DataFrame
+    hungary = pd.DataFrame(hungary, index=[0])
+
+    # concatenate the new row to the DataFrame
+    temp_df = pd.concat([temp_df, hungary], ignore_index=True)
 
     return temp_df
 
