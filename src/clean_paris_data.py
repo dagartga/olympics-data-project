@@ -8,12 +8,20 @@ import regex as re
 PARIS_PATH = "../data/raw/paris2024_results.json"
 COUNTRY_PATH = "../data/raw/country_codes.csv"
 SPORTS_PATH = "../data/raw/sports_list.json"
+CSV_SAVE_PATH = "../data/processed/paris2024_results.csv"
+
+
+def save_data_to_csv(df: pd.DataFrame, path: str):
+    """Save the DataFrame to a csv file"""
+    df.to_csv(path, index=False)
+    print(f"File saved to {path}")
 
 
 def clean_paris_data(path):
-    """Clean the json data and save it to a csv file"""
-    data = load_data(path)
+    """Clean the json data and save it to a csv file.
+    Final csv file has columns Sport, Event, Medal, Athlete, and Country"""
 
+    data = load_data(path)
     # remove dates from h2 data
     h2_data = remove_dates_from_h2(data["h2"])
     # remove symbols from h2 data
@@ -24,59 +32,43 @@ def clean_paris_data(path):
     h2_data = update_3x3_basketball(h2_data)
     # clean the SWIMMING RELAYS data
     h2_data = clean_swimming_relays(h2_data)
-
     # remove headlines from p data
     p_data = remove_headlines_from_p(data["p"])
     # clean medals events from p data
     p_data = clean_medals_events_from_p(p_data)
-
     data = {"h2": h2_data, "p": p_data}
 
     # group the medals with the events
     grouped_medals = group_medals(data)
     # combine the grouped medals with the h2 data
     combined_data = combine_grouped_medals_with_h2(h2_data, grouped_medals)
-
     # geat the events from the p data
     p_events = get_p_events(p_data)
-
     # store the p events in a json file
     save_p_events(p_events)
-
     # convert the cleaned data to a DataFrame
     df = convert_to_df(combined_data)
-
     # adjust the event and sports
     df = adjust_event_and_sports(df)
-
     # replace the sport names
     df = replace_sport(df)
-
     # insert the p events into the DataFrame
     df = insert_p_events(df, p_events)
-
     # convert the medal list to a DataFrame
     df = convert_medal_list_to_df(df)
-
     # remove the medal colors
     df = remove_medal_colors(df)
-
     # melt the medal data
     df = melt_medals(df)
-
     # split country and athlete
     df = split_country_athlete(df, COUNTRY_PATH)
-
     # deal with some events that tie for bronze
     bronze_df, tie_list = deal_with_ties(df)
     df = remove_bronze_ties(df, bronze_df, tie_list)
-
     # fill in the missing athlete and country
     df = fill_athlete_none(df)
-
-    # create the 100m breaststroke event
+    # create the 100m breaststroke event due to miss data
     df = create_100m_breastroke(df)
-
     # fix the kayak double event
     df = fix_kayak_double(df)
 
@@ -928,3 +920,8 @@ def test_get_p_events():
         "MEN’S KEIRIN",
         "WOMEN’S 3X3 BASKETBALL Gold: United States",
     ]
+
+
+if __name__ == "__main__":
+    df = clean_paris_data(PARIS_PATH)
+    save_data_to_csv(df, CSV_SAVE_PATH)
