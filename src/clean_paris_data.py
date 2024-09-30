@@ -5,10 +5,10 @@ import json
 import pandas as pd
 import regex as re
 
-PARIS_PATH = "./data/raw/paris2024_results.json"
-COUNTRY_PATH = "./data/raw/country_codes.csv"
-SPORTS_PATH = "./data/raw/sports_list.json"
-CSV_SAVE_PATH = "./data/processed/paris2024_results.csv"
+PARIS_PATH = "../data/raw/paris2024_results.json"
+COUNTRY_PATH = "../data/raw/country_codes.csv"
+SPORTS_PATH = "../data/raw/sports_list.json"
+CSV_SAVE_PATH = "../data/processed/paris2024_results.csv"
 
 
 def save_data_to_csv(df: pd.DataFrame, path: str):
@@ -348,15 +348,22 @@ def group_medals(data: dict) -> list:
 
 
 def combine_grouped_medals_with_h2(h2_data: list, grouped_medals: list) -> list:
+    """Takes in a list of h2 Sports names and a list of medals with athlete names.
+    Combines the two lists into a single list of lists.
+    This allows to get the correct sport associated with the results.
+    """
+    try:
+        h2_data.pop(251)
+        h2_data.pop(254)
+        h2_data.insert(256, "MEN’S 90KG")
+        h2_data.insert(276, "MEN’S 4X200M FREESTYLE RELAY")
+        h2_data.insert(172, "SWIMMING")
+        h2_data.pop(173)
+        h2_data.pop(251)
+        h2_data.insert(251, "CYCLING")
 
-    h2_data.pop(251)
-    h2_data.pop(254)
-    h2_data.insert(256, "MEN’S 90KG")
-    h2_data.insert(276, "MEN’S 4X200M FREESTYLE RELAY")
-    h2_data.insert(172, "SWIMMING")
-    h2_data.pop(173)
-    h2_data.pop(251)
-    h2_data.insert(251, "CYCLING")
+    except:
+        pass
 
     combined_data = [[x, y] for x, y in zip(h2_data, grouped_medals)]
 
@@ -919,6 +926,86 @@ def test_get_p_events():
         "WOMEN’S",
         "MEN’S KEIRIN",
         "WOMEN’S 3X3 BASKETBALL Gold: United States",
+    ]
+
+
+def test_group_medals():
+    """Test that the group_medals function returns the
+    medals and athlete data in a list of lists"""
+
+    test_data = {
+        "h2": ["TRACK AND FIELD", "BASKETBALL", "CYCLING"],
+        "p": [
+            "WOMEN’S MARATHON",
+            "Gold: Netherlands (Sifan Hassan)",
+            "Silver: Ethiopia (Tigst Assefa)",
+            "Bronze: Kenya (Hellen Obiri)",
+            "WOMEN’S",
+            "Gold: United States",
+            "Silver: France",
+            "Bronze: Australia",
+            "MEN’S KEIRIN",
+            "Gold: Netherlands (Harrie Lavreysen)",
+            "Silver: Australia (Matthew Richardson)",
+            "Bronze: Australia (Matthew Glaetzer",
+        ],
+    }
+
+    medals = group_medals(test_data)
+    assert medals == [
+        [
+            "Gold: Netherlands (Sifan Hassan)",
+            "Silver: Ethiopia (Tigst Assefa)",
+            "Bronze: Kenya (Hellen Obiri)",
+        ],
+        ["Gold: United States", "Silver: France", "Bronze: Australia"],
+        [
+            "Gold: Netherlands (Harrie Lavreysen)",
+            "Silver: Australia (Matthew Richardson)",
+            "Bronze: Australia (Matthew Glaetzer",
+        ],
+    ]
+
+
+def test_combine_group_medals_with_h2():
+    """Test that the combine_grouped_medals_with_h2 function
+    combines the Sport with the medal results"""
+
+    h2_data = ["TRACK AND FIELD", "BASKETBALL", "CYCLING"]
+
+    grouped_medals = [
+        [
+            "Gold: Netherlands (Sifan Hassan)",
+            "Silver: Ethiopia (Tigst Assefa)",
+            "Bronze: Kenya (Hellen Obiri)",
+        ],
+        ["Gold: United States", "Silver: France", "Bronze: Australia"],
+        [
+            "Gold: Netherlands (Harrie Lavreysen)",
+            "Silver: Australia (Matthew Richardson)",
+            "Bronze: Australia (Matthew Glaetzer",
+        ],
+    ]
+
+    combined_data = combine_grouped_medals_with_h2(h2_data, grouped_medals)
+    assert combined_data == [
+        [
+            "TRACK AND FIELD",
+            [
+                "Gold: Netherlands (Sifan Hassan)",
+                "Silver: Ethiopia (Tigst Assefa)",
+                "Bronze: Kenya (Hellen Obiri)",
+            ],
+        ],
+        ["BASKETBALL", ["Gold: United States", "Silver: France", "Bronze: Australia"]],
+        [
+            "CYCLING",
+            [
+                "Gold: Netherlands (Harrie Lavreysen)",
+                "Silver: Australia (Matthew Richardson)",
+                "Bronze: Australia (Matthew Glaetzer",
+            ],
+        ],
     ]
 
 
