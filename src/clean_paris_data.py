@@ -1009,6 +1009,35 @@ def test_combine_group_medals_with_h2():
     ]
 
 
+def test_convert_to_df():
+    """Test that the convert_to_df function returns a DataFrame"""
+
+    test_data = [
+        [
+            "TRACK AND FIELD",
+            [
+                "Gold: Netherlands (Sifan Hassan)",
+                "Silver: Ethiopia (Tigst Assefa)",
+                "Bronze: Kenya (Hellen Obiri)",
+            ],
+        ],
+        ["BASKETBALL", ["Gold: United States", "Silver: France", "Bronze: Australia"]],
+        [
+            "CYCLING",
+            [
+                "Gold: Netherlands (Harrie Lavreysen)",
+                "Silver: Australia (Matthew Richardson)",
+                "Bronze: Australia (Matthew Glaetzer",
+            ],
+        ],
+    ]
+
+    df = convert_to_df(test_data)
+    assert type(df) == pd.DataFrame
+    assert df.shape == (3, 3)
+    assert df.columns.tolist() == ["Sport", "Medal Winners", "Event"]
+
+
 if __name__ == "__main__":
     df = clean_paris_data(PARIS_PATH)
     save_data_to_csv(df, CSV_SAVE_PATH)
