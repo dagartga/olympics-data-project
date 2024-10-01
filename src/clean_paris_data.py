@@ -71,6 +71,8 @@ def clean_paris_data(path):
     df = create_100m_breastroke(df)
     # fix the kayak double event
     df = fix_kayak_double(df)
+    # add the columns for Year, City, and Season for Paris 2024
+    df = add_paris_columns(df)
 
     return df
 
@@ -417,7 +419,7 @@ def replace_sport(df: pd.DataFrame) -> pd.DataFrame:
 
 def save_p_events(p_events: list):
     """Save the p events to a json file"""
-    file_path = "./data/raw/p_events.json"
+    file_path = "../data/raw/p_events.json"
 
     with open(file_path, "w") as file:
 
@@ -816,6 +818,22 @@ def fix_kayak_double(df: pd.DataFrame) -> pd.DataFrame:
 
     return temp_df
 
+def add_paris_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """ Add columns for Year, City, and Season.
+    This allows the data to be combined with other Olympic data
+    
+    Year: 2024
+    City: Paris
+    Season: Summer
+    """
+
+    temp_df = df.copy()
+
+    temp_df["Year"] = 2024
+    temp_df["City"] = "Paris"
+    temp_df["Season"] = "Summer"
+
+    return temp_df
 
 ############################################
 # TESTING
