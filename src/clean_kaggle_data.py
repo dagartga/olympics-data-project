@@ -4,7 +4,7 @@ import pandas as pd
 KAGGLE_DATA_PATH = "data/raw/athlete_events.csv"
 CLEAN_DATA_PATH = "data/processed/kaggle1896_to_2016_results.csv"
 FINAL_COLUMNS = [
-    "Name",
+    "Athlete",
     "Country",
     "NOC",
     "Season",
@@ -32,8 +32,10 @@ def remove_winter_olympics(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def remove_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Remove unnecessary columns and rename Team as Country."""
+    """Remove unnecessary columns and rename Team as Country
+    and Name as Athlete."""
     df = df.rename(columns={"Team": "Country"})
+    df = df.rename(columns={"Name": "Athlete"})
     return df[FINAL_COLUMNS]
 
 

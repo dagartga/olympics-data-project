@@ -5,10 +5,11 @@ import json
 import pandas as pd
 import regex as re
 
-PARIS_PATH = "../data/raw/paris2024_results.json"
-COUNTRY_PATH = "../data/raw/country_codes.csv"
-SPORTS_PATH = "../data/raw/sports_list.json"
-CSV_SAVE_PATH = "../data/processed/paris2024_results.csv"
+PARIS_PATH = "./data/raw/paris2024_results.json"
+COUNTRY_PATH = "./data/raw/country_codes.csv"
+SPORTS_PATH = "./data/raw/sports_list.json"
+CSV_SAVE_PATH = "./data/processed/paris2024_results.csv"
+NOC_PATH = "./data/raw/noc_regions.csv"
 
 
 def save_data_to_csv(df: pd.DataFrame, path: str):
@@ -73,6 +74,10 @@ def clean_paris_data(path):
     df = fix_kayak_double(df)
     # add the columns for Year, City, and Season for Paris 2024
     df = add_paris_columns(df)
+    # replace some country names
+    df = replace_some_country_names(df)
+    # assign the NOC to each country
+    df = assign_noc_to_paris(df)
 
     return df
 
@@ -419,7 +424,7 @@ def replace_sport(df: pd.DataFrame) -> pd.DataFrame:
 
 def save_p_events(p_events: list):
     """Save the p events to a json file"""
-    file_path = "../data/raw/p_events.json"
+    file_path = "./data/raw/p_events.json"
 
     with open(file_path, "w") as file:
 
@@ -751,6 +756,8 @@ def create_100m_breastroke(df: pd.DataFrame) -> pd.DataFrame:
     """Manually add the athlete and country for the
     MEN'S 100M BREASTSTROKE event"""
 
+    temp_df = df.copy()
+
     # create a dictionary of the data
     data = [
         {
@@ -777,8 +784,7 @@ def create_100m_breastroke(df: pd.DataFrame) -> pd.DataFrame:
     ]
 
     # create a DataFrame from the dictionary
-    breaststroke_df = pd.concat([df, pd.DataFrame(data)], ignore_index=True)
-
+    breaststroke_df = pd.DataFrame(data)
     # concatenate the two DataFrames
     temp_df = pd.concat([df, breaststroke_df], ignore_index=True)
 
@@ -818,10 +824,11 @@ def fix_kayak_double(df: pd.DataFrame) -> pd.DataFrame:
 
     return temp_df
 
+
 def add_paris_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """ Add columns for Year, City, and Season.
+    """Add columns for Year, City, and Season.
     This allows the data to be combined with other Olympic data
-    
+
     Year: 2024
     City: Paris
     Season: Summer
@@ -834,6 +841,46 @@ def add_paris_columns(df: pd.DataFrame) -> pd.DataFrame:
     temp_df["Season"] = "Summer"
 
     return temp_df
+
+
+def replace_some_country_names(df: pd.DataFrame) -> pd.DataFrame:
+    """Replace St. Lucia with Saint Lucia and Britain with Great Britain
+    and Albany with Albania and Tadzhikistan with Tajikistan.
+    Replace AIN with Refugee Olympic Team"""
+
+    temp_df = df.copy()
+
+    temp_df["Country"] = temp_df["Country"].replace(
+        {
+            "St. Lucia": "Saint Lucia",
+            "Britain": "Great Britain",
+            "Albany": "Albania",
+            "Tadzhikistan": "Tajikistan",
+            "AIN": "Refugee Olympic Team",
+        }
+    )
+
+    return temp_df
+
+
+def assign_noc_to_paris(df: pd.DataFrame) -> pd.DataFrame:
+    """Match the NOC with the Country name for the Paris 2024 dataframe."""
+
+    # load the NOC data
+    noc_df = pd.read_csv(NOC_PATH)
+    noc_df = noc_df.drop_duplicates(subset="region")
+
+    # rename region column to Country
+    noc_df.rename(columns={"region": "Country"}, inplace=True)
+
+    # merge the dataframes
+    final_df = pd.merge(df, noc_df[["NOC", "Country"]], on="Country", how="left")
+
+    # fix Great Britain NOC
+    final_df.loc[final_df["Country"] == "Great Britain", "NOC"] = "GBR"
+
+    return final_df
+
 
 ############################################
 # TESTING
