@@ -5,7 +5,7 @@ KAGGLE_DATA_PATH = "data/raw/athlete_events.csv"
 CLEAN_DATA_PATH = "data/processed/kaggle1896_to_2016_results.csv"
 FINAL_COLUMNS = [
     "Name",
-    "Team",
+    "Country",
     "NOC",
     "Season",
     "Year",
@@ -32,13 +32,15 @@ def remove_winter_olympics(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def remove_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Remove unnecessary columns."""
+    """Remove unnecessary columns and rename Team as Country."""
+    df = df.rename(columns={"Team": "Country"})
     return df[FINAL_COLUMNS]
 
+
 def remove_hyphen_numbers(df: pd.DataFrame) -> pd.DataFrame:
-    """Remove Team names that end in -1, -2, -3."""
+    """Remove Country names that end in -1, -2, -3."""
     # use regex to remove any Team names that end in -1, -2, -3
-    df["Team"] = df["Team"].str.replace(r"-\d", "", regex=True)
+    df["Country"] = df["Country"].str.replace(r"-\d", "", regex=True)
     return df
 
 
@@ -80,7 +82,7 @@ def test_final_columns():
     assert (
         df.columns.tolist() == FINAL_COLUMNS
     ), f"Expected columns {FINAL_COLUMNS} but got {df.columns.tolist()}"
-    
+
 
 def test_remove_hyphen_numbers():
     df = import_data(KAGGLE_DATA_PATH)
@@ -88,8 +90,12 @@ def test_remove_hyphen_numbers():
     df = remove_winter_olympics(df)
     df = remove_columns(df)
     df = remove_hyphen_numbers(df)
-    assert "United States-1" not in df["Team"].values, "Team names still contain -1"
-    assert not df["Team"].str.contains(r"-\d").any(), "Team names still contain hyphen numbers"
+    assert (
+        "United States-1" not in df["Country"].values
+    ), "Country names still contain -1"
+    assert (
+        not df["Country"].str.contains(r"-\d").any()
+    ), "Country names still contain hyphen numbers"
 
 
 if __name__ == "__main__":
@@ -101,4 +107,3 @@ if __name__ == "__main__":
     df = remove_hyphen_numbers(df)
     save_data(df, CLEAN_DATA_PATH)
     print(f"Kaggle Olympic (1896-2016) data saved to {CLEAN_DATA_PATH}")
-
