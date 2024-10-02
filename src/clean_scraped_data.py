@@ -8,9 +8,9 @@ import json
 import regex as re
 
 
-KAGGLE_OLYMPICS = "../data/raw/olympics_1896_2016_data.csv"
-TOKYO_2020 = "../data/raw/tokyo2020_medals.json"
-PARIS_2024 = "../data/raw/paris2024_medals.json"
+KAGGLE_OLYMPICS = "./data/raw/olympics_1896_2016_data.csv"
+TOKYO_2020 = "./data/raw/tokyo2020_medals.json"
+PARIS_2024 = "./data/raw/paris2024_medals.json"
 NOC_PATH = "./data/raw/noc_regions.csv"
 
 TOKYO_YEAR = "2020"
@@ -413,6 +413,4 @@ if __name__ == "__main__":
     cleaned_final_tokyo_df = assign_country_to_tokyo(cleaned_final_tokyo_df)
 
     # save the final dataframe
-    cleaned_final_tokyo_df.to_csv(
-        "../data/processed/tokyo2020_results.csv", index=False
-    )
+    cleaned_final_tokyo_df.to_csv("./data/processed/tokyo2020_results.csv", index=False)
