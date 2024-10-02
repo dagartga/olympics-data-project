@@ -11,7 +11,7 @@ import regex as re
 KAGGLE_OLYMPICS = "../data/raw/olympics_1896_2016_data.csv"
 TOKYO_2020 = "../data/raw/tokyo2020_medals.json"
 PARIS_2024 = "../data/raw/paris2024_medals.json"
-NOC_PATH = "../data/raw/noc_regions.csv"
+NOC_PATH = "./data/raw/noc_regions.csv"
 
 TOKYO_YEAR = "2020"
 TOKYO_SEASON = "Summer"
@@ -66,36 +66,19 @@ def create_event_df(df_row: pd.Series) -> pd.DataFrame:
     medal_tuple = split_medals(results)
     gold, silver, bronze = medal_tuple[0], medal_tuple[1], medal_tuple[2]
 
-    # create a dataframe for the medals and athletes
-    final_event_df = pd.DataFrame(columns=FINAL_COLUMNS)
-    # iterate through the medals and athletes
-    for i, medal in enumerate(MEDALS):
-        if medal == "Gold":
-            athlete = gold
-            noc = gold
-        elif medal == "Silver":
-            athlete = silver
-            noc = silver
-        else:
-            athlete = bronze
-            noc = bronze
+    # create a list to hold each row as a list of values
+    rows = []
 
-        final_event_df = final_event_df.append(
-            pd.Series(
-                [
-                    athlete,
-                    noc,
-                    TOKYO_YEAR,
-                    TOKYO_SEASON,
-                    TOKYO_CITY,
-                    sport,
-                    event,
-                    medal,
-                ],
-                index=FINAL_COLUMNS,
-            ),
-            ignore_index=True,
+    # iterate through the medals and athletes
+    for medal, athlete, noc in zip(
+        MEDALS, [gold, silver, bronze], [gold, silver, bronze]
+    ):
+        rows.append(
+            [athlete, noc, TOKYO_YEAR, TOKYO_SEASON, TOKYO_CITY, sport, event, medal]
         )
+
+    # create a DataFrame from the collected rows
+    final_event_df = pd.DataFrame(rows, columns=FINAL_COLUMNS)
 
     return final_event_df
 
@@ -227,7 +210,7 @@ def remove_ties(df):
         temp_df = df.loc[i].copy()
         temp_df = temp_df.to_frame().T
         # make a duplicate row
-        temp_df = temp_df.append(temp_df, ignore_index=True)
+        temp_df = pd.concat([temp_df, temp_df], ignore_index=True)
         # take the first athlete and country and put it in the first row
         temp_df.loc[0, "Athlete"] = athletes_and_countries[0]
         temp_df.loc[0, "NOC"] = athletes_and_countries[2]
@@ -237,7 +220,7 @@ def remove_ties(df):
         temp_df.loc[1, "NOC"] = athletes_and_countries[3]
         temp_df.loc[1, "Medal"] = temp_df.loc[1, "Medal"] + " (Tie)"
         # append the new rows
-        df = df.append(temp_df, ignore_index=True)
+        df = pd.concat([df, temp_df], ignore_index=True)
 
     # remove the tied rows
     clean_ties_df = df.drop(ties)
@@ -415,7 +398,7 @@ if __name__ == "__main__":
     # from the results column and add them to the final dataframe
     for i, row in tokyo_df.iterrows():
         temp_df = create_event_df(row)
-        expanded_tokyo_df = expanded_tokyo_df.append(temp_df, ignore_index=True)
+        expanded_tokyo_df = pd.concat([expanded_tokyo_df, temp_df], ignore_index=True)
 
     # split the athlete and country values into the correct columns
     final_tokyo_df = split_athelete_country(expanded_tokyo_df)
