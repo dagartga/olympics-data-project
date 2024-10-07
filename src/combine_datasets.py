@@ -5,6 +5,8 @@ TOKYO_PATH = "../data/processed/tokyo2020_results.csv"
 PARIS_PATH = "../data/processed/paris2024_results.csv"
 KAGGLE_PATH = "../data/processed/kaggle1896_to_2016_results.csv"
 
+SAVE_PATH = "../data/processed/all_olympics_data.csv"
+
 FINAL_COLUMNS = [
     "Athlete",
     "Country",
@@ -17,6 +19,11 @@ FINAL_COLUMNS = [
     "Medal",
 ]
 
+def save_combined_data() -> None:
+    """Save the combined paris, tokyo, and kaggle datasets to 
+    a csv file."""
+    combined_data = combine_datasets()
+    combined_data.to_csv(SAVE_PATH, index=False)
 
 def combine_datasets() -> pd.DataFrame:
     """Concatenate the three datasets into one."""
@@ -115,3 +122,4 @@ def test_combine_datasets():
         == paris_data.shape[0] + tokyo_data.shape[0] + kaggle_data.shape[0]
     )
     assert combined_data.columns.tolist() == FINAL_COLUMNS
+
