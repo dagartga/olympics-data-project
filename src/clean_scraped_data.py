@@ -248,6 +248,11 @@ def assign_country_to_tokyo(df: pd.DataFrame) -> pd.DataFrame:
 
     return final_df
 
+def fill_na_athlete(df: pd.DataFrame) -> pd.DataFrame:
+    """Fill the None values in the Athlete column with the Country value."""
+    df["Athlete"] = df["Athlete"].fillna(df["Country"])
+    return df
+
 
 ##################################################
 # Testing
@@ -255,7 +260,6 @@ def assign_country_to_tokyo(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def test_simple_split_medals():
-    # Test the split_medals function
     results = ["USA", "CAN", "GBR"]
     assert split_medals(results) == (["USA"], ["CAN"], ["GBR"])
 
@@ -369,6 +373,27 @@ def test_assign_country_to_tokyo():
     assert country_df["Country"].values[2] == "Russia"
 
 
+def test_fill_na_athlete():
+    df = pd.DataFrame(
+        {
+            "Athlete": [None, None, None],
+            "NOC": ["USA", "ITA", "AUS"],
+            "Country": ["United States", "Italy", "Australia"],
+            "Year": [2020, 2020, 2020],
+            "Season": ["Summer", "Summer", "Summer"],
+            "City": ["Tokyo", "Tokyo", "Tokyo"],
+            "Sport": ["Swimming", "Swimming", "Swimming"],
+            "Event": ["4X100M Freestyle Relay", "4X100M Freestyle Relay", "4X100M Freestyle Relay"],
+        }
+    )
+
+    filled_df = fill_na_athlete(df)
+
+    assert filled_df["Athlete"].isna().sum() == 0
+    assert filled_df["Athlete"].values[0] == "United States"
+    assert filled_df["Athlete"].values[1] == "Italy"
+    assert filled_df["Athlete"].values[2] == "Australia"
+
 if __name__ == "__main__":
 
     # Load the json file
@@ -411,6 +436,9 @@ if __name__ == "__main__":
 
     # assign the country to the NOC
     cleaned_final_tokyo_df = assign_country_to_tokyo(cleaned_final_tokyo_df)
+
+    # fill the None values in the Athlete column for tokyo
+    cleaned_final_tokyo_df = fill_na_athlete(cleaned_final_tokyo_df)
 
     # save the final dataframe
     cleaned_final_tokyo_df.to_csv("./data/processed/tokyo2020_results.csv", index=False)
