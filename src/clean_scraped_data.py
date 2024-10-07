@@ -10,7 +10,6 @@ import regex as re
 
 KAGGLE_OLYMPICS = "./data/raw/olympics_1896_2016_data.csv"
 TOKYO_2020 = "./data/raw/tokyo2020_medals.json"
-PARIS_2024 = "./data/raw/paris2024_medals.json"
 NOC_PATH = "./data/raw/noc_regions.csv"
 
 TOKYO_YEAR = "2020"
