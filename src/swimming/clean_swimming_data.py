@@ -31,10 +31,34 @@ def standardize_event_names(swimming_data: pd.DataFrame) -> pd.DataFrame:
     # remove swimming from the event name
     swimming_data["Event"] = swimming_data["Event"].str.replace("swimming ", "")
     swimming_data["Event"] = swimming_data["Event"].str.replace("swimming", "")
+    # replace the multiplication symbol with x
+    swimming_data["Event"] = swimming_data["Event"].str.replace("×", "x")
     # remove the space between 4 x 100m
     swimming_data["Event"] = swimming_data["Event"].str.replace("4 x 100","4x100")
     # remove the space between 4 x 200m
     swimming_data["Event"] = swimming_data["Event"].str.replace("4 x 200","4x200")
+    # remove any commas
+    swimming_data["Event"] = swimming_data["Event"].str.replace(",", "")    
+    # remove any whitespace
+    swimming_data["Event"] = swimming_data["Event"].str.strip()
+    
+    return swimming_data
+
+def assign_gender(swimming_data: pd.DataFrame) -> pd.DataFrame:
+    """Assign the gender category to the swimming data. 
+    Extract the string of men or women or mixed from the event name and assign
+    it to a new column called Category."""
+
+    # check for men or women or mixed in the event name
+    swimming_data["Category"] = swimming_data["Event"].str.extract(r"(men|women|mixed)")
+    # remove women or women's or any variation of punctionation
+    swimming_data["Event"] = swimming_data["Event"].str.replace(r"women(?:'s|`s)?", "")
+        # remove mixed from event name
+    swimming_data["Event"] = swimming_data["Event"].str.replace(r"mixed", "")
+        # remove men or men's or any variation of punctionation
+    swimming_data["Event"] = swimming_data["Event"].str.replace(r"men(?:'s|`s)?", "")
+    # remove whitespace
+    swimming_data["Event"] = swimming_data["Event"].str.strip()
     
     return swimming_data
 
@@ -58,3 +82,10 @@ def test_standardize_event_names():
     assert swimming_data["Event"].str.contains("4 x 200").sum() == 0
     assert swimming_data["Event"].str.contains("4 x 100 m").sum() == 0
     assert swimming_data["Event"].str.contains("4 x 200 m").sum() == 0
+    assert swimming_data['Event'].str.contains("×").sum() == 0
+    
+def test_assign_gender():
+    swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
+    swimming_data = standardize_event_names(swimming_data)
+    swimming_data = assign_gender(swimming_data)
+    assert swimming_data["Category"].nunique() == 3
