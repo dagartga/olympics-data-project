@@ -102,12 +102,14 @@ def test_import_kaggle_data():
     ]
 
 
-def test_concatenate_datasets():
+def test_combine_datasets():
     paris_data = import_paris_data(PARIS_PATH)
     tokyo_data = import_tokyo_data(TOKYO_PATH)
     kaggle_data = import_kaggle_data(KAGGLE_PATH)
-    combined_data = concatenate_datasets(tokyo_data, paris_data, kaggle_data)
+    combined_data = combine_datasets()
+    # check the column number is correct
     assert combined_data.shape[1] == 9
+    # ensure the combined rows equal the sum of the individual datasets
     assert (
         combined_data.shape[0]
         == paris_data.shape[0] + tokyo_data.shape[0] + kaggle_data.shape[0]
