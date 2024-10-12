@@ -87,5 +87,22 @@ def test_standardize_event_names():
 def test_assign_gender():
     swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
     swimming_data = standardize_event_names(swimming_data)
-    swimming_data = assign_gender(swimming_data)
-    assert swimming_data["Category"].nunique() == 3
+    # check tokyo data naming conventions
+    tokyo_swim = swimming_data[swimming_data["Year"] == 2020]
+    tokyo_swim = assign_gender(tokyo_swim)
+    assert tokyo_swim["Category"].isna().sum() == 0
+    assert tokyo_swim["Category"].nunique() == 3
+    # check paris data naming conventions
+    paris_swim = swimming_data[swimming_data["Year"] == 2024]
+    paris_swim = assign_gender(paris_swim)
+    assert paris_swim["Category"].isna().sum() == 0
+    assert paris_swim["Category"].nunique() == 3
+    # check all others
+    other_swim = swimming_data[(swimming_data["Year"] != 2020) & (swimming_data["Year"] != 2024)]
+    other_swim = assign_gender(other_swim)
+    assert other_swim["Category"].isna().sum() == 0
+    # mixed relay were not in the olympics before 2020
+    assert other_swim["Category"].nunique() == 2
+    
+
+    
