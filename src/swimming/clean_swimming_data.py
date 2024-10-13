@@ -1,6 +1,17 @@
 import pandas as pd
+from pathlib import Path
 
-OLYMPICS_DATA_PATH = "../../data/processed/all_olympics_data.csv"
+# Get the current script's directory
+base_dir = Path(__file__).parent
+# convert the path to the project directory
+project_dir = base_dir.parent.parent
+
+# Construct the path to the all olympics data csv file
+OLYMPICS_DATA_PATH = project_dir / 'data' / 'processed' / 'all_olympics_data.csv'
+# Construct the path to store the cleaned swimming data
+SWIMMING_DATA_PATH = project_dir / 'data' / 'processed' / 'swimming' / 'swimming_results.csv'
+
+
 
 def extract_swimming_data(file_path: str) -> pd.DataFrame:
     """Extracts swimming data from the all olympics data csv file.
@@ -51,6 +62,8 @@ def assign_gender(swimming_data: pd.DataFrame) -> pd.DataFrame:
 
     # check for men or women or mixed in the event name
     swimming_data["Category"] = swimming_data["Event"].str.extract(r"(men|women|mixed)")
+    # capitalize the first letter
+    swimming_data["Category"] = swimming_data["Category"].str.capitalize()
     # remove women or women's or any variation of punctionation
     swimming_data["Event"] = swimming_data["Event"].str.replace(r"women(?:'s|`s)?", "")
         # remove mixed from event name
@@ -106,3 +119,9 @@ def test_assign_gender():
     
 
     
+if __name__ == "__main__":
+    swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
+    swimming_data = standardize_event_names(swimming_data)
+    swimming_data = assign_gender(swimming_data)
+    # save the data
+    swimming_data.to_csv(SWIMMING_DATA_PATH, index=False)
