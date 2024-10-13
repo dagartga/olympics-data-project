@@ -6,11 +6,18 @@
 import pandas as pd
 import json
 import regex as re
+from pathlib import Path
 
+# Get the current script's directory
+base_dir = Path(__file__).parent
+# convert the path to the project directory
+project_dir = base_dir.parent
 
-KAGGLE_OLYMPICS = "./data/raw/olympics_1896_2016_data.csv"
-TOKYO_2020 = "./data/raw/tokyo2020_medals.json"
-NOC_PATH = "./data/raw/noc_regions.csv"
+# Construct the path to the necessary files
+KAGGLE_OLYMPICS = project_dir / 'data' / 'raw' / 'olympics_1896_2016_data.csv'
+TOKYO_2020 = project_dir / 'data' / 'raw' / 'tokyo2020_medals.json'
+NOC_PATH = project_dir / 'data' / 'raw' / 'noc_regions.csv'
+CSV_SAVE_PATH = project_dir / 'data' / 'processed' / 'tokyo2020_results.csv'
 
 TOKYO_YEAR = "2020"
 TOKYO_SEASON = "Summer"
@@ -440,4 +447,4 @@ if __name__ == "__main__":
     cleaned_final_tokyo_df = fill_na_athlete(cleaned_final_tokyo_df)
 
     # save the final dataframe
-    cleaned_final_tokyo_df.to_csv("./data/processed/tokyo2020_results.csv", index=False)
+    cleaned_final_tokyo_df.to_csv(CSV_SAVE_PATH, index=False)
