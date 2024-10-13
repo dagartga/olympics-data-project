@@ -4,12 +4,20 @@
 import json
 import pandas as pd
 import regex as re
+from pathlib import Path
 
-PARIS_PATH = "./data/raw/paris2024_results.json"
-COUNTRY_PATH = "./data/raw/country_codes.csv"
-SPORTS_PATH = "./data/raw/sports_list.json"
-CSV_SAVE_PATH = "./data/processed/paris2024_results.csv"
-NOC_PATH = "./data/raw/noc_regions.csv"
+# Get the current script's directory
+base_dir = Path(__file__).parent
+# convert the path to the project directory
+project_dir = base_dir.parent
+
+# Construct the path to the necessary files
+PARIS_PATH = project_dir / 'data' / 'raw' / 'paris2024_results.json'
+COUNTRY_PATH = project_dir / 'data' / 'raw' / 'country_codes.csv'
+SPORTS_PATH = project_dir / 'data' / 'raw' / 'sports_list.json'
+CSV_SAVE_PATH = project_dir / 'data' / 'processed' / 'paris2024_results.csv'
+NOC_PATH = project_dir / 'data' / 'raw' / 'noc_regions.csv'
+
 
 
 def save_data_to_csv(df: pd.DataFrame, path: str):
