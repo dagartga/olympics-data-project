@@ -1,11 +1,17 @@
 import pandas as pd
+from pathlib import Path
 
+# Get the current script's directory
+base_dir = Path(__file__).parent
+# convert the path to the project directory
+project_dir = base_dir.parent
 
-TOKYO_PATH = "../data/processed/tokyo2020_results.csv"
-PARIS_PATH = "../data/processed/paris2024_results.csv"
-KAGGLE_PATH = "../data/processed/kaggle1896_to_2016_results.csv"
+# Construct the path to the necessary files
+TOKYO_PATH = project_dir / "data" / "processed" / "tokyo2020_results.csv"
+PARIS_PATH = project_dir / "data" / "processed" / "paris2024_results.csv"
+KAGGLE_PATH = project_dir / "data" / "processed" / "kaggle1896_to_2016_results.csv"
+SAVE_PATH = project_dir / "data" / "processed" / "all_olympics_data.csv"
 
-SAVE_PATH = "../data/processed/all_olympics_data.csv"
 
 FINAL_COLUMNS = [
     "Athlete",
