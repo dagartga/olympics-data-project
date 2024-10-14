@@ -15,10 +15,10 @@ base_dir = Path(__file__).parent
 project_dir = base_dir.parent
 
 # Construct the path to the necessary files
-KAGGLE_OLYMPICS = project_dir / 'data' / 'raw' / 'olympics_1896_2016_data.csv'
-TOKYO_2020 = project_dir / 'data' / 'raw' / 'tokyo2020_medals.json'
-NOC_PATH = project_dir / 'data' / 'raw' / 'noc_regions.csv'
-CSV_SAVE_PATH = project_dir / 'data' / 'processed' / 'tokyo2020_results.csv'
+KAGGLE_OLYMPICS = project_dir / "data" / "raw" / "olympics_1896_2016_data.csv"
+TOKYO_2020 = project_dir / "data" / "raw" / "tokyo2020_medals.json"
+NOC_PATH = project_dir / "data" / "raw" / "noc_regions.csv"
+CSV_SAVE_PATH = project_dir / "data" / "processed" / "tokyo2020_results.csv"
 
 TOKYO_YEAR = "2020"
 TOKYO_SEASON = "Summer"
@@ -255,6 +255,7 @@ def assign_country_to_tokyo(df: pd.DataFrame) -> pd.DataFrame:
 
     return final_df
 
+
 def fill_na_athlete(df: pd.DataFrame) -> pd.DataFrame:
     """Fill the None values in the Athlete column with the Country value."""
     df["Athlete"] = df["Athlete"].fillna(df["Country"])
@@ -390,7 +391,11 @@ def test_fill_na_athlete():
             "Season": ["Summer", "Summer", "Summer"],
             "City": ["Tokyo", "Tokyo", "Tokyo"],
             "Sport": ["Swimming", "Swimming", "Swimming"],
-            "Event": ["4X100M Freestyle Relay", "4X100M Freestyle Relay", "4X100M Freestyle Relay"],
+            "Event": [
+                "4X100M Freestyle Relay",
+                "4X100M Freestyle Relay",
+                "4X100M Freestyle Relay",
+            ],
         }
     )
 
@@ -401,8 +406,8 @@ def test_fill_na_athlete():
     assert filled_df["Athlete"].values[1] == "Italy"
     assert filled_df["Athlete"].values[2] == "Australia"
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     # Load the json file
     with open(TOKYO_2020) as f:
         data_tokyo = json.load(f)

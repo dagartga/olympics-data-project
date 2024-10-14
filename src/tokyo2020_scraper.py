@@ -53,8 +53,6 @@ def get_sports_links(url):
         print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
 
 
-
-
 if __name__ == "__main__":
     # Get the sports links
     sports_links = get_sports_links(BASE_URL)

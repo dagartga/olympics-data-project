@@ -13,12 +13,11 @@ base_dir = Path(__file__).parent
 project_dir = base_dir.parent
 
 # Construct the path to the necessary files
-PARIS_PATH = project_dir / 'data' / 'raw' / 'paris2024_results.json'
-COUNTRY_PATH = project_dir / 'data' / 'raw' / 'country_codes.csv'
-SPORTS_PATH = project_dir / 'data' / 'raw' / 'sports_list.json'
-CSV_SAVE_PATH = project_dir / 'data' / 'processed' / 'paris2024_results.csv'
-NOC_PATH = project_dir / 'data' / 'raw' / 'noc_regions.csv'
-
+PARIS_PATH = project_dir / "data" / "raw" / "paris2024_results.json"
+COUNTRY_PATH = project_dir / "data" / "raw" / "country_codes.csv"
+SPORTS_PATH = project_dir / "data" / "raw" / "sports_list.json"
+CSV_SAVE_PATH = project_dir / "data" / "processed" / "paris2024_results.csv"
+NOC_PATH = project_dir / "data" / "raw" / "noc_regions.csv"
 
 
 def save_data_to_csv(df: pd.DataFrame, path: str):
@@ -198,7 +197,6 @@ def update_3x3_basketball(h2_data: list) -> list:
 
 
 def clean_swimming_relays(h2_data: list) -> list:
-
     updated_h2_data = []
 
     for i, val in enumerate(h2_data):
@@ -436,7 +434,6 @@ def save_p_events(p_events: list):
     file_path = "./data/raw/p_events.json"
 
     with open(file_path, "w") as file:
-
         json.dump(p_events, file)
 
     print(f"File saved to {file_path}")
@@ -502,7 +499,6 @@ def convert_medal_list_to_df(df: pd.DataFrame) -> pd.DataFrame:
 
     # iterate through the DataFrame
     for i, row in temp_df.iterrows():
-
         # iterate through the medals
         for medal in row["Medal Winners"]:
             # check if the medal is Gold

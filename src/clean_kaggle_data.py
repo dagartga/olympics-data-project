@@ -8,8 +8,8 @@ base_dir = Path(__file__).parent
 project_dir = base_dir.parent
 
 # Construct the path to the data csv files
-KAGGLE_DATA_PATH = project_dir / 'data' / 'raw' / 'athlete_events.csv'
-CLEAN_DATA_PATH = project_dir / 'data' / 'processed' / 'kaggle1896_to_2016_results.csv'
+KAGGLE_DATA_PATH = project_dir / "data" / "raw" / "athlete_events.csv"
+CLEAN_DATA_PATH = project_dir / "data" / "processed" / "kaggle1896_to_2016_results.csv"
 
 FINAL_COLUMNS = [
     "Athlete",

@@ -8,10 +8,11 @@ base_dir = Path(__file__).parent
 project_dir = base_dir.parent.parent
 
 # Construct the path to the all olympics data csv file
-OLYMPICS_DATA_PATH = project_dir / 'data' / 'processed' / 'all_olympics_data.csv'
+OLYMPICS_DATA_PATH = project_dir / "data" / "processed" / "all_olympics_data.csv"
 # Construct the path to store the cleaned swimming data
-SWIMMING_DATA_PATH = project_dir / 'data' / 'processed' / 'swimming' / 'swimming_results.csv'
-
+SWIMMING_DATA_PATH = (
+    project_dir / "data" / "processed" / "swimming" / "swimming_results.csv"
+)
 
 
 def extract_swimming_data(file_path: str) -> pd.DataFrame:
@@ -34,7 +35,7 @@ def extract_swimming_data(file_path: str) -> pd.DataFrame:
 
 def standardize_event_names(swimming_data: pd.DataFrame) -> pd.DataFrame:
     """Standardize the event names in the swimming data."""
-    
+
     # make lowercase and remove whitespace
     swimming_data["Event"] = swimming_data["Event"].str.lower().str.strip()
     # replace metres with m
@@ -46,18 +47,19 @@ def standardize_event_names(swimming_data: pd.DataFrame) -> pd.DataFrame:
     # replace the multiplication symbol with x
     swimming_data["Event"] = swimming_data["Event"].str.replace("×", "x")
     # remove the space between 4 x 100m
-    swimming_data["Event"] = swimming_data["Event"].str.replace("4 x 100","4x100")
+    swimming_data["Event"] = swimming_data["Event"].str.replace("4 x 100", "4x100")
     # remove the space between 4 x 200m
-    swimming_data["Event"] = swimming_data["Event"].str.replace("4 x 200","4x200")
+    swimming_data["Event"] = swimming_data["Event"].str.replace("4 x 200", "4x200")
     # remove any commas
-    swimming_data["Event"] = swimming_data["Event"].str.replace(",", "")    
+    swimming_data["Event"] = swimming_data["Event"].str.replace(",", "")
     # remove any whitespace
     swimming_data["Event"] = swimming_data["Event"].str.strip()
-    
+
     return swimming_data
 
+
 def assign_gender(swimming_data: pd.DataFrame) -> pd.DataFrame:
-    """Assign the gender category to the swimming data. 
+    """Assign the gender category to the swimming data.
     Extract the string of men or women or mixed from the event name and assign
     it to a new column called Category."""
 
@@ -67,14 +69,15 @@ def assign_gender(swimming_data: pd.DataFrame) -> pd.DataFrame:
     swimming_data["Category"] = swimming_data["Category"].str.capitalize()
     # remove women or women's or any variation of punctionation
     swimming_data["Event"] = swimming_data["Event"].str.replace(r"women(?:'s|`s)?", "")
-        # remove mixed from event name
+    # remove mixed from event name
     swimming_data["Event"] = swimming_data["Event"].str.replace(r"mixed", "")
-        # remove men or men's or any variation of punctionation
+    # remove men or men's or any variation of punctionation
     swimming_data["Event"] = swimming_data["Event"].str.replace(r"men(?:'s|`s)?", "")
     # remove whitespace
     swimming_data["Event"] = swimming_data["Event"].str.strip()
-    
+
     return swimming_data
+
 
 ###############################################
 # TESTING
@@ -87,6 +90,7 @@ def test_extract_swimming_data():
     assert swimming_data["Year"].nunique() == 31
     assert swimming_data["Season"].unique() == ["Summer"]
 
+
 def test_standardize_event_names():
     swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
     swimming_data = standardize_event_names(swimming_data)
@@ -96,8 +100,9 @@ def test_standardize_event_names():
     assert swimming_data["Event"].str.contains("4 x 200").sum() == 0
     assert swimming_data["Event"].str.contains("4 x 100 m").sum() == 0
     assert swimming_data["Event"].str.contains("4 x 200 m").sum() == 0
-    assert swimming_data['Event'].str.contains("×").sum() == 0
-    
+    assert swimming_data["Event"].str.contains("×").sum() == 0
+
+
 def test_assign_gender():
     swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
     swimming_data = standardize_event_names(swimming_data)
@@ -112,14 +117,15 @@ def test_assign_gender():
     assert paris_swim["Category"].isna().sum() == 0
     assert paris_swim["Category"].nunique() == 3
     # check all others
-    other_swim = swimming_data[(swimming_data["Year"] != 2020) & (swimming_data["Year"] != 2024)]
+    other_swim = swimming_data[
+        (swimming_data["Year"] != 2020) & (swimming_data["Year"] != 2024)
+    ]
     other_swim = assign_gender(other_swim)
     assert other_swim["Category"].isna().sum() == 0
     # mixed relay were not in the olympics before 2020
     assert other_swim["Category"].nunique() == 2
-    
 
-    
+
 if __name__ == "__main__":
     swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
     swimming_data = standardize_event_names(swimming_data)
