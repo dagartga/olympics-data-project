@@ -1,7 +1,8 @@
+import json
+
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
-import json
 
 # URL to scrape
 BASE_URL = "https://www.lemonde.fr/en/sport/jo-2024/results/"

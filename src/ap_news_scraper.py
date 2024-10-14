@@ -1,9 +1,10 @@
 # scrape the AP news website for the Paris 2024 Olympics tags
 # https://apnews.com/article/olympics-2024-medal-winners-today-b9522fd1223ae6599569ffe1ee48cc62
 
+import json
+
 import requests
 from bs4 import BeautifulSoup
-import json
 
 AP_NEWS_URL = "https://apnews.com/article/olympics-2024-medal-winners-today-b9522fd1223ae6599569ffe1ee48cc62"
 

@@ -1,6 +1,6 @@
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 
 # URL to scrape
 BASE_URL = "https://www.olympedia.org/editions/61/result"

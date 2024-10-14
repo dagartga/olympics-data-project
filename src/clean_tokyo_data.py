@@ -3,10 +3,11 @@
 # And 329 medaling events across 45 different sports in Paris 2024 and 206 countries in Paris.
 
 
-import pandas as pd
 import json
-import regex as re
 from pathlib import Path
+
+import pandas as pd
+import regex as re
 
 # Get the current script's directory
 base_dir = Path(__file__).parent

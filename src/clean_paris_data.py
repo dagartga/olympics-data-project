@@ -2,9 +2,10 @@
 # data scraped from https://apnews.com/article/olympics-2024-medal-winners-today-b9522fd1223ae6599569ffe1ee48cc62
 
 import json
+from pathlib import Path
+
 import pandas as pd
 import regex as re
-from pathlib import Path
 
 # Get the current script's directory
 base_dir = Path(__file__).parent

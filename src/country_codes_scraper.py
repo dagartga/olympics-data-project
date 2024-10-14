@@ -1,7 +1,8 @@
+import json
+
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
-import json
 
 FILE_PATH = "data/raw/country_codes.csv"
 IBAN_URL = "https://www.iban.com/country-codes"

@@ -1,5 +1,6 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 # Get the current script's directory
 base_dir = Path(__file__).parent
