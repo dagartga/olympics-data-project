@@ -894,7 +894,7 @@ def assign_noc_to_paris(df: pd.DataFrame) -> pd.DataFrame:
 
 def test_load_data():
     data = load_data(PARIS_PATH)
-    assert type(data) == dict
+    assert isinstance(data, dict)
     assert data.keys() == {"h2", "p"}
 
 
@@ -1103,7 +1103,7 @@ def test_convert_to_df():
     ]
 
     df = convert_to_df(test_data)
-    assert type(df) == pd.DataFrame
+    assert isinstance(df, pd.DataFrame)
     assert df.shape == (3, 3)
     assert df.columns.tolist() == ["Sport", "Medal Winners", "Event"]
 
