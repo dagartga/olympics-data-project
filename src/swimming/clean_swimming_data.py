@@ -87,6 +87,21 @@ def remove_apostrophes(swimming_data: pd.DataFrame) -> pd.DataFrame:
     return swimming_data
 
 
+def add_meters_to_event_name(swimming_data: pd.DataFrame) -> pd.DataFrame:
+    """Add meters (m) to the event name if it is missing in the swimming data."""
+
+    # create regex pattern to match 0 followed by sapce
+    pattern = r"0\s"
+    # check if the event name has 0 followed by space
+    mask = swimming_data["Event"].str.contains(pattern)
+    # replace 0 followed by space with 0m
+    swimming_data.loc[mask, "Event"] = swimming_data.loc[mask, "Event"].str.replace(
+        "0 ", "0m "
+    )
+
+    return swimming_data
+
+
 ###############################################
 # TESTING
 ###############################################
@@ -146,10 +161,23 @@ def test_remove_apostrophes():
     ]
 
 
+def test_add_meters_to_event_name():
+    test_df = pd.DataFrame(
+        {"Event": ["200m backstroke", "4x100 freestyle relay", "200 butterfly"]}
+    )
+    test_df = add_meters_to_event_name(test_df)
+    assert test_df["Event"].to_list() == [
+        "200m backstroke",
+        "4x100m freestyle relay",
+        "200m butterfly",
+    ]
+
+
 if __name__ == "__main__":
     swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
     swimming_data = standardize_event_names(swimming_data)
     swimming_data = assign_gender(swimming_data)
     swimming_data = remove_apostrophes(swimming_data)
+    swimming_data = add_meters_to_event_name(swimming_data)
     # save the data
     swimming_data.to_csv(SWIMMING_DATA_PATH, index=False)
