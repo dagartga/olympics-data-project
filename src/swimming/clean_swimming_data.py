@@ -102,6 +102,17 @@ def add_meters_to_event_name(swimming_data: pd.DataFrame) -> pd.DataFrame:
     return swimming_data
 
 
+def rename_10km_event(swimming_data: pd.DataFrame) -> pd.DataFrame:
+    """Rename the 10 kilom event to 10km open water in the swimming data."""
+
+    # rename the 10km event to 10k marathon
+    swimming_data["Event"] = swimming_data["Event"].str.replace(
+        "10 kilom open water", "10km open water"
+    )
+
+    return swimming_data
+
+
 ###############################################
 # TESTING
 ###############################################
@@ -169,6 +180,15 @@ def test_add_meters_to_event_name():
     assert test_df["Event"].to_list() == [
         "200m backstroke",
         "4x100m freestyle relay",
+        "200m butterfly",
+    ]
+
+
+def test_10km_open_water():
+    test_df = pd.DataFrame({"Event": ["10 kilom open water", "200m butterfly"]})
+    test_df = rename_10km_event(test_df)
+    assert test_df["Event"].to_list() == [
+        "10km open water",
         "200m butterfly",
     ]
 
