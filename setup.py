@@ -1,8 +1,10 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name="olympics_data_cleaning",
+    name="olympics_data_project",
     version="0.0.0",
-    packages=["olympics_data_cleaning"],
+    package=find_packages(),
     author="Dagart Allison",
+    author_email="dagartga@gmail.com",
+    description="A package to scrape data and clean Olympics data from the web and Kaggle.",
 )
