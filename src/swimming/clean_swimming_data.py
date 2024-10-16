@@ -79,6 +79,14 @@ def assign_gender(swimming_data: pd.DataFrame) -> pd.DataFrame:
     return swimming_data
 
 
+def remove_apostrophes(swimming_data: pd.DataFrame) -> pd.DataFrame:
+    """Remove apostrophes from the event names in the swimming data."""
+
+    swimming_data["Event"] = swimming_data["Event"].str.replace("'s ", "")
+
+    return swimming_data
+
+
 ###############################################
 # TESTING
 ###############################################
@@ -126,9 +134,22 @@ def test_assign_gender():
     assert other_swim["Category"].nunique() == 2
 
 
+def test_remove_apostrophes():
+    test_df = pd.DataFrame(
+        {"Event": ["'s 200m backstroke", "400m freestyle", "'s 200 butterfly"]}
+    )
+    test_df = remove_apostrophes(test_df)
+    assert test_df["Event"].to_list() == [
+        "200m backstroke",
+        "400m freestyle",
+        "200 butterfly",
+    ]
+
+
 if __name__ == "__main__":
     swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
     swimming_data = standardize_event_names(swimming_data)
     swimming_data = assign_gender(swimming_data)
+    swimming_data = remove_apostrophes(swimming_data)
     # save the data
     swimming_data.to_csv(SWIMMING_DATA_PATH, index=False)
