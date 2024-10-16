@@ -2,7 +2,7 @@ import sys
 import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from olympics_data_cleaning.clean_kaggle_data import (
+from olympics_data_project.data_cleaning.clean_kaggle_data import (
     import_data,
     KAGGLE_DATA_PATH,
     remove_null_medals,

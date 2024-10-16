@@ -3,8 +3,8 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import pandas as pd
-import olympics_data_cleaning.clean_paris_data as cpd
-from olympics_data_cleaning.clean_paris_data import (
+import olympics_data_project.data_cleaning.clean_paris_data as cpd
+from olympics_data_project.data_cleaning.clean_paris_data import (
     PARIS_PATH,
     COUNTRY_PATH,
     SPORTS_PATH,
