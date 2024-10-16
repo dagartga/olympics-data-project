@@ -67,14 +67,21 @@ def assign_gender(swimming_data: pd.DataFrame) -> pd.DataFrame:
     swimming_data["Category"] = swimming_data["Event"].str.extract(r"(men|women|mixed)")
     # capitalize the first letter
     swimming_data["Category"] = swimming_data["Category"].str.capitalize()
-    # remove women or women's or any variation of punctionation
-    swimming_data["Event"] = swimming_data["Event"].str.replace(r"women(?:'s|`s)?", "")
-    # remove mixed from event name
-    swimming_data["Event"] = swimming_data["Event"].str.replace(r"mixed", "")
-    # remove men or men's or any variation of punctionation
-    swimming_data["Event"] = swimming_data["Event"].str.replace(r"men(?:'s|`s)?", "")
     # remove whitespace
     swimming_data["Event"] = swimming_data["Event"].str.strip()
+
+    return swimming_data
+
+
+def remove_gender_from_event(swimming_data: pd.DataFrame) -> pd.DataFrame:
+    """Remove Men, Women, or Mixed from the event name in the swimming data."""
+
+    # replace the word women
+    swimming_data["Event"] = swimming_data["Event"].str.replace("women", "")
+    # replace the word mixed
+    swimming_data["Event"] = swimming_data["Event"].str.replace("mixed", "")
+    # replace the word men
+    swimming_data["Event"] = swimming_data["Event"].str.replace("men", "")
 
     return swimming_data
 
@@ -83,6 +90,8 @@ def remove_apostrophes(swimming_data: pd.DataFrame) -> pd.DataFrame:
     """Remove apostrophes from the event names in the swimming data."""
 
     swimming_data["Event"] = swimming_data["Event"].str.replace("'s ", "")
+    swimming_data["Event"] = swimming_data["Event"].str.replace("’s ", "")
+    swimming_data["Event"] = swimming_data["Event"].str.replace("s ", "")
 
     return swimming_data
 
@@ -107,8 +116,31 @@ def rename_10km_event(swimming_data: pd.DataFrame) -> pd.DataFrame:
 
     # rename the 10km event to 10k marathon
     swimming_data["Event"] = swimming_data["Event"].str.replace(
-        "10 kilom open water", "10km open water"
+        "10m kilom open water", "10km open water"
     )
+
+    return swimming_data
+
+
+def replace_meters_with_yards(swimming_data: pd.DataFrame) -> pd.DataFrame:
+    """If the event name has yard in it, replace the m with yds in the swimming data."""
+
+    # create a mask to check if yard in the event name
+    mask = swimming_data["Event"].str.contains("yard")
+    # replace m with yds
+    swimming_data.loc[mask, "Event"] = swimming_data.loc[mask, "Event"].str.replace(
+        "m", "yds"
+    )
+    # remove the word yard from the event name
+    swimming_data["Event"] = swimming_data["Event"].str.replace("yard ", "")
+
+    return swimming_data
+
+
+def capitalize_events(swimming_data: pd.DataFrame) -> pd.DataFrame:
+    """Capitalize the event names in the swimming data."""
+
+    swimming_data["Event"] = swimming_data["Event"].str.title()
 
     return swimming_data
 
@@ -150,6 +182,7 @@ def test_assign_gender():
     paris_swim = assign_gender(paris_swim)
     assert paris_swim["Category"].isna().sum() == 0
     assert paris_swim["Category"].nunique() == 3
+
     # check all others
     other_swim = swimming_data[
         (swimming_data["Year"] != 2020) & (swimming_data["Year"] != 2024)
@@ -158,6 +191,16 @@ def test_assign_gender():
     assert other_swim["Category"].isna().sum() == 0
     # mixed relay were not in the olympics before 2020
     assert other_swim["Category"].nunique() == 2
+
+
+def test_remove_gender_from_event():
+    test_df = pd.DataFrame(
+        {
+            "Event": ["men200m backstroke", "women100m freestyle"],
+        }
+    )
+    test_df = remove_gender_from_event(test_df)
+    assert test_df["Event"].to_list() == ["200m backstroke", "100m freestyle"]
 
 
 def test_remove_apostrophes():
@@ -185,7 +228,7 @@ def test_add_meters_to_event_name():
 
 
 def test_10km_open_water():
-    test_df = pd.DataFrame({"Event": ["10 kilom open water", "200m butterfly"]})
+    test_df = pd.DataFrame({"Event": ["10m kilom open water", "200m butterfly"]})
     test_df = rename_10km_event(test_df)
     assert test_df["Event"].to_list() == [
         "10km open water",
@@ -193,11 +236,44 @@ def test_10km_open_water():
     ]
 
 
+def test_replace_meters_with_yards():
+    test_df = pd.DataFrame(
+        {
+            "Event": [
+                "400m yard backstroke",
+                "4x100m freestyle relay",
+                "200m yard butterfly",
+            ]
+        }
+    )
+    test_df = replace_meters_with_yards(test_df)
+    assert test_df["Event"].to_list() == [
+        "400yds backstroke",
+        "4x100m freestyle relay",
+        "200yds butterfly",
+    ]
+
+
+def test_capitalize_events():
+    test_df = pd.DataFrame(
+        {"Event": ["200m backstroke", "4x100m freestyle relay", "200m butterfly"]}
+    )
+    test_df = capitalize_events(test_df)
+    assert test_df["Event"].to_list() == [
+        "200M Backstroke",
+        "4X100M Freestyle Relay",
+        "200M Butterfly",
+    ]
+
+
 if __name__ == "__main__":
     swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
     swimming_data = standardize_event_names(swimming_data)
     swimming_data = assign_gender(swimming_data)
+    swimming_data = remove_gender_from_event(swimming_data)
     swimming_data = remove_apostrophes(swimming_data)
     swimming_data = add_meters_to_event_name(swimming_data)
+    swimming_data = rename_10km_event(swimming_data)
+    swimming_data = capitalize_events(swimming_data)
     # save the data
     swimming_data.to_csv(SWIMMING_DATA_PATH, index=False)
