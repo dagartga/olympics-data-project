@@ -16,6 +16,7 @@ project_dir = base_dir.parent
 PARIS_PATH = project_dir / "data" / "raw" / "paris2024_results.json"
 COUNTRY_PATH = project_dir / "data" / "raw" / "country_codes.csv"
 SPORTS_PATH = project_dir / "data" / "raw" / "sports_list.json"
+P_EVENTS_PATH = project_dir / "data" / "raw" / "p_events.json"
 CSV_SAVE_PATH = project_dir / "data" / "processed" / "paris2024_results.csv"
 NOC_PATH = project_dir / "data" / "raw" / "noc_regions.csv"
 
@@ -431,12 +432,11 @@ def replace_sport(df: pd.DataFrame) -> pd.DataFrame:
 
 def save_p_events(p_events: list):
     """Save the p events to a json file"""
-    file_path = "./data/raw/p_events.json"
 
-    with open(file_path, "w") as file:
+    with open(P_EVENTS_PATH, "w") as file:
         json.dump(p_events, file)
 
-    print(f"File saved to {file_path}")
+    print(f"File saved to {P_EVENTS_PATH}")
 
 
 def insert_p_events(df: pd.DataFrame, p_events: list) -> pd.DataFrame:
