@@ -87,6 +87,8 @@ def clean_paris_data(path):
     df = replace_some_country_names(df)
     # assign the NOC to each country
     df = assign_noc_to_paris(df)
+    # capitalize the sport
+    df = capitalize_sport(df)
 
     return df
 
