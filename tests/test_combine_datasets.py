@@ -73,3 +73,27 @@ def test_combine_datasets():
         == paris_data.shape[0] + tokyo_data.shape[0] + kaggle_data.shape[0]
     )
     assert combined_data.columns.tolist() == FINAL_COLUMNS
+
+
+def test_format_strings():
+    data = pd.DataFrame(
+        {
+            "Athlete": ["Usain Bolt", "CALEB DRESSEL"],
+            "Country": ["Jamaica", "United States"],
+            "Season": ["Summer", "SUMMER"],
+            "City": ["Rio", "PARIS"],
+            "Year": [2016, 2024],
+            "Sport": ["Athletics", "SWIMMING"],
+            "Event": ["100m", "100m BUTTERFLY"],
+            "Medal": ["Gold", "GOLD"],
+        }
+    )
+
+    formatted_data = cd.format_the_strings(data)
+    assert formatted_data["Athlete"].tolist() == ["Usain Bolt", "Caleb Dressel"]
+    assert formatted_data["Country"].tolist() == ["Jamaica", "United States"]
+    assert formatted_data["Season"].tolist() == ["Summer", "Summer"]
+    assert formatted_data["City"].tolist() == ["Rio", "Paris"]
+    assert formatted_data["Sport"].tolist() == ["Athletics", "Swimming"]
+    assert formatted_data["Event"].tolist() == ["100M", "100M Butterfly"]
+    assert formatted_data["Medal"].tolist() == ["Gold", "Gold"]
