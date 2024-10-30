@@ -227,3 +227,29 @@ def test_convert_to_df():
     assert isinstance(df, pd.DataFrame)
     assert df.shape == (3, 3)
     assert df.columns.tolist() == ["Sport", "Medal Winners", "Event"]
+
+
+def test_capitalize_sport():
+    """Test that the capitalize_events function capitalizes the
+    first letter of each word in the Sport column"""
+
+    test_data = pd.DataFrame(
+        {
+            "Sport": ["TRACK AND FIELD", "BASKETBALL", "CYCLING"],
+            "Medal Winners": [
+                "Gold: Netherlands (Sifan Hassan)",
+                "Silver: Ethiopia (Tigst Assefa)",
+                "Bronze: Kenya (Hellen Obiri)",
+            ],
+            "Event": [
+                "women’s marathon",
+                "men’s 3x3 basketball",
+                "women’s 500m single kayak",
+            ],
+        }
+    )
+
+    df = cpd.capitalize_sport(test_data)
+    assert df["Sport"].tolist() == [
+        "Track And Field", "Basketball", "Cycling"
+    ]

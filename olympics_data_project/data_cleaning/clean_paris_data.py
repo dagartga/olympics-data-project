@@ -886,6 +886,13 @@ def assign_noc_to_paris(df: pd.DataFrame) -> pd.DataFrame:
 
     return final_df
 
+def capitalize_sport(df: pd.DataFrame) -> pd.DataFrame:
+    """Capitalize the sport name. Currently it is all uppercase"""
+    
+    df["Sport"] = df["Sport"].apply(lambda sport: sport.title())
+    
+    return df
+
 
 if __name__ == "__main__":
     df = clean_paris_data(PARIS_PATH)
