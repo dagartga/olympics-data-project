@@ -1,4 +1,5 @@
 from setuptools import setup
+import wheel
 
 setup(
     name="olympics_data_project",
