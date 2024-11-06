@@ -65,16 +65,17 @@ def import_kaggle_data(kaggle_path: str) -> pd.DataFrame:
     This contains data from 1896 to 2016."""
     return pd.read_csv(kaggle_path)
 
+
 def format_the_strings(data: pd.DataFrame) -> pd.DataFrame:
     """Format the strings in the dataframe to be title case.
     Example: "united states" -> "United States"
     """
-    
+
     columns = ["Athlete", "Country", "Season", "City", "Sport", "Event", "Medal"]
-    
+
     for column in columns:
-        data[column] = data[column].str.title() 
-    
+        data[column] = data[column].str.title()
+
     return data
 
 

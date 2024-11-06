@@ -887,7 +887,6 @@ def assign_noc_to_paris(df: pd.DataFrame) -> pd.DataFrame:
     return final_df
 
 
-
 if __name__ == "__main__":
     df = clean_paris_data(PARIS_PATH)
     save_data_to_csv(df, CSV_SAVE_PATH)
