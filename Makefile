@@ -19,7 +19,7 @@ clean:
 
 # Show help
 help:
-	@echo "make all      - Run linting, formatting, and testing"
+	@echo "make all      - Run formatting, linting, and testing"
 	@echo "make lint     - Run linting only"
 	@echo "make format   - Run formatting only"
 	@echo "make test     - Run tests only"
