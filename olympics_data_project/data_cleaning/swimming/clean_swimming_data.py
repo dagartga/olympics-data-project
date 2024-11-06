@@ -145,6 +145,53 @@ def capitalize_events(swimming_data: pd.DataFrame) -> pd.DataFrame:
     return swimming_data
 
 
+def remove_athletes_from_relay(df: pd.DataFrame) -> pd.DataFrame:
+    """Remove any individual athletes from relay results and
+    remove any duplicate rows of countries for a relay medal.
+
+    Args:
+        df (pd.DataFrame): A dataframe wtih relay in the Events column.
+
+    Returns:
+        pd.DataFrame: A dataframe with the country name in the Athlete column for relays.
+    """
+
+    # get only the relay data
+    relays_df = df[df["Event"].str.contains("Relay")]
+    # group by the relevent columns to remove individual athletes from the relay results
+    new_relays_df = (
+        relays_df.groupby(
+            [
+                "Country",
+                "NOC",
+                "Season",
+                "Year",
+                "City",
+                "Category",
+                "Sport",
+                "Event",
+                "Medal",
+            ]
+        )
+        .size()
+        .reset_index(name="Medal_Count")
+    )
+    new_relays_df.drop(columns="Medal_Count", inplace=True)
+    # create athlete column that is same as country column
+    new_relays_df["Athlete"] = new_relays_df["Country"]
+
+    # remove any rows with Relay in the Event name from the original df
+    no_relays_df = df[~df["Event"].str.contains("Relay")]
+
+    # set the no_relays_df columns to be the same as the new_relays_df columns
+    new_relays_df = new_relays_df[no_relays_df.columns]
+
+    # combine the two dataframes
+    combined_df = pd.concat([no_relays_df, new_relays_df], ignore_index=True)
+
+    return combined_df
+
+
 ###############################################
 # TESTING
 ###############################################
@@ -266,6 +313,68 @@ def test_capitalize_events():
     ]
 
 
+def test_remove_athletes_from_relay():
+
+    test_df = pd.DataFrame(
+        {
+            "Country": [
+                "United States",
+                "United States",
+                "Japan",
+                "Japan",
+                "Canada",
+                "United States",
+            ],
+            "NOC": ["USA", "USA", "JPN", "JPN", "CAN", "USA"],
+            "Season": ["Summer", "Summer", "Summer", "Summer", "Summer", "Summer"],
+            "Year": [2020, 2020, 2020, 2020, 2020, 2020],
+            "City": ["Tokyo", "Tokyo", "Tokyo", "Tokyo", "Tokyo", "Tokyo"],
+            "Category": ["Men", "Men", "Men", "Men", "Men", "Men"],
+            "Sport": [
+                "Swimming",
+                "Swimming",
+                "Swimming",
+                "Swimming",
+                "Swimming",
+                "Swimming",
+            ],
+            "Event": [
+                "4x100m Relay",
+                "4x100m Relay",
+                "4x100m Relay",
+                "4x100m Relay",
+                "4x100m Relay",
+                "100m Freestyle",
+            ],
+            "Athlete": [
+                "John Doe",
+                "Michael Phelps",
+                "Hiroki Abe",
+                "Kohei Uchimura",
+                "Brian Johns",
+                "Caeleb Dressel",
+            ],
+            "Medal": ["Gold", "Gold", "Silver", "Silver", "Bronze", "Gold"],
+        }
+    )
+
+    output_df = remove_athletes_from_relay(test_df)
+    assert output_df.shape == (4, 10)
+    assert output_df["Event"].str.contains("Relay").sum() == 3
+    assert output_df.columns.to_list() == [
+        "Athlete",
+        "Country",
+        "NOC",
+        "Season",
+        "Year",
+        "City",
+        "Sport",
+        "Event",
+        "Medal",
+        "Category",
+    ]
+
+
 if __name__ == "__main__":
     swimming_data = extract_swimming_data(OLYMPICS_DATA_PATH)
     swimming_data = standardize_event_names(swimming_data)
@@ -275,5 +384,6 @@ if __name__ == "__main__":
     swimming_data = add_meters_to_event_name(swimming_data)
     swimming_data = rename_10km_event(swimming_data)
     swimming_data = capitalize_events(swimming_data)
+    swimming_data = remove_athletes_from_relay(swimming_data)
     # save the data
     swimming_data.to_csv(SWIMMING_DATA_PATH, index=False)
