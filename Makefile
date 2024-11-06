@@ -1,5 +1,5 @@
 # Run all steps: linting, formatting, and testing
-all: lint format test
+all: format lint test
 
 # Linting target
 lint:
@@ -11,7 +11,7 @@ format:
 
 # Testing target
 test:
-	pytest *
+	pytest ./tests
 
 # Clean up unnecessary files (e.g., cache)
 clean:
