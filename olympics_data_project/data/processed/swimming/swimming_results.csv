@@ -5,8 +5,8 @@ Bruno Fratus,Brazil,BRA,Summer,2020,Tokyo,Swimming,50M Freestyle ,Bronze,Men
 Caeleb Dressel,United States,USA,Summer,2020,Tokyo,Swimming,100M Freestyle ,Gold,Men
 Kyle Chalmers,Australia,AUS,Summer,2020,Tokyo,Swimming,100M Freestyle ,Silver,Men
 Kliment Kolesnikov,Russia,ROC,Summer,2020,Tokyo,Swimming,100M Freestyle ,Bronze,Men
-Tom Dean,Uk,GBR,Summer,2020,Tokyo,Swimming,200M Freestyle ,Gold,Men
-Duncan Scott,Uk,GBR,Summer,2020,Tokyo,Swimming,200M Freestyle ,Silver,Men
+Tom Dean,Great Britain,GBR,Summer,2020,Tokyo,Swimming,200M Freestyle ,Gold,Men
+Duncan Scott,Great Britain,GBR,Summer,2020,Tokyo,Swimming,200M Freestyle ,Silver,Men
 Fernando Scheffer,Brazil,BRA,Summer,2020,Tokyo,Swimming,200M Freestyle ,Bronze,Men
 Ahmed Hafnaoui,Tunisia,TUN,Summer,2020,Tokyo,Swimming,400M Freestyle ,Gold,Men
 Jack Mcloughlin,Australia,AUS,Summer,2020,Tokyo,Swimming,400M Freestyle ,Silver,Men
@@ -22,8 +22,8 @@ Kliment Kolesnikov,Russia,ROC,Summer,2020,Tokyo,Swimming,100M Backstroke ,Silver
 Ryan Murphy,United States,USA,Summer,2020,Tokyo,Swimming,100M Backstroke ,Bronze,Men
 Yevgeny Rylov,Russia,ROC,Summer,2020,Tokyo,Swimming,200M Backstroke ,Gold,Men
 Ryan Murphy,United States,USA,Summer,2020,Tokyo,Swimming,200M Backstroke ,Silver,Men
-Luke Greenbank,Uk,GBR,Summer,2020,Tokyo,Swimming,200M Backstroke ,Bronze,Men
-Adam Peaty,Uk,GBR,Summer,2020,Tokyo,Swimming,100M Breaststroke ,Gold,Men
+Luke Greenbank,Great Britain,GBR,Summer,2020,Tokyo,Swimming,200M Backstroke ,Bronze,Men
+Adam Peaty,Great Britain,GBR,Summer,2020,Tokyo,Swimming,100M Breaststroke ,Gold,Men
 Arno Kamminga,Netherlands,NED,Summer,2020,Tokyo,Swimming,100M Breaststroke ,Silver,Men
 Nicolò Martinenghi,Italy,ITA,Summer,2020,Tokyo,Swimming,100M Breaststroke ,Bronze,Men
 Zac Stubblety-Cook,Australia,AUS,Summer,2020,Tokyo,Swimming,200M Breaststroke ,Gold,Men
@@ -36,7 +36,7 @@ Kristóf Milák,Hungary,HUN,Summer,2020,Tokyo,Swimming,200M Butterfly ,Gold,Men
 Tomoru Honda,Japan,JPN,Summer,2020,Tokyo,Swimming,200M Butterfly ,Silver,Men
 Federico Burdisso,Italy,ITA,Summer,2020,Tokyo,Swimming,200M Butterfly ,Bronze,Men
 Wang Shun,China,CHN,Summer,2020,Tokyo,Swimming,200M Individual Medley ,Gold,Men
-Duncan Scott,Uk,GBR,Summer,2020,Tokyo,Swimming,200M Individual Medley ,Silver,Men
+Duncan Scott,Great Britain,GBR,Summer,2020,Tokyo,Swimming,200M Individual Medley ,Silver,Men
 Jérémy Desplanches,Switzerland,SUI,Summer,2020,Tokyo,Swimming,200M Individual Medley ,Bronze,Men
 Chase Kalisz,United States,USA,Summer,2020,Tokyo,Swimming,400M Individual Medley ,Gold,Men
 Jay Litherland,United States,USA,Summer,2020,Tokyo,Swimming,400M Individual Medley ,Silver,Men
@@ -1717,6 +1717,9 @@ Great Britain,Great Britain,GBR,Summer,1980,Moskva,Swimming,4X100M Medley Relay,
 Great Britain,Great Britain,GBR,Summer,1984,Los Angeles,Swimming,4X200M Freestyle Relay,Bronze,Men
 Great Britain,Great Britain,GBR,Summer,2016,Rio De Janeiro,Swimming,4X100M Medley Relay,Silver,Men
 Great Britain,Great Britain,GBR,Summer,2016,Rio De Janeiro,Swimming,4X200M Freestyle Relay,Silver,Men
+Great Britain,Great Britain,GBR,Summer,2020,Tokyo,Swimming,4X100M Medley Relay ,Silver,Men
+Great Britain,Great Britain,GBR,Summer,2020,Tokyo,Swimming,4X200M Freestyle Relay ,Gold,Men
+Great Britain,Great Britain,GBR,Summer,2020,Tokyo,Swimming,4X100M Medley Relay ,Gold,Mixed
 Great Britain,Great Britain,GBR,Summer,2024,Paris,Swimming,4X200M Freestyle Relay,Gold,Men
 Hungary,Hungary,HUN,Summer,1906,Athina,Swimming,4 X 250M Freestyle Relay,Gold,Men
 Hungary,Hungary,HUN,Summer,1908,London,Swimming,4X200M Freestyle Relay,Silver,Men
@@ -1787,9 +1790,6 @@ Sweden,Sweden,SWE,Summer,1984,Los Angeles,Swimming,4X100M Freestyle Relay,Bronze
 Sweden,Sweden,SWE,Summer,1992,Barcelona,Swimming,4X200M Freestyle Relay,Silver,Men
 Sweden,Sweden,SWE,Summer,1996,Atlanta,Swimming,4X200M Freestyle Relay,Silver,Men
 Sweden,Sweden,SWE,Summer,2000,Sydney,Swimming,4X100M Freestyle Relay,Bronze,Women
-Uk,Uk,GBR,Summer,2020,Tokyo,Swimming,4X100M Medley Relay ,Silver,Men
-Uk,Uk,GBR,Summer,2020,Tokyo,Swimming,4X200M Freestyle Relay ,Gold,Men
-Uk,Uk,GBR,Summer,2020,Tokyo,Swimming,4X100M Medley Relay ,Gold,Mixed
 Unified Team,Unified Team,EUN,Summer,1992,Barcelona,Swimming,4X100M Freestyle Relay,Silver,Men
 Unified Team,Unified Team,EUN,Summer,1992,Barcelona,Swimming,4X100M Medley Relay,Silver,Men
 Unified Team,Unified Team,EUN,Summer,1992,Barcelona,Swimming,4X200M Freestyle Relay,Gold,Men

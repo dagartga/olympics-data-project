@@ -307,5 +307,10 @@ if __name__ == "__main__":
     # fill the None values in the Athlete column for tokyo
     cleaned_final_tokyo_df = fill_na_athlete(cleaned_final_tokyo_df)
 
+    # replace the country value of UK with Great Britain
+    cleaned_final_tokyo_df["Country"] = cleaned_final_tokyo_df["Country"].replace(
+        {"UK": "Great Britain"}
+    )
+
     # save the final dataframe
     cleaned_final_tokyo_df.to_csv(CSV_SAVE_PATH, index=False)

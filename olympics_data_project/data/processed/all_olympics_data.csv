@@ -41,7 +41,7 @@ Nikita Nagorny,Russia,ROC,Summer,2020,Tokyo,Artistic Gymnastics,"Horizontal Bar,
 Liu Yang,China,CHN,Summer,2020,Tokyo,Artistic Gymnastics,"Rings, Men",Gold
 You Hao,China,CHN,Summer,2020,Tokyo,Artistic Gymnastics,"Rings, Men",Silver
 Lefteris Petrounias,Greece,GRE,Summer,2020,Tokyo,Artistic Gymnastics,"Rings, Men",Bronze
-Max Whitlock,Uk,GBR,Summer,2020,Tokyo,Artistic Gymnastics,"Pommelled Horse, Men",Gold
+Max Whitlock,Great Britain,GBR,Summer,2020,Tokyo,Artistic Gymnastics,"Pommelled Horse, Men",Gold
 Lee Chih-Kai,Taiwan,TPE,Summer,2020,Tokyo,Artistic Gymnastics,"Pommelled Horse, Men",Silver
 Kazuma Kaya,Japan,JPN,Summer,2020,Tokyo,Artistic Gymnastics,"Pommelled Horse, Men",Bronze
 Suni Lee,United States,USA,Summer,2020,Tokyo,Artistic Gymnastics,"Individual All-Around, Women",Gold
@@ -49,7 +49,7 @@ Rebeca Andrade,Brazil,BRA,Summer,2020,Tokyo,Artistic Gymnastics,"Individual All-
 Angelina Melnikova,Russia,ROC,Summer,2020,Tokyo,Artistic Gymnastics,"Individual All-Around, Women",Bronze
 Russia,Russia,ROC,Summer,2020,Tokyo,Artistic Gymnastics,"Team All-Around, Women",Gold
 United States,United States,USA,Summer,2020,Tokyo,Artistic Gymnastics,"Team All-Around, Women",Silver
-Uk,Uk,GBR,Summer,2020,Tokyo,Artistic Gymnastics,"Team All-Around, Women",Bronze
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Artistic Gymnastics,"Team All-Around, Women",Bronze
 Jade Carey,United States,USA,Summer,2020,Tokyo,Artistic Gymnastics,"Floor Exercise, Women",Gold
 Vanessa Ferrari,Italy,ITA,Summer,2020,Tokyo,Artistic Gymnastics,"Floor Exercise, Women",Silver
 Rebeca Andrade,Brazil,BRA,Summer,2020,Tokyo,Artistic Gymnastics,"Horse Vault, Women",Gold
@@ -81,7 +81,7 @@ Ferguson Rotich,Kenya,KEN,Summer,2020,Tokyo,Athletics,"800 Metres, Men",Silver
 Patryk Dobek,Poland,POL,Summer,2020,Tokyo,Athletics,"800 Metres, Men",Bronze
 Jakob Ingebrigtsen,Norway,NOR,Summer,2020,Tokyo,Athletics,"1,500 Metres, Men",Gold
 Timothy Cheruiyot,Kenya,KEN,Summer,2020,Tokyo,Athletics,"1,500 Metres, Men",Silver
-Josh Kerr,Uk,GBR,Summer,2020,Tokyo,Athletics,"1,500 Metres, Men",Bronze
+Josh Kerr,Great Britain,GBR,Summer,2020,Tokyo,Athletics,"1,500 Metres, Men",Bronze
 Joshua Cheptegei,Uganda,UGA,Summer,2020,Tokyo,Athletics,"5,000 Metres, Men",Gold
 Moh Ahmed,Canada,CAN,Summer,2020,Tokyo,Athletics,"5,000 Metres, Men",Silver
 Paul Chelimo,United States,USA,Summer,2020,Tokyo,Athletics,"5,000 Metres, Men",Bronze
@@ -148,10 +148,10 @@ Shaunae Miller-Uibo,Bahamas,BAH,Summer,2020,Tokyo,Athletics,"400 Metres, Women",
 Marileidy Paulino,Dominican Republic,DOM,Summer,2020,Tokyo,Athletics,"400 Metres, Women",Silver
 Allyson Felix,United States,USA,Summer,2020,Tokyo,Athletics,"400 Metres, Women",Bronze
 Athing Mu,United States,USA,Summer,2020,Tokyo,Athletics,"800 Metres, Women",Gold
-Keely Hodgkinson,Uk,GBR,Summer,2020,Tokyo,Athletics,"800 Metres, Women",Silver
+Keely Hodgkinson,Great Britain,GBR,Summer,2020,Tokyo,Athletics,"800 Metres, Women",Silver
 Raevyn Rogers,United States,USA,Summer,2020,Tokyo,Athletics,"800 Metres, Women",Bronze
 Faith Kipyegon,Kenya,KEN,Summer,2020,Tokyo,Athletics,"1,500 Metres, Women",Gold
-Laura Muir,Uk,GBR,Summer,2020,Tokyo,Athletics,"1,500 Metres, Women",Silver
+Laura Muir,Great Britain,GBR,Summer,2020,Tokyo,Athletics,"1,500 Metres, Women",Silver
 Sifan Hassan,Netherlands,NED,Summer,2020,Tokyo,Athletics,"1,500 Metres, Women",Bronze
 Sifan Hassan,Netherlands,NED,Summer,2020,Tokyo,Athletics,"5,000 Metres, Women",Gold
 Hellen Obiri,Kenya,KEN,Summer,2020,Tokyo,Athletics,"5,000 Metres, Women",Silver
@@ -173,7 +173,7 @@ Courtney Frerichs,United States,USA,Summer,2020,Tokyo,Athletics,"3,000 Metres St
 Hyvin Kiyeng,Kenya,KEN,Summer,2020,Tokyo,Athletics,"3,000 Metres Steeplechase, Women",Bronze
 Jamaica,Jamaica,JAM,Summer,2020,Tokyo,Athletics,"4 × 100 Metres Relay, Women",Gold
 United States,United States,USA,Summer,2020,Tokyo,Athletics,"4 × 100 Metres Relay, Women",Silver
-Uk,Uk,GBR,Summer,2020,Tokyo,Athletics,"4 × 100 Metres Relay, Women",Bronze
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Athletics,"4 × 100 Metres Relay, Women",Bronze
 United States,United States,USA,Summer,2020,Tokyo,Athletics,"4 × 400 Metres Relay, Women",Gold
 Poland,Poland,POL,Summer,2020,Tokyo,Athletics,"4 × 400 Metres Relay, Women",Silver
 Jamaica,Jamaica,JAM,Summer,2020,Tokyo,Athletics,"4 × 400 Metres Relay, Women",Bronze
@@ -185,7 +185,7 @@ Nicola Mcdermott,Australia,AUS,Summer,2020,Tokyo,Athletics,"High Jump, Women",Si
 Yaroslava Mahuchikh,Ukraine,UKR,Summer,2020,Tokyo,Athletics,"High Jump, Women",Bronze
 Katie Nageotte,United States,USA,Summer,2020,Tokyo,Athletics,"Pole Vault, Women",Gold
 Anzhelika Sidorova,Russia,ROC,Summer,2020,Tokyo,Athletics,"Pole Vault, Women",Silver
-Holly Bradshaw,Uk,GBR,Summer,2020,Tokyo,Athletics,"Pole Vault, Women",Bronze
+Holly Bradshaw,Great Britain,GBR,Summer,2020,Tokyo,Athletics,"Pole Vault, Women",Bronze
 Malaika Mihambo,Germany,GER,Summer,2020,Tokyo,Athletics,"Long Jump, Women",Gold
 Brittney Reese,United States,USA,Summer,2020,Tokyo,Athletics,"Long Jump, Women",Silver
 Ese Brume,Nigeria,NGR,Summer,2020,Tokyo,Athletics,"Long Jump, Women",Bronze
@@ -240,18 +240,18 @@ Qatar,Qatar,QAT,Summer,2020,Tokyo,Beach Volleyball,"Beach Volleyball, Men",Bronz
 United States,United States,USA,Summer,2020,Tokyo,Beach Volleyball,"Beach Volleyball, Women",Gold
 Australia,Australia,AUS,Summer,2020,Tokyo,Beach Volleyball,"Beach Volleyball, Women",Silver
 Switzerland,Switzerland,SUI,Summer,2020,Tokyo,Beach Volleyball,"Beach Volleyball, Women",Bronze
-Galal Yafai,Uk,GBR,Summer,2020,Tokyo,Boxing,"Flyweight, Men",Gold
+Galal Yafai,Great Britain,GBR,Summer,2020,Tokyo,Boxing,"Flyweight, Men",Gold
 Carlo Paalam,Philippines,PHI,Summer,2020,Tokyo,Boxing,"Flyweight, Men",Silver
 Albert Batyrgaziyev,Russia,ROC,Summer,2020,Tokyo,Boxing,"Featherweight, Men",Gold
 Duke Ragan,United States,USA,Summer,2020,Tokyo,Boxing,"Featherweight, Men",Silver
 Andy Cruz,Cuba,CUB,Summer,2020,Tokyo,Boxing,"Lightweight, Men",Gold
 Keyshawn Davis,United States,USA,Summer,2020,Tokyo,Boxing,"Lightweight, Men",Silver
 Roniel Iglesias,Cuba,CUB,Summer,2020,Tokyo,Boxing,"Welterweight, Men",Gold
-Pat Mccormack,Uk,GBR,Summer,2020,Tokyo,Boxing,"Welterweight, Men",Silver
+Pat Mccormack,Great Britain,GBR,Summer,2020,Tokyo,Boxing,"Welterweight, Men",Silver
 Hebert Conceição,Brazil,BRA,Summer,2020,Tokyo,Boxing,"Middleweight, Men",Gold
 Oleksandr Khyzhniak,Ukraine,UKR,Summer,2020,Tokyo,Boxing,"Middleweight, Men",Silver
 Arlen López,Cuba,CUB,Summer,2020,Tokyo,Boxing,"Light-Heavyweight, Men",Gold
-Ben Whittaker,Uk,GBR,Summer,2020,Tokyo,Boxing,"Light-Heavyweight, Men",Silver
+Ben Whittaker,Great Britain,GBR,Summer,2020,Tokyo,Boxing,"Light-Heavyweight, Men",Silver
 Julio César La Cruz,Cuba,CUB,Summer,2020,Tokyo,Boxing,"Heavyweight, Men",Gold
 Muslim Gadzhimagomedov,Russia,ROC,Summer,2020,Tokyo,Boxing,"Heavyweight, Men",Silver
 Bakhodir Dzhalolov,Uzbekistan,UZB,Summer,2020,Tokyo,Boxing,"Super-Heavyweight, Men",Gold
@@ -264,7 +264,7 @@ Kellie Harrington,Ireland,IRL,Summer,2020,Tokyo,Boxing,"Lightweight, Women",Gold
 Beatriz Ferreira,Brazil,BRA,Summer,2020,Tokyo,Boxing,"Lightweight, Women",Silver
 Busenaz Sürmeneli,Turkey,TUR,Summer,2020,Tokyo,Boxing,"Welterweight, Women",Gold
 Gu Hong,China,CHN,Summer,2020,Tokyo,Boxing,"Welterweight, Women",Silver
-Lauren Price,Uk,GBR,Summer,2020,Tokyo,Boxing,"Middleweight, Women",Gold
+Lauren Price,Great Britain,GBR,Summer,2020,Tokyo,Boxing,"Middleweight, Women",Gold
 Li Qian,China,CHN,Summer,2020,Tokyo,Boxing,"Middleweight, Women",Silver
 Jiří Prskavec,Czech Republic,CZE,Summer,2020,Tokyo,Canoe Slalom,"Kayak Singles, Slalom, Men",Gold
 Jakub Grigar,Slovakia,SVK,Summer,2020,Tokyo,Canoe Slalom,"Kayak Singles, Slalom, Men",Silver
@@ -276,11 +276,11 @@ Ricarda Funk,Germany,GER,Summer,2020,Tokyo,Canoe Slalom,"Kayak Singles, Slalom, 
 Maialen Chourraut,Spain,ESP,Summer,2020,Tokyo,Canoe Slalom,"Kayak Singles, Slalom, Women",Silver
 Jess Fox,Australia,AUS,Summer,2020,Tokyo,Canoe Slalom,"Kayak Singles, Slalom, Women",Bronze
 Jess Fox,Australia,AUS,Summer,2020,Tokyo,Canoe Slalom,"Canadian Singles, Slalom, Women",Gold
-Mallory Franklin,Uk,GBR,Summer,2020,Tokyo,Canoe Slalom,"Canadian Singles, Slalom, Women",Silver
+Mallory Franklin,Great Britain,GBR,Summer,2020,Tokyo,Canoe Slalom,"Canadian Singles, Slalom, Women",Silver
 Andrea Herzog,Germany,GER,Summer,2020,Tokyo,Canoe Slalom,"Canadian Singles, Slalom, Women",Bronze
 Sándor Tótka,Hungary,HUN,Summer,2020,Tokyo,Canoe Sprint,"Kayak Singles, 200 Metres, Men",Gold
 Manfredi Rizza,Italy,ITA,Summer,2020,Tokyo,Canoe Sprint,"Kayak Singles, 200 Metres, Men",Silver
-Liam Heath,Uk,GBR,Summer,2020,Tokyo,Canoe Sprint,"Kayak Singles, 200 Metres, Men",Bronze
+Liam Heath,Great Britain,GBR,Summer,2020,Tokyo,Canoe Sprint,"Kayak Singles, 200 Metres, Men",Bronze
 Bálint Kopasz,Hungary,HUN,Summer,2020,Tokyo,Canoe Sprint,"Kayak Singles, 1,000 Metres, Men",Gold
 Ádám Varga,Hungary,HUN,Summer,2020,Tokyo,Canoe Sprint,"Kayak Singles, 1,000 Metres, Men",Silver
 Fernando Pimenta,Portugal,POR,Summer,2020,Tokyo,Canoe Sprint,"Kayak Singles, 1,000 Metres, Men",Bronze
@@ -316,17 +316,17 @@ Ukraine,Ukraine,UKR,Summer,2020,Tokyo,Canoe Sprint,"Canadian Doubles, 500 Metres
 Canada,Canada,CAN,Summer,2020,Tokyo,Canoe Sprint,"Canadian Doubles, 500 Metres, Women",Bronze
 Logan Martin,Australia,AUS,Summer,2020,Tokyo,Cycling Bmx Freestyle,"Park, Men",Gold
 Daniel Dhers,Venezuela,VEN,Summer,2020,Tokyo,Cycling Bmx Freestyle,"Park, Men",Silver
-Declan Brooks,Uk,GBR,Summer,2020,Tokyo,Cycling Bmx Freestyle,"Park, Men",Bronze
-Charlotte Worthington,Uk,GBR,Summer,2020,Tokyo,Cycling Bmx Freestyle,"Park, Women",Gold
+Declan Brooks,Great Britain,GBR,Summer,2020,Tokyo,Cycling Bmx Freestyle,"Park, Men",Bronze
+Charlotte Worthington,Great Britain,GBR,Summer,2020,Tokyo,Cycling Bmx Freestyle,"Park, Women",Gold
 Hannah Roberts,United States,USA,Summer,2020,Tokyo,Cycling Bmx Freestyle,"Park, Women",Silver
 Nikita Ducarroz,Switzerland,SUI,Summer,2020,Tokyo,Cycling Bmx Freestyle,"Park, Women",Bronze
 Niek Kimmann,Netherlands,NED,Summer,2020,Tokyo,Cycling Bmx Racing,"Bmx, Men",Gold
-Kye Whyte,Uk,GBR,Summer,2020,Tokyo,Cycling Bmx Racing,"Bmx, Men",Silver
+Kye Whyte,Great Britain,GBR,Summer,2020,Tokyo,Cycling Bmx Racing,"Bmx, Men",Silver
 Carlos Ramírez,Colombia,COL,Summer,2020,Tokyo,Cycling Bmx Racing,"Bmx, Men",Bronze
-Beth Shriever,Uk,GBR,Summer,2020,Tokyo,Cycling Bmx Racing,"Bmx, Women",Gold
+Beth Shriever,Great Britain,GBR,Summer,2020,Tokyo,Cycling Bmx Racing,"Bmx, Women",Gold
 Mariana Pajón,Colombia,COL,Summer,2020,Tokyo,Cycling Bmx Racing,"Bmx, Women",Silver
 Merel Smulders,Netherlands,NED,Summer,2020,Tokyo,Cycling Bmx Racing,"Bmx, Women",Bronze
-Tom Pidcock,Uk,GBR,Summer,2020,Tokyo,Cycling Mountain Bike,"Cross-Country, Men",Gold
+Tom Pidcock,Great Britain,GBR,Summer,2020,Tokyo,Cycling Mountain Bike,"Cross-Country, Men",Gold
 Mathias Flückiger,Switzerland,SUI,Summer,2020,Tokyo,Cycling Mountain Bike,"Cross-Country, Men",Silver
 David Valero,Spain,ESP,Summer,2020,Tokyo,Cycling Mountain Bike,"Cross-Country, Men",Bronze
 Jolanda Neff,Switzerland,SUI,Summer,2020,Tokyo,Cycling Mountain Bike,"Cross-Country, Women",Gold
@@ -346,20 +346,20 @@ Marlen Reusser,Switzerland,SUI,Summer,2020,Tokyo,Cycling Road,"Individual Time T
 Anna Van Der Breggen,Netherlands,NED,Summer,2020,Tokyo,Cycling Road,"Individual Time Trial, Women",Bronze
 Harrie Lavreysen,Netherlands,NED,Summer,2020,Tokyo,Cycling Track,"Sprint, Men",Gold
 Jeffrey Hoogland,Netherlands,NED,Summer,2020,Tokyo,Cycling Track,"Sprint, Men",Silver
-Jack Carlin,Uk,GBR,Summer,2020,Tokyo,Cycling Track,"Sprint, Men",Bronze
-Jason Kenny,Uk,GBR,Summer,2020,Tokyo,Cycling Track,"Keirin, Men",Gold
+Jack Carlin,Great Britain,GBR,Summer,2020,Tokyo,Cycling Track,"Sprint, Men",Bronze
+Jason Kenny,Great Britain,GBR,Summer,2020,Tokyo,Cycling Track,"Keirin, Men",Gold
 Azizul Awang,Malaysia,MAS,Summer,2020,Tokyo,Cycling Track,"Keirin, Men",Silver
 Harrie Lavreysen,Netherlands,NED,Summer,2020,Tokyo,Cycling Track,"Keirin, Men",Bronze
 Netherlands,Netherlands,NED,Summer,2020,Tokyo,Cycling Track,"Team Sprint, Men",Gold
-Uk,Uk,GBR,Summer,2020,Tokyo,Cycling Track,"Team Sprint, Men",Silver
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Cycling Track,"Team Sprint, Men",Silver
 France,France,FRA,Summer,2020,Tokyo,Cycling Track,"Team Sprint, Men",Bronze
 Italy,Italy,ITA,Summer,2020,Tokyo,Cycling Track,"Team Pursuit, 4,000 Metres, Men",Gold
 Denmark,Denmark,DEN,Summer,2020,Tokyo,Cycling Track,"Team Pursuit, 4,000 Metres, Men",Silver
 Australia,Australia,AUS,Summer,2020,Tokyo,Cycling Track,"Team Pursuit, 4,000 Metres, Men",Bronze
 Denmark,Denmark,DEN,Summer,2020,Tokyo,Cycling Track,"Madison, Men",Gold
-Uk,Uk,GBR,Summer,2020,Tokyo,Cycling Track,"Madison, Men",Silver
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Cycling Track,"Madison, Men",Silver
 France,France,FRA,Summer,2020,Tokyo,Cycling Track,"Madison, Men",Bronze
-Matthew Walls,Uk,GBR,Summer,2020,Tokyo,Cycling Track,"Omnium, Men",Gold
+Matthew Walls,Great Britain,GBR,Summer,2020,Tokyo,Cycling Track,"Omnium, Men",Gold
 Campbell Stewart,New Zealand,NZL,Summer,2020,Tokyo,Cycling Track,"Omnium, Men",Silver
 Elia Viviani,Italy,ITA,Summer,2020,Tokyo,Cycling Track,"Omnium, Men",Bronze
 Kelsey Mitchell,Canada,CAN,Summer,2020,Tokyo,Cycling Track,"Sprint, Women",Gold
@@ -372,24 +372,24 @@ China,China,CHN,Summer,2020,Tokyo,Cycling Track,"Team Sprint, Women",Gold
 Germany,Germany,GER,Summer,2020,Tokyo,Cycling Track,"Team Sprint, Women",Silver
 Russia,Russia,ROC,Summer,2020,Tokyo,Cycling Track,"Team Sprint, Women",Bronze
 Germany,Germany,GER,Summer,2020,Tokyo,Cycling Track,"Team Pursuit, Women",Gold
-Uk,Uk,GBR,Summer,2020,Tokyo,Cycling Track,"Team Pursuit, Women",Silver
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Cycling Track,"Team Pursuit, Women",Silver
 United States,United States,USA,Summer,2020,Tokyo,Cycling Track,"Team Pursuit, Women",Bronze
 Jennifer Valente,United States,USA,Summer,2020,Tokyo,Cycling Track,"Omnium, Women",Gold
 Yumi Kajihara,Japan,JPN,Summer,2020,Tokyo,Cycling Track,"Omnium, Women",Silver
 Kirsten Wild,Netherlands,NED,Summer,2020,Tokyo,Cycling Track,"Omnium, Women",Bronze
-Uk,Uk,GBR,Summer,2020,Tokyo,Cycling Track,"Madison, Women",Gold
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Cycling Track,"Madison, Women",Gold
 Denmark,Denmark,DEN,Summer,2020,Tokyo,Cycling Track,"Madison, Women",Silver
 Russia,Russia,ROC,Summer,2020,Tokyo,Cycling Track,"Madison, Women",Bronze
 Xie Siyi,China,CHN,Summer,2020,Tokyo,Diving,"Springboard, Men",Gold
 Wang Zongyuan,China,CHN,Summer,2020,Tokyo,Diving,"Springboard, Men",Silver
-Jack Laugher,Uk,GBR,Summer,2020,Tokyo,Diving,"Springboard, Men",Bronze
+Jack Laugher,Great Britain,GBR,Summer,2020,Tokyo,Diving,"Springboard, Men",Bronze
 Cao Yuan,China,CHN,Summer,2020,Tokyo,Diving,"Platform, Men",Gold
 Yang Jian,China,CHN,Summer,2020,Tokyo,Diving,"Platform, Men",Silver
-Tom Daley,Uk,GBR,Summer,2020,Tokyo,Diving,"Platform, Men",Bronze
+Tom Daley,Great Britain,GBR,Summer,2020,Tokyo,Diving,"Platform, Men",Bronze
 China,China,CHN,Summer,2020,Tokyo,Diving,"Synchronized Springboard, Men",Gold
 United States,United States,USA,Summer,2020,Tokyo,Diving,"Synchronized Springboard, Men",Silver
 Germany,Germany,GER,Summer,2020,Tokyo,Diving,"Synchronized Springboard, Men",Bronze
-Uk,Uk,GBR,Summer,2020,Tokyo,Diving,"Synchronized Platform, Men",Gold
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Diving,"Synchronized Platform, Men",Gold
 China,China,CHN,Summer,2020,Tokyo,Diving,"Synchronized Platform, Men",Silver
 Russia,Russia,ROC,Summer,2020,Tokyo,Diving,"Synchronized Platform, Men",Bronze
 Shi Tingmao,China,CHN,Summer,2020,Tokyo,Diving,"Springboard, Women",Gold
@@ -406,17 +406,17 @@ United States,United States,USA,Summer,2020,Tokyo,Diving,"Synchronized Platform,
 Mexico,Mexico,MEX,Summer,2020,Tokyo,Diving,"Synchronized Platform, Women",Bronze
 Jessica Von Bredow-Werndl,Germany,GER,Summer,2020,Tokyo,Equestrian Dressage,"Individual, Open",Gold
 Isabell Werth,Germany,GER,Summer,2020,Tokyo,Equestrian Dressage,"Individual, Open",Silver
-Charlotte Dujardin,Uk,GBR,Summer,2020,Tokyo,Equestrian Dressage,"Individual, Open",Bronze
+Charlotte Dujardin,Great Britain,GBR,Summer,2020,Tokyo,Equestrian Dressage,"Individual, Open",Bronze
 Germany,Germany,GER,Summer,2020,Tokyo,Equestrian Dressage,"Team, Open",Gold
 United States,United States,USA,Summer,2020,Tokyo,Equestrian Dressage,"Team, Open",Silver
-Uk,Uk,GBR,Summer,2020,Tokyo,Equestrian Dressage,"Team, Open",Bronze
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Equestrian Dressage,"Team, Open",Bronze
 Julia Krajewski,Germany,GER,Summer,2020,Tokyo,Equestrian Eventing,"Individual, Open",Gold
-Tom Mcewen,Uk,GBR,Summer,2020,Tokyo,Equestrian Eventing,"Individual, Open",Silver
+Tom Mcewen,Great Britain,GBR,Summer,2020,Tokyo,Equestrian Eventing,"Individual, Open",Silver
 Andrew Hoy,Australia,AUS,Summer,2020,Tokyo,Equestrian Eventing,"Individual, Open",Bronze
-Uk,Uk,GBR,Summer,2020,Tokyo,Equestrian Eventing,"Team, Open",Gold
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Equestrian Eventing,"Team, Open",Gold
 Australia,Australia,AUS,Summer,2020,Tokyo,Equestrian Eventing,"Team, Open",Silver
 France,France,FRA,Summer,2020,Tokyo,Equestrian Eventing,"Team, Open",Bronze
-Ben Maher,Uk,GBR,Summer,2020,Tokyo,Equestrian Jumping,"Individual, Open",Gold
+Ben Maher,Great Britain,GBR,Summer,2020,Tokyo,Equestrian Jumping,"Individual, Open",Gold
 Peder Fredricson,Sweden,SWE,Summer,2020,Tokyo,Equestrian Jumping,"Individual, Open",Silver
 Maikel Van Der Vleuten,Netherlands,NED,Summer,2020,Tokyo,Equestrian Jumping,"Individual, Open",Bronze
 Sweden,Sweden,SWE,Summer,2020,Tokyo,Equestrian Jumping,"Team, Open",Gold
@@ -481,7 +481,7 @@ Australia,Australia,AUS,Summer,2020,Tokyo,Hockey,"Hockey, Men",Silver
 India,India,IND,Summer,2020,Tokyo,Hockey,"Hockey, Men",Bronze
 Netherlands,Netherlands,NED,Summer,2020,Tokyo,Hockey,"Hockey, Women",Gold
 Argentina,Argentina,ARG,Summer,2020,Tokyo,Hockey,"Hockey, Women",Silver
-Uk,Uk,GBR,Summer,2020,Tokyo,Hockey,"Hockey, Women",Bronze
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Hockey,"Hockey, Women",Bronze
 Naohisa Takato,Japan,JPN,Summer,2020,Tokyo,Judo,"Extra-Lightweight, Men",Gold
 Yang Yung-Wei,Taiwan,TPE,Summer,2020,Tokyo,Judo,"Extra-Lightweight, Men",Silver
 Hifumi Abe,Japan,JPN,Summer,2020,Tokyo,Judo,"Half-Lightweight, Men",Gold
@@ -535,10 +535,10 @@ Gregorio Paltrinieri,Italy,ITA,Summer,2020,Tokyo,Marathon Swimming,"10 Kilometre
 Ana Marcela Cunha,Brazil,BRA,Summer,2020,Tokyo,Marathon Swimming,"10 Kilometres Open Water, Women",Gold
 Sharon Van Rouwendaal,Netherlands,NED,Summer,2020,Tokyo,Marathon Swimming,"10 Kilometres Open Water, Women",Silver
 Kareena Lee,Australia,AUS,Summer,2020,Tokyo,Marathon Swimming,"10 Kilometres Open Water, Women",Bronze
-Joe Choong,Uk,GBR,Summer,2020,Tokyo,Modern Pentathlon,"Individual, Men",Gold
+Joe Choong,Great Britain,GBR,Summer,2020,Tokyo,Modern Pentathlon,"Individual, Men",Gold
 Ahmed El-Gendy,Egypt,EGY,Summer,2020,Tokyo,Modern Pentathlon,"Individual, Men",Silver
 Jeon Ung-Tae,South Korea,KOR,Summer,2020,Tokyo,Modern Pentathlon,"Individual, Men",Bronze
-Kate French,Uk,GBR,Summer,2020,Tokyo,Modern Pentathlon,"Individual, Women",Gold
+Kate French,Great Britain,GBR,Summer,2020,Tokyo,Modern Pentathlon,"Individual, Women",Gold
 Laura Asadauskaitė,Lithuania,LTU,Summer,2020,Tokyo,Modern Pentathlon,"Individual, Women",Silver
 Sarolta Kovács,Hungary,HUN,Summer,2020,Tokyo,Modern Pentathlon,"Individual, Women",Bronze
 Linoy Ashram,Israel,ISR,Summer,2020,Tokyo,Rhythmic Gymnastics,"Individual, Women",Gold
@@ -554,7 +554,7 @@ France,France,FRA,Summer,2020,Tokyo,Rowing,"Double Sculls, Men",Gold
 Netherlands,Netherlands,NED,Summer,2020,Tokyo,Rowing,"Double Sculls, Men",Silver
 China,China,CHN,Summer,2020,Tokyo,Rowing,"Double Sculls, Men",Bronze
 Netherlands,Netherlands,NED,Summer,2020,Tokyo,Rowing,"Quadruple Sculls, Men",Gold
-Uk,Uk,GBR,Summer,2020,Tokyo,Rowing,"Quadruple Sculls, Men",Silver
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Rowing,"Quadruple Sculls, Men",Silver
 Australia,Australia,AUS,Summer,2020,Tokyo,Rowing,"Quadruple Sculls, Men",Bronze
 Croatia,Croatia,CRO,Summer,2020,Tokyo,Rowing,"Coxless Pairs, Men",Gold
 Romania,Romania,ROU,Summer,2020,Tokyo,Rowing,"Coxless Pairs, Men",Silver
@@ -564,7 +564,7 @@ Romania,Romania,ROU,Summer,2020,Tokyo,Rowing,"Coxless Fours, Men",Silver
 Italy,Italy,ITA,Summer,2020,Tokyo,Rowing,"Coxless Fours, Men",Bronze
 New Zealand,New Zealand,NZL,Summer,2020,Tokyo,Rowing,"Eights, Men",Gold
 Germany,Germany,GER,Summer,2020,Tokyo,Rowing,"Eights, Men",Silver
-Uk,Uk,GBR,Summer,2020,Tokyo,Rowing,"Eights, Men",Bronze
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Rowing,"Eights, Men",Bronze
 Ireland,Ireland,IRL,Summer,2020,Tokyo,Rowing,"Lightweight Double Sculls, Men",Gold
 Germany,Germany,GER,Summer,2020,Tokyo,Rowing,"Lightweight Double Sculls, Men",Silver
 Italy,Italy,ITA,Summer,2020,Tokyo,Rowing,"Lightweight Double Sculls, Men",Bronze
@@ -604,26 +604,26 @@ Hermann Tomasgaard,Norway,NOR,Summer,2020,Tokyo,Sailing,"One Person Dinghy, Men"
 Australia,Australia,AUS,Summer,2020,Tokyo,Sailing,"Two Person Dinghy, Men",Gold
 Sweden,Sweden,SWE,Summer,2020,Tokyo,Sailing,"Two Person Dinghy, Men",Silver
 Spain,Spain,ESP,Summer,2020,Tokyo,Sailing,"Two Person Dinghy, Men",Bronze
-Uk,Uk,GBR,Summer,2020,Tokyo,Sailing,"Skiff, Men",Gold
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Sailing,"Skiff, Men",Gold
 New Zealand,New Zealand,NZL,Summer,2020,Tokyo,Sailing,"Skiff, Men",Silver
 Germany,Germany,GER,Summer,2020,Tokyo,Sailing,"Skiff, Men",Bronze
-Giles Scott,Uk,GBR,Summer,2020,Tokyo,Sailing,"One Person Heavyweight Dinghy, Men",Gold
+Giles Scott,Great Britain,GBR,Summer,2020,Tokyo,Sailing,"One Person Heavyweight Dinghy, Men",Gold
 Zsombor Berecz,Hungary,HUN,Summer,2020,Tokyo,Sailing,"One Person Heavyweight Dinghy, Men",Silver
 Joan Cardona,Spain,ESP,Summer,2020,Tokyo,Sailing,"One Person Heavyweight Dinghy, Men",Bronze
 Lu Yunxiu,China,CHN,Summer,2020,Tokyo,Sailing,"Windsurfer, Women",Gold
 Charline Picon,France,FRA,Summer,2020,Tokyo,Sailing,"Windsurfer, Women",Silver
-Emma Wilson,Uk,GBR,Summer,2020,Tokyo,Sailing,"Windsurfer, Women",Bronze
+Emma Wilson,Great Britain,GBR,Summer,2020,Tokyo,Sailing,"Windsurfer, Women",Bronze
 Anne-Marie Rindom,Denmark,DEN,Summer,2020,Tokyo,Sailing,"One Person Dinghy, Women",Gold
 Josefin Olsson,Sweden,SWE,Summer,2020,Tokyo,Sailing,"One Person Dinghy, Women",Silver
 Marit Bouwmeester,Netherlands,NED,Summer,2020,Tokyo,Sailing,"One Person Dinghy, Women",Bronze
-Uk,Uk,GBR,Summer,2020,Tokyo,Sailing,"Two Person Dinghy, Women",Gold
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Sailing,"Two Person Dinghy, Women",Gold
 Poland,Poland,POL,Summer,2020,Tokyo,Sailing,"Two Person Dinghy, Women",Silver
 France,France,FRA,Summer,2020,Tokyo,Sailing,"Two Person Dinghy, Women",Bronze
 Brazil,Brazil,BRA,Summer,2020,Tokyo,Sailing,"Skiff, Women",Gold
 Germany,Germany,GER,Summer,2020,Tokyo,Sailing,"Skiff, Women",Silver
 Netherlands,Netherlands,NED,Summer,2020,Tokyo,Sailing,"Skiff, Women",Bronze
 Italy,Italy,ITA,Summer,2020,Tokyo,Sailing,"Multihull, Mixed",Gold
-Uk,Uk,GBR,Summer,2020,Tokyo,Sailing,"Multihull, Mixed",Silver
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Sailing,"Multihull, Mixed",Silver
 Germany,Germany,GER,Summer,2020,Tokyo,Sailing,"Multihull, Mixed",Bronze
 Javad Foroughi,Iran,IRI,Summer,2020,Tokyo,Shooting,"Air Pistol, 10 Metres, Men",Gold
 Damir Mikec,Serbia,SRB,Summer,2020,Tokyo,Shooting,"Air Pistol, 10 Metres, Men",Silver
@@ -639,7 +639,7 @@ Sergey Kamensky,Russia,ROC,Summer,2020,Tokyo,Shooting,"Small-Bore Rifle, Three P
 Milenko Sebić,Serbia,SRB,Summer,2020,Tokyo,Shooting,"Small-Bore Rifle, Three Positions, 50 Metres, Men",Bronze
 Jiří Lipták,Czech Republic,CZE,Summer,2020,Tokyo,Shooting,"Trap, Men",Gold
 David Kostelecký,Czech Republic,CZE,Summer,2020,Tokyo,Shooting,"Trap, Men",Silver
-Matthew Coward-Holley,Uk,GBR,Summer,2020,Tokyo,Shooting,"Trap, Men",Bronze
+Matthew Coward-Holley,Great Britain,GBR,Summer,2020,Tokyo,Shooting,"Trap, Men",Bronze
 Vincent Hancock,United States,USA,Summer,2020,Tokyo,Shooting,"Skeet, Men",Gold
 Jesper Hansen,Denmark,DEN,Summer,2020,Tokyo,Shooting,"Skeet, Men",Silver
 Abdullah Al-Rashidi,Kuwait,KUW,Summer,2020,Tokyo,Shooting,"Skeet, Men",Bronze
@@ -681,7 +681,7 @@ Rayssa Leal,Brazil,BRA,Summer,2020,Tokyo,Skateboarding,"Street, Women",Silver
 Funa Nakayama,Japan,JPN,Summer,2020,Tokyo,Skateboarding,"Street, Women",Bronze
 Sakura Yosozumi,Japan,JPN,Summer,2020,Tokyo,Skateboarding,"Park, Women",Gold
 Kokona Hiraki,Japan,JPN,Summer,2020,Tokyo,Skateboarding,"Park, Women",Silver
-Sky Brown,Uk,GBR,Summer,2020,Tokyo,Skateboarding,"Park, Women",Bronze
+Sky Brown,Great Britain,GBR,Summer,2020,Tokyo,Skateboarding,"Park, Women",Bronze
 Japan,Japan,JPN,Summer,2020,Tokyo,Softball,"Softball, Women",Gold
 United States,United States,USA,Summer,2020,Tokyo,Softball,"Softball, Women",Silver
 Canada,Canada,CAN,Summer,2020,Tokyo,Softball,"Softball, Women",Bronze
@@ -703,8 +703,8 @@ Bruno Fratus,Brazil,BRA,Summer,2020,Tokyo,Swimming,"50 Metres Freestyle, Men",Br
 Caeleb Dressel,United States,USA,Summer,2020,Tokyo,Swimming,"100 Metres Freestyle, Men",Gold
 Kyle Chalmers,Australia,AUS,Summer,2020,Tokyo,Swimming,"100 Metres Freestyle, Men",Silver
 Kliment Kolesnikov,Russia,ROC,Summer,2020,Tokyo,Swimming,"100 Metres Freestyle, Men",Bronze
-Tom Dean,Uk,GBR,Summer,2020,Tokyo,Swimming,"200 Metres Freestyle, Men",Gold
-Duncan Scott,Uk,GBR,Summer,2020,Tokyo,Swimming,"200 Metres Freestyle, Men",Silver
+Tom Dean,Great Britain,GBR,Summer,2020,Tokyo,Swimming,"200 Metres Freestyle, Men",Gold
+Duncan Scott,Great Britain,GBR,Summer,2020,Tokyo,Swimming,"200 Metres Freestyle, Men",Silver
 Fernando Scheffer,Brazil,BRA,Summer,2020,Tokyo,Swimming,"200 Metres Freestyle, Men",Bronze
 Ahmed Hafnaoui,Tunisia,TUN,Summer,2020,Tokyo,Swimming,"400 Metres Freestyle, Men",Gold
 Jack Mcloughlin,Australia,AUS,Summer,2020,Tokyo,Swimming,"400 Metres Freestyle, Men",Silver
@@ -718,7 +718,7 @@ Florian Wellbrock,Germany,GER,Summer,2020,Tokyo,Swimming,"1,500 Metres Freestyle
 United States,United States,USA,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Freestyle Relay, Men",Gold
 Italy,Italy,ITA,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Freestyle Relay, Men",Silver
 Australia,Australia,AUS,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Freestyle Relay, Men",Bronze
-Uk,Uk,GBR,Summer,2020,Tokyo,Swimming,"4 × 200 Metres Freestyle Relay, Men",Gold
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Swimming,"4 × 200 Metres Freestyle Relay, Men",Gold
 Russia,Russia,ROC,Summer,2020,Tokyo,Swimming,"4 × 200 Metres Freestyle Relay, Men",Silver
 Australia,Australia,AUS,Summer,2020,Tokyo,Swimming,"4 × 200 Metres Freestyle Relay, Men",Bronze
 Yevgeny Rylov,Russia,ROC,Summer,2020,Tokyo,Swimming,"100 Metres Backstroke, Men",Gold
@@ -726,8 +726,8 @@ Kliment Kolesnikov,Russia,ROC,Summer,2020,Tokyo,Swimming,"100 Metres Backstroke,
 Ryan Murphy,United States,USA,Summer,2020,Tokyo,Swimming,"100 Metres Backstroke, Men",Bronze
 Yevgeny Rylov,Russia,ROC,Summer,2020,Tokyo,Swimming,"200 Metres Backstroke, Men",Gold
 Ryan Murphy,United States,USA,Summer,2020,Tokyo,Swimming,"200 Metres Backstroke, Men",Silver
-Luke Greenbank,Uk,GBR,Summer,2020,Tokyo,Swimming,"200 Metres Backstroke, Men",Bronze
-Adam Peaty,Uk,GBR,Summer,2020,Tokyo,Swimming,"100 Metres Breaststroke, Men",Gold
+Luke Greenbank,Great Britain,GBR,Summer,2020,Tokyo,Swimming,"200 Metres Backstroke, Men",Bronze
+Adam Peaty,Great Britain,GBR,Summer,2020,Tokyo,Swimming,"100 Metres Breaststroke, Men",Gold
 Arno Kamminga,Netherlands,NED,Summer,2020,Tokyo,Swimming,"100 Metres Breaststroke, Men",Silver
 Nicolò Martinenghi,Italy,ITA,Summer,2020,Tokyo,Swimming,"100 Metres Breaststroke, Men",Bronze
 Zac Stubblety-Cook,Australia,AUS,Summer,2020,Tokyo,Swimming,"200 Metres Breaststroke, Men",Gold
@@ -740,13 +740,13 @@ Kristóf Milák,Hungary,HUN,Summer,2020,Tokyo,Swimming,"200 Metres Butterfly, Me
 Tomoru Honda,Japan,JPN,Summer,2020,Tokyo,Swimming,"200 Metres Butterfly, Men",Silver
 Federico Burdisso,Italy,ITA,Summer,2020,Tokyo,Swimming,"200 Metres Butterfly, Men",Bronze
 Wang Shun,China,CHN,Summer,2020,Tokyo,Swimming,"200 Metres Individual Medley, Men",Gold
-Duncan Scott,Uk,GBR,Summer,2020,Tokyo,Swimming,"200 Metres Individual Medley, Men",Silver
+Duncan Scott,Great Britain,GBR,Summer,2020,Tokyo,Swimming,"200 Metres Individual Medley, Men",Silver
 Jérémy Desplanches,Switzerland,SUI,Summer,2020,Tokyo,Swimming,"200 Metres Individual Medley, Men",Bronze
 Chase Kalisz,United States,USA,Summer,2020,Tokyo,Swimming,"400 Metres Individual Medley, Men",Gold
 Jay Litherland,United States,USA,Summer,2020,Tokyo,Swimming,"400 Metres Individual Medley, Men",Silver
 Brendon Smith,Australia,AUS,Summer,2020,Tokyo,Swimming,"400 Metres Individual Medley, Men",Bronze
 United States,United States,USA,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Men",Gold
-Uk,Uk,GBR,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Men",Silver
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Men",Silver
 Italy,Italy,ITA,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Men",Bronze
 Emma Mckeon,Australia,AUS,Summer,2020,Tokyo,Swimming,"50 Metres Freestyle, Women",Gold
 Sarah Sjöström,Sweden,SWE,Summer,2020,Tokyo,Swimming,"50 Metres Freestyle, Women",Silver
@@ -799,7 +799,7 @@ Hali Flickinger,United States,USA,Summer,2020,Tokyo,Swimming,"400 Metres Individ
 Australia,Australia,AUS,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Women",Gold
 United States,United States,USA,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Women",Silver
 Canada,Canada,CAN,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Women",Bronze
-Uk,Uk,GBR,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Mixed",Gold
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Mixed",Gold
 China,China,CHN,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Mixed",Silver
 Australia,Australia,AUS,Summer,2020,Tokyo,Swimming,"4 × 100 Metres Medley Relay, Mixed",Bronze
 Ma Long,China,CHN,Summer,2020,Tokyo,Table Tennis,"Singles, Men",Gold
@@ -820,7 +820,7 @@ Taiwan,Taiwan,TPE,Summer,2020,Tokyo,Table Tennis,"Doubles, Mixed",Bronze
 Vito Dell'Aquila,Italy,ITA,Summer,2020,Tokyo,Taekwondo,"Flyweight, Men",Gold
 Mohamed Khalil Jendoubi,Tunisia,TUN,Summer,2020,Tokyo,Taekwondo,"Flyweight, Men",Silver
 Ulugbek Rashitov,Uzbekistan,UZB,Summer,2020,Tokyo,Taekwondo,"Featherweight, Men",Gold
-Bradly Sinden,Uk,GBR,Summer,2020,Tokyo,Taekwondo,"Featherweight, Men",Silver
+Bradly Sinden,Great Britain,GBR,Summer,2020,Tokyo,Taekwondo,"Featherweight, Men",Silver
 Maksim Khramtsov,Russia,ROC,Summer,2020,Tokyo,Taekwondo,"Welterweight, Men",Gold
 Saleh El-Sharabaty,Jordan,JOR,Summer,2020,Tokyo,Taekwondo,"Welterweight, Men",Silver
 Vladislav Larin,Russia,ROC,Summer,2020,Tokyo,Taekwondo,"Heavyweight, Men",Gold
@@ -830,7 +830,7 @@ Adriana Cerezo,Spain,ESP,Summer,2020,Tokyo,Taekwondo,"Flyweight, Women",Silver
 Anastasija Zolotic,United States,USA,Summer,2020,Tokyo,Taekwondo,"Featherweight, Women",Gold
 Tatyana Minina,Russia,ROC,Summer,2020,Tokyo,Taekwondo,"Featherweight, Women",Silver
 Matea Jelić,Croatia,CRO,Summer,2020,Tokyo,Taekwondo,"Welterweight, Women",Gold
-Lauren Williams,Uk,GBR,Summer,2020,Tokyo,Taekwondo,"Welterweight, Women",Silver
+Lauren Williams,Great Britain,GBR,Summer,2020,Tokyo,Taekwondo,"Welterweight, Women",Silver
 Milica Mandić,Serbia,SRB,Summer,2020,Tokyo,Taekwondo,"Heavyweight, Women",Gold
 Lee Da-Bin,South Korea,KOR,Summer,2020,Tokyo,Taekwondo,"Heavyweight, Women",Silver
 Alexander Zverev,Germany,GER,Summer,2020,Tokyo,Tennis,"Singles, Men",Gold
@@ -853,14 +853,14 @@ Dong Dong,China,CHN,Summer,2020,Tokyo,Trampolining,"Individual, Men",Silver
 Dylan Schmidt,New Zealand,NZL,Summer,2020,Tokyo,Trampolining,"Individual, Men",Bronze
 Zhu Xueying,China,CHN,Summer,2020,Tokyo,Trampolining,"Individual, Women",Gold
 Liu Lingling,China,CHN,Summer,2020,Tokyo,Trampolining,"Individual, Women",Silver
-Bryony Page,Uk,GBR,Summer,2020,Tokyo,Trampolining,"Individual, Women",Bronze
+Bryony Page,Great Britain,GBR,Summer,2020,Tokyo,Trampolining,"Individual, Women",Bronze
 Kristian Blummenfelt,Norway,NOR,Summer,2020,Tokyo,Triathlon,"Olympic Distance, Men",Gold
-Alex Yee,Uk,GBR,Summer,2020,Tokyo,Triathlon,"Olympic Distance, Men",Silver
+Alex Yee,Great Britain,GBR,Summer,2020,Tokyo,Triathlon,"Olympic Distance, Men",Silver
 Hayden Wilde,New Zealand,NZL,Summer,2020,Tokyo,Triathlon,"Olympic Distance, Men",Bronze
 Flora Duffy,Bermuda,BER,Summer,2020,Tokyo,Triathlon,"Olympic Distance, Women",Gold
-Georgia Taylor-Brown,Uk,GBR,Summer,2020,Tokyo,Triathlon,"Olympic Distance, Women",Silver
+Georgia Taylor-Brown,Great Britain,GBR,Summer,2020,Tokyo,Triathlon,"Olympic Distance, Women",Silver
 Katie Zaferes,United States,USA,Summer,2020,Tokyo,Triathlon,"Olympic Distance, Women",Bronze
-Uk,Uk,GBR,Summer,2020,Tokyo,Triathlon,"Relay, Mixed",Gold
+Uk,Great Britain,GBR,Summer,2020,Tokyo,Triathlon,"Relay, Mixed",Gold
 United States,United States,USA,Summer,2020,Tokyo,Triathlon,"Relay, Mixed",Silver
 France,France,FRA,Summer,2020,Tokyo,Triathlon,"Relay, Mixed",Bronze
 France,France,FRA,Summer,2020,Tokyo,Volleyball,"Volleyball, Men",Gold
@@ -915,7 +915,7 @@ Wang Zhouyu,China,CHN,Summer,2020,Tokyo,Weightlifting,"Heavyweight, Women",Gold
 Tamara Salazar,Ecuador,ECU,Summer,2020,Tokyo,Weightlifting,"Heavyweight, Women",Silver
 Crismery Santana,Dominican Republic,DOM,Summer,2020,Tokyo,Weightlifting,"Heavyweight, Women",Bronze
 Li Wenwen,China,CHN,Summer,2020,Tokyo,Weightlifting,"Super-Heavyweight, Women",Gold
-Emily Campbell,Uk,GBR,Summer,2020,Tokyo,Weightlifting,"Super-Heavyweight, Women",Silver
+Emily Campbell,Great Britain,GBR,Summer,2020,Tokyo,Weightlifting,"Super-Heavyweight, Women",Silver
 Sarah Robles,United States,USA,Summer,2020,Tokyo,Weightlifting,"Super-Heavyweight, Women",Bronze
 Luis Alberto Orta,Cuba,CUB,Summer,2020,Tokyo,Wrestling,"Featherweight, Greco-Roman, Men",Gold
 Kenichiro Fumita,Japan,JPN,Summer,2020,Tokyo,Wrestling,"Featherweight, Greco-Roman, Men",Silver
@@ -971,11 +971,11 @@ Loren Alfonso,Azerbaijan,AZE,Summer,2020,Tokyo,Boxing,"Light-Heavyweight, Men",B
 Imam Khatayev,Russia,ROC,Summer,2020,Tokyo,Boxing,"Light-Heavyweight, Men",Bronze (Tie)
 Abner Teixeira,Brazil,BRA,Summer,2020,Tokyo,Boxing,"Heavyweight, Men",Bronze (Tie)
 David Nyika,New Zealand,NZL,Summer,2020,Tokyo,Boxing,"Heavyweight, Men",Bronze (Tie)
-Frazer Clarke,Uk,GBR,Summer,2020,Tokyo,Boxing,"Super-Heavyweight, Men",Bronze (Tie)
+Frazer Clarke,Great Britain,GBR,Summer,2020,Tokyo,Boxing,"Super-Heavyweight, Men",Bronze (Tie)
 Kamshybek Kunkabayev,Kazakhstan,KAZ,Summer,2020,Tokyo,Boxing,"Super-Heavyweight, Men",Bronze (Tie)
 Tsukimi Namiki,Japan,JPN,Summer,2020,Tokyo,Boxing,"Flyweight, Women",Bronze (Tie)
 Huang Hsiao-Wen,Taiwan,TPE,Summer,2020,Tokyo,Boxing,"Flyweight, Women",Bronze (Tie)
-Karriss Artingstall,Uk,GBR,Summer,2020,Tokyo,Boxing,"Featherweight, Women",Bronze (Tie)
+Karriss Artingstall,Great Britain,GBR,Summer,2020,Tokyo,Boxing,"Featherweight, Women",Bronze (Tie)
 Irma Testa,Italy,ITA,Summer,2020,Tokyo,Boxing,"Featherweight, Women",Bronze (Tie)
 Mira Potkonen,Finland,FIN,Summer,2020,Tokyo,Boxing,"Lightweight, Women",Bronze (Tie)
 Sudaporn Seesondee,Thailand,THA,Summer,2020,Tokyo,Boxing,"Lightweight, Women",Bronze (Tie)
@@ -999,7 +999,7 @@ Teddy Riner,France,FRA,Summer,2020,Tokyo,Judo,"Heavyweight, Men",Bronze (Tie)
 Tamerlan Bashayev,Russia,ROC,Summer,2020,Tokyo,Judo,"Heavyweight, Men",Bronze (Tie)
 Mönkhbatyn Urantsetseg,Mongolia,MGL,Summer,2020,Tokyo,Judo,"Extra-Lightweight, Women",Bronze (Tie)
 Dar'Ia Bilodid,Ukraine,UKR,Summer,2020,Tokyo,Judo,"Extra-Lightweight, Women",Bronze (Tie)
-Chelsie Giles,Uk,GBR,Summer,2020,Tokyo,Judo,"Half-Lightweight, Women",Bronze (Tie)
+Chelsie Giles,Great Britain,GBR,Summer,2020,Tokyo,Judo,"Half-Lightweight, Women",Bronze (Tie)
 Odette Giuffrida,Italy,ITA,Summer,2020,Tokyo,Judo,"Half-Lightweight, Women",Bronze (Tie)
 Jessica Klimkait,Canada,CAN,Summer,2020,Tokyo,Judo,"Lightweight, Women",Bronze (Tie)
 Tsukasa Yoshida,Japan,JPN,Summer,2020,Tokyo,Judo,"Lightweight, Women",Bronze (Tie)
@@ -1042,7 +1042,7 @@ Hatice Kübra İlgün,Turkey,TUR,Summer,2020,Tokyo,Taekwondo,"Featherweight, Wom
 Ruth Gbagbi,Ivory Coast,CIV,Summer,2020,Tokyo,Taekwondo,"Welterweight, Women",Bronze (Tie)
 Hedaya Malak,Egypt,EGY,Summer,2020,Tokyo,Taekwondo,"Welterweight, Women",Bronze (Tie)
 Althéa Laurin,France,FRA,Summer,2020,Tokyo,Taekwondo,"Heavyweight, Women",Bronze (Tie)
-Bianca Walkden,Uk,GBR,Summer,2020,Tokyo,Taekwondo,"Heavyweight, Women",Bronze (Tie)
+Bianca Walkden,Great Britain,GBR,Summer,2020,Tokyo,Taekwondo,"Heavyweight, Women",Bronze (Tie)
 Walihan Sailike,China,CHN,Summer,2020,Tokyo,Wrestling,"Featherweight, Greco-Roman, Men",Bronze (Tie)
 Sergey Yemelin,Russia,ROC,Summer,2020,Tokyo,Wrestling,"Featherweight, Greco-Roman, Men",Bronze (Tie)
 Mohamed Ibrahim El-Sayed,Egypt,EGY,Summer,2020,Tokyo,Wrestling,"Welterweight, Greco-Roman, Men",Bronze (Tie)
